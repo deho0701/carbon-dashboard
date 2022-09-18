@@ -1,5 +1,6 @@
 import {  createRouter, createWebHistory } from "vue-router"
 import eco from "./views/Eco.vue"
+import getInfo from "./views/get_info.vue"
 
 const router = createRouter({
   history: createWebHistory(),
@@ -9,6 +10,11 @@ const router = createRouter({
       name: "eco",
       component: eco,
     },
+    {
+      path: "/info",
+      name: "get_info",
+      component: getInfo,
+    }
     ]
 })
 

@@ -1,6 +1,7 @@
 <template>
     <div  class="eco">
         <Header></Header>
+        <router-link to="/info" class="test-link">test info</router-link>  <!-- 나중에 삭제 -->
         <div class="eco-body1" >
             <TotalCarbonVue class="totalcarbon"></TotalCarbonVue>
             <div class="barchart">
@@ -12,10 +13,19 @@
         </div>
         <div class="eco-body3">
             <sectors />
+            <sectorAvg/>
         </div>
     </div>
 </template>
 <style>
+    .test-link{
+        position: absolute;
+        left: 50vw;
+        top: 5vw;
+        border:solid 2px;
+        color: #383a37;
+    }
+
     body{
         margin :0;
     }
@@ -34,6 +44,10 @@
         border-radius: 30px;
         margin: 4.5vw;
         
+    }
+    .eco-body3{
+        display: flex;
+        justify-content: space-around;
     }
     .totalcarbon{
         width: 40vw;
@@ -54,7 +68,7 @@
     import overview from "@/components/eco2/overview.vue"
     //page 3 -> eco 3
     import sectors from "@/components/eco3/sectors.vue"
-
+    import sectorAvg from "@/components/eco3/sector_avg.vue"
 
     export default {
         name :"Eco-home",
@@ -63,7 +77,8 @@
             TotalCarbonVue,
             barchart,
             overview,
-            sectors
+            sectors,
+            sectorAvg
         }
     }
 </script>
