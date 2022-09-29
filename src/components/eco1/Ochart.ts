@@ -46,11 +46,11 @@ export default defineComponent({
   },
   setup(props) {
     const chartData = {
-      labels: ['VueJs', 'EmberJs', 'ReactJs', 'AngularJs'],
+      labels: ['scope1', 'scope2', 'scope3'],
       datasets: [
         {
-          backgroundColor: ['#41B883', '#E46651', '#00D8FF', '#DD1B16'],
-          data: [40, 20, 80, 10]
+          backgroundColor: ['#3E7519', '#72A252', '#B1D095'], 
+          data: [80, 40, 20]
         }
       ]
     }

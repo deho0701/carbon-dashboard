@@ -61,8 +61,8 @@ export default defineComponent({
       datasets: [
         {
           label: 'Data One',
-          backgroundColor: '#f87979',
-          data: [40, 39, 10, 40, 39, 80, 40,30,70,80,50,60]
+          backgroundColor: '#16AF81',
+          data: [40, 39, 10, 40, 39, 80, 40,30,70,80,50,60],
         }
       ]
     }

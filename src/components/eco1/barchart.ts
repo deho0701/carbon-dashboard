@@ -48,7 +48,7 @@ export default defineComponent({
   },
   setup(props) {
     const chartData = {
-      labels: [
+      /*labels: [
         'January',
         'February',
         'March',
@@ -62,16 +62,23 @@ export default defineComponent({
         'November',
         'December'
       ],
+      */
+      labels: [
+        '기업 소유 운송수단 1달 유류비',
+        '기업 폐기물 소각비'
+      ],
       datasets: [
         {
-          label: 'Data One',
-          backgroundColor: '#528132',
-          data: [40, 20, 12, 39, 10, 40, 39, 80, 40, 20, 12, 11]
+          label : 'scpoe1',
+          backgroundColor: ['#1AA67C', '#50D184'],
+          data: [40, 30],
+          
         }
       ]
     }
 
     const chartOptions = {
+      
       responsive: true,
       maintainAspectRatio: false
     }

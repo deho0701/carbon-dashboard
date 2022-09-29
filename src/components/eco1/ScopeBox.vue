@@ -18,7 +18,7 @@
     .scope-box{
         border-radius: 10px;
         border:2px solid #295c07 ;  
-        width: 10vw;
+        width: 100px;
         margin-bottom: 2vw;
     }
 </style>
