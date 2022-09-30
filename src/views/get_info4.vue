@@ -12,8 +12,8 @@
         <div class = "Q4">
                 <div class ="q4_1">
                     <p>연간 전자기기 구매 비용을 입력해주세요.</p>
-                    <input type = "text">
-                    <select name="원" id ="selec">
+                    <input class = "q_input4" type = "text">
+                    <select class ="q_btn4" name="원" id ="selec">
                         <option value="">만 원</option>
                         <option value="1" >천 원</option>
                         <option value="2">원</option>
@@ -27,8 +27,8 @@
 
                 <div class ="q4_2">
                     <p>연간 비품 구매 비용을 입력해주세요.</p>
-                    <input type = "text">
-                    <select name="원" id ="selec">
+                    <input class = "q_input4" type = "text">
+                    <select class ="q_btn4" name="원" id ="selec">
                         <option value="">만 원</option>
                         <option value="1" >천 원</option>
                         <option value="2">원</option>
@@ -40,8 +40,8 @@
                 </div>
                 <div class ="q4_3">
                     <p>연간 음식 구매 비용을 입력해주세요.</p>
-                    <input type = "text">
-                    <select name="원" id ="selec">
+                    <input class = "q_input4" type = "text">
+                    <select class ="q_btn4" name="원" id ="selec">
                         <option value="">만 원</option>
                         <option value="1" >천 원</option>
                         <option value="2">원</option>
@@ -54,8 +54,8 @@
         </div>
     </div>
     <div class = "btn4">
-        <button type="button" onclick="location.href='/info/page1/page2'">previous</button>
-        <button type="button" onclick="location.href='/'">submmit</button>  
+        <button type="button" class ="btn_pre4" id ="pre" onclick="location.href='/info/page1/page2'">previous</button>
+        <button type="button" class = "btn_next4" id ="next" onclick="location.href='/'">submmit</button>  
 	</div>
 </template>
 
@@ -75,6 +75,27 @@
         background: #C3DAAE;
         border-radius: 14px;
         line-height: 50px;
+    }
+
+    .q_input4 {
+        width: 500px;
+        height : 30px;
+        background-color: #ECECEC;
+        border: none;
+        border-radius: 7px;
+    }
+
+    .q_btn4{
+        margin-left: 10px;
+        width: 70px;
+        height : 30px;
+        background-color: #ECECEC;
+        border: none;
+        border-radius: 7px;
+    }
+
+    .q_btn4:active {
+        background-color: #C1C1C1;
     }
 
     .context4{
@@ -108,4 +129,40 @@
     .btn4{
         margin: 200px 50px;
     }
+
+
+    #pre {
+        width: 100px;
+        height : 35px;
+        background-color: #ECECEC;
+        border: none;
+        border-radius: 7px;
+        
+    }
+
+    #pre:active {
+        background-color: #C1C1C1;
+    }
+    .btn_pre4{
+        margin-left: 30px;
+    }
+
+    #next {
+        width: 150px;
+        height : 35px;
+        color: #FFFFFF;
+        background-color: #818181;
+        border: none;
+        border-radius: 7px;
+    }
+
+    #next:active {
+        background-color: #C1C1C1;
+    }
+    
+    .btn_next4{
+        margin-left: 400px;
+    }
+
+
 </style>

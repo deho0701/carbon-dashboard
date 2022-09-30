@@ -42,8 +42,8 @@
         
     </div>
     <div class = "btn">
-        <button type="button" onclick="location.href='./'">previous</button>
-        <button type="button" onclick="location.href='info/page1'">next</button>
+        <button type="button" class ="btn_pre" id ="pre" onclick="location.href='./'">Back</button>
+        <button type="button" class = "btn_next" id ="next" onclick="location.href='info/page1'">Next question</button>
         
 	</div>
 </template>
@@ -54,26 +54,31 @@
         background: #FFFFFF;
     }
 
-    .prog {
+    .prog{
         background: #EAEAEA;
         border-radius: 14px;
     }
     .progs{
-        width: 0%;
+        width: 35%;
         height: 10px;
         background: #C3DAAE;
         border-radius: 14px;
         line-height: 50px;
     }
 
-    .context {
-        position: absolute;
-        left: 30%;
-        top: 20%
-        
+    .q_input{
+        width: 500px;
+        height : 30px;
+        background-color: #ECECEC;
+        border: none;
+        border-radius: 7px;
+    }
+
+    .context{
+        margin: 100px 50px;
     }
     
-    h1.title_info {
+    h1.title_info{
         font-family: 'B612';
         font-size: 300;
         font-weight: nomal;
@@ -81,26 +86,17 @@
         color: #3E7519;
     }
 
-    .Q {
-        margin-top: 100px;
-        margin-left: 30px;
+    div.q {
+        margin: 30px ;
+    }
+    
+    .radioBtn {
+        font-family: 'B612';
+        font-size: 12px;
     }
 
-    .q {
-        position: relative;
-        margin-top: 70px;
-    }
-
-    .q_text {
-        margin-bottom: 12px;
-    }
-        
-    .q_input {
-        width: 500px;
-        height : 30px;
-        background-color: #ECECEC;
-        border: none;
-        border-radius: 7px;
+    .btn{
+        margin: 200px 50px;
     }
 
     .q_btn{
@@ -111,12 +107,38 @@
         border: none;
         border-radius: 7px;
     }
-    .q_btn:active {
+
+    #pre{
+        width: 100px;
+        height : 35px;
+        background-color: #ECECEC;
+        border: none;
+        border-radius: 7px;
+        
+    }
+
+    #pre:active {
         background-color: #C1C1C1;
     }
-    .btn {
-        position: relative;
-        top : 800px;
-        left : 50px;
+    .btn_pre{
+        margin-left: 30px;
     }
+
+    #next {
+        width: 150px;
+        height : 35px;
+        color: #FFFFFF;
+        background-color: #818181;
+        border: none;
+        border-radius: 7px;
+    }
+
+    #next:active {
+        background-color: #C1C1C1;
+    }
+    
+    .btn_next{
+        margin-left: 400px;
+    }
+
 </style>

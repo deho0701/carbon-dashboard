@@ -15,8 +15,8 @@
         <div class = "Q2">
             <div class ="q2_1">
                 <p>기업 소유 운송수단 1달 유류비를 입력해주세요.</p>
-                <input type = "text">
-                <select name="원" id ="selec">
+                <input class = "q_input2" type = "text" placeholder ="0">
+                <select class = "q_btn2" name="원" id ="selec">
                     <option value="">만 원</option>
                     <option value="1" >천 원</option>
                     <option value="2">원</option>
@@ -30,8 +30,8 @@
 
             <div class ="q2_2">
                 <p>직원 출장시 이용 운송수단의 총 거리를 입력해주세요.</p>
-                <input type = "text">
-                <select name="명" id ="selec">
+                <input class = "q_input2" type = "text">
+                <select class = "q_btn2" name="명" id ="selec">
                     <option value="">천 명</option>
                     <option value="1">백 명</option>
                     <option value="2">십 명</option>
@@ -46,8 +46,8 @@
         
     </div>
     <div class = "btn2">
-        <button type="button" onclick="location.href='/info'">previous</button>
-        <button type="button" onclick="location.href='page1/page2'">next</button>  
+        <button type="button" class ="btn_pre2" id ="pre" onclick="location.href='/info'">Back</button>
+        <button type="button" class = "btn_next2" id ="next" onclick="location.href='page1/page2'">Next question</button>    
 	</div>
 </template>
 
@@ -69,13 +69,22 @@
         line-height: 50px;
     }
 
+    .q_input2 {
+        width: 500px;
+        height : 30px;
+        background-color: #ECECEC;
+        border: none;
+        border-radius: 7px;
+    }
+
     .context2 {
         margin: 100px 50px;
     }
     
     h1.title_info2 {
         font-family: 'B612';
-        font-size: 50px;
+        font-size: 300;
+        font-weight: nomal;
         line-height: 0px;
         color: #3E7519;
     }
@@ -94,5 +103,47 @@
 
     .btn2 {
         margin: 200px 50px;
+    }
+
+    .q_btn2{
+        margin-left: 10px;
+        width: 70px;
+        height : 30px;
+        background-color: #ECECEC;
+        border: none;
+        border-radius: 7px;
+    }
+
+    #pre {
+        width: 100px;
+        height : 35px;
+        background-color: #ECECEC;
+        border: none;
+        border-radius: 7px;
+        
+    }
+
+    #pre:active {
+        background-color: #C1C1C1;
+    }
+    .btn_pre2{
+        margin-left: 30px;
+    }
+
+    #next {
+        width: 150px;
+        height : 35px;
+        color: #FFFFFF;
+        background-color: #818181;
+        border: none;
+        border-radius: 7px;
+    }
+
+    #next:active {
+        background-color: #C1C1C1;
+    }
+    
+    .btn_next2{
+        margin-left: 400px;
     }
 </style>
