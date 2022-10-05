@@ -50,7 +50,7 @@
 
 <style>
     .container{
-        margin: 50px 50px;
+        margin: 5px 50px;
         background: #FFFFFF;
     }
 
@@ -59,7 +59,7 @@
         border-radius: 14px;
     }
     .progs{
-        width: 35%;
+        width: 0%;
         height: 10px;
         background: #C3DAAE;
         border-radius: 14px;
@@ -67,6 +67,7 @@
     }
 
     .q_input{
+        margin-top: 10px;
         width: 500px;
         height : 30px;
         background-color: #ECECEC;
@@ -75,7 +76,7 @@
     }
 
     .context{
-        margin: 100px 50px;
+        margin: 100px 100px;
     }
     
     h1.title_info{
@@ -87,7 +88,8 @@
     }
 
     div.q {
-        margin: 30px ;
+        margin: 50px;
+    
     }
     
     .radioBtn {
@@ -98,6 +100,7 @@
     .btn{
         margin: 200px 50px;
     }
+    
 
     .q_btn{
         margin-left: 10px;
@@ -106,6 +109,10 @@
         background-color: #ECECEC;
         border: none;
         border-radius: 7px;
+    }
+    
+    .q_btn:active {
+        background-color: #cfcfcf;
     }
 
     #pre{
@@ -121,7 +128,9 @@
         background-color: #C1C1C1;
     }
     .btn_pre{
-        margin-left: 30px;
+        position:absolute;
+        left : 100px;
+        top: 800px;
     }
 
     #next {
@@ -138,7 +147,9 @@
     }
     
     .btn_next{
-        margin-left: 400px;
+        position:absolute;
+        left : 600px;
+        top: 800px;
     }
 
 </style>

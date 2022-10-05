@@ -10,7 +10,7 @@
         <p>2022-09-07</p>
     
         <div class = "Q3">
-                <div class ="q3_1">
+                <div class ="q3">
                     <p>건물의 월 전기료를 입력해주세요.</p>
                     <input class = "q_input3" type = "text">
                     <select class = "q_btn3" name="원" id ="selec">
@@ -23,7 +23,7 @@
                 </div>
 
 
-                <div class ="q3_2">
+                <div class ="q3">
                     <p>건물의 월 수도료를 입력해주세요.</p>
                     <input class = "q_input3" type = "text">
                     <select class = "q_btn3" name="원" id ="selec">
@@ -34,7 +34,7 @@
                     <div class = "radioBtn1">
                     <input type="radio" name="transport1" value="1" />잘 모르겠습니다.</div>
                 </div>
-                <div class ="q3_3">
+                <div class ="q3">
                     <p>건물의 월 가스비를 입력해주세요.</p>
                     <input class = "q_input3" type = "text">
                     <select class = "q_btn3" name="원" id ="selec">
@@ -45,7 +45,7 @@
                     <div class = "radioBtn1">
                     <input type="radio" name="transport1" value="1" />잘 모르겠습니다.</div>
                 </div>
-                <div class ="q3_4">
+                <div class ="q3">
                     <p>기업의 폐기물 소각비(1년)을 입력해주세요.</p>
                     <input class = "q_input3" type = "text">
                     <select class = "q_btn3" name="원" id ="selec">
@@ -66,7 +66,7 @@
 
 <style>
     .container3{
-        margin: 50px 50px;
+        margin: 5px 50px;
         background: #FFFFFF;
     }
 
@@ -83,6 +83,7 @@
     }
 
     .q_input3 {
+        margin-top: 10px;
         width: 500px;
         height : 30px;
         background-color: #ECECEC;
@@ -91,7 +92,7 @@
     }
 
     .context3{
-        margin: 100px 50px;
+        margin: 100px 100px;
     }
     
     h1.title_info3{
@@ -102,24 +103,17 @@
     }
 
     .radioBtn1 {
+        margin-top: 10px;
         font-family: 'B612';
         font-size: 12px;
     }
 
     
 
-    div.q3_1 {
-        margin: 30px;
+    div.q3 {
+        margin: 50px;
     }
-    div.q3_2 {
-        margin: 30px;
-    }
-    div.q3_3 {
-        margin: 30px;
-    }
-    div.q3_4 {
-        margin: 30px;
-    }
+
     .btn3{
         margin: 200px 50px;
     }
@@ -147,7 +141,9 @@
     }
 
     .btn_pre3{
-        margin-left: 30px;
+        position:absolute;
+        left : 100px;
+        top: 800px;
     }
 
     #next {
@@ -164,6 +160,8 @@
     }
     
     .btn_next3{
-        margin-left: 400px;
+        position:absolute;
+        left : 600px;
+        top: 800px;
     }
 </style>

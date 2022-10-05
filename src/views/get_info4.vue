@@ -10,7 +10,7 @@
         <p>2022-09-07</p>
     
         <div class = "Q4">
-                <div class ="q4_1">
+                <div class ="q4">
                     <p>연간 전자기기 구매 비용을 입력해주세요.</p>
                     <input class = "q_input4" type = "text">
                     <select class ="q_btn4" name="원" id ="selec">
@@ -20,12 +20,12 @@
                     </select>
                     <div class = "radioBtn2">
                     <input type="radio" name="transport3" value="1" />전자기기를 구매하지 않았습니다.</div>
-                    <div class = "radioBtn1">
+                    <div class = "radioBtn2">
                     <input type="radio" name="transport3" value="2" />잘 모르겠습니다.</div>
                 </div>
 
 
-                <div class ="q4_2">
+                <div class ="q4">
                     <p>연간 비품 구매 비용을 입력해주세요.</p>
                     <input class = "q_input4" type = "text">
                     <select class ="q_btn4" name="원" id ="selec">
@@ -33,12 +33,12 @@
                         <option value="1" >천 원</option>
                         <option value="2">원</option>
                     </select>
-                    <div class = "radioBtn1">
+                    <div class = "radioBtn2">
                     <input type="radio" name="transport1" value="1" />비품을 구매하지 않았습니다.</div>
-                    <div class = "radioBtn1">
+                    <div class = "radioBtn2">
                     <input type="radio" name="transport1" value="1" />잘 모르겠습니다.</div>
                 </div>
-                <div class ="q4_3">
+                <div class ="q4">
                     <p>연간 음식 구매 비용을 입력해주세요.</p>
                     <input class = "q_input4" type = "text">
                     <select class ="q_btn4" name="원" id ="selec">
@@ -48,20 +48,20 @@
                     </select>
                     <div class = "radioBtn2">
                     <input type="radio" name="transport1" value="1" />음식을 구매하지 않았습니다.</div>
-                    <div class = "radioBtn1">
+                    <div class = "radioBtn2">
                     <input type="radio" name="transport1" value="1" />잘 모르겠습니다.</div>
                 </div>
         </div>
     </div>
     <div class = "btn4">
         <button type="button" class ="btn_pre4" id ="pre" onclick="location.href='/info/page1/page2'">previous</button>
-        <button type="button" class = "btn_next4" id ="next" onclick="location.href='/'">submmit</button>  
+        <button type="button" class = "btn_next4" id ="submmit" onclick="location.href='/'">submmit</button>  
 	</div>
 </template>
 
 <style>
     .container4{
-        margin: 50px 50px;
+        margin: 5px 50px;
         background: #FFFFFF;
     }
 
@@ -78,6 +78,7 @@
     }
 
     .q_input4 {
+        margin-top: 10px;
         width: 500px;
         height : 30px;
         background-color: #ECECEC;
@@ -99,7 +100,7 @@
     }
 
     .context4{
-        margin: 100px 50px;
+        margin: 100px 100px;
     }
     
     h1.title_info4{
@@ -110,21 +111,13 @@
     }
 
     .radioBtn2 {
+        margin-top: 10px;
         font-family: 'B612';
         font-size: 12px;
     }
 
-    div.q4_1 {
-        margin: 30px;
-    }
-    div.q4_2 {
-        margin: 30px;
-    }
-    div.q4_3 {
-        margin: 30px;
-    }
-    div.q4_4 {
-        margin: 30px;
+    div.q4 {
+        margin: 50px;
     }
     .btn4{
         margin: 200px 50px;
@@ -144,24 +137,28 @@
         background-color: #C1C1C1;
     }
     .btn_pre4{
-        margin-left: 30px;
+        position:absolute;
+        left : 100px;
+        top: 800px;
     }
 
-    #next {
+    #submmit {
         width: 150px;
         height : 35px;
         color: #FFFFFF;
-        background-color: #818181;
+        background-color: #7c9260;
         border: none;
         border-radius: 7px;
     }
 
-    #next:active {
-        background-color: #C1C1C1;
+    #submmit:active {
+        background-color: #adbc9e;
     }
     
     .btn_next4{
-        margin-left: 400px;
+        position:absolute;
+        left : 600px;
+        top: 800px;
     }
 
 

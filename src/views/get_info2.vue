@@ -13,7 +13,7 @@
         <p>2022-09-07</p>
 
         <div class = "Q2">
-            <div class ="q2_1">
+            <div class ="q2">
                 <p>기업 소유 운송수단 1달 유류비를 입력해주세요.</p>
                 <input class = "q_input2" type = "text" placeholder ="0">
                 <select class = "q_btn2" name="원" id ="selec">
@@ -28,7 +28,7 @@
             </div>
 
 
-            <div class ="q2_2">
+            <div class ="q2">
                 <p>직원 출장시 이용 운송수단의 총 거리를 입력해주세요.</p>
                 <input class = "q_input2" type = "text">
                 <select class = "q_btn2" name="명" id ="selec">
@@ -53,7 +53,7 @@
 
 <style>
     .container2{
-        margin: 50px 50px;
+        margin: 5px 50px;
         background: #FFFFFF;
     }
 
@@ -70,6 +70,7 @@
     }
 
     .q_input2 {
+        margin-top: 10px;
         width: 500px;
         height : 30px;
         background-color: #ECECEC;
@@ -78,7 +79,7 @@
     }
 
     .context2 {
-        margin: 100px 50px;
+        margin: 100px 100px;
     }
     
     h1.title_info2 {
@@ -89,14 +90,14 @@
         color: #3E7519;
     }
 
-    div.q2_1 {
-        margin: 30px ;
-    }
-    div.q2_2 {
-        margin: 30px ;
+    div.q2 {
+        margin-left: 50px ;
+        margin-top: 70px;
     }
 
+
     .radioBtn {
+        margin-top: 10px;
         font-family: 'B612';
         font-size: 12px;
     }
@@ -127,7 +128,9 @@
         background-color: #C1C1C1;
     }
     .btn_pre2{
-        margin-left: 30px;
+        position:absolute;
+        left : 100px;
+        top: 800px;
     }
 
     #next {
@@ -144,6 +147,8 @@
     }
     
     .btn_next2{
-        margin-left: 400px;
+        position:absolute;
+        left : 600px;
+        top: 800px;
     }
 </style>
