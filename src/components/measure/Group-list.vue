@@ -20,7 +20,7 @@
             <div class="right-bar" style = "float: left; position:relative">
                 <ul calss="select_group" style="list-style: none; position: absolute;">
                    <li class="select-list" v-for="group in list_group">　　　{{group.image}} {{group.name}}
-                   <button class="select-btn">+　입력하기</button></li>
+                   <button class="select-btn" onclick="location.href='/measure/input1';">+　입력하기</button></li>
                 </ul>
             </div>
 
@@ -33,7 +33,7 @@
 .body{
     padding:2%;
     position:relative;
-    background: #ffffff;
+    background: #F8F8F8;;
     width: inherit;
     height: 86vh;
     
