@@ -29,14 +29,12 @@ body{
 <script>
 import navigation from "@/components/Navigation.vue"
 import MeasureHeader from "@/components/measure/Header.vue"
-import MeasureBody from "@/components/measure/Body.vue"
 import GroupList from "@/components/measure/Group-list.vue"
     export default {
         name :"measure",
         components:{
             navigation,
             MeasureHeader,
-            MeasureBody,
             GroupList
         }
     }
