@@ -2,12 +2,13 @@ import {  createRouter, createWebHistory } from "vue-router"
 import group from "./views/Group"
 import measure from "./views/Measure"
 import insight from "./views/Insight"
+import settingg from "./views/get_info2"
 
 const router = createRouter({
   history: createWebHistory(),
   routes:[
     {
-      path: "/group",
+      path: "/",
       name: "group",
       component: group,
     },
@@ -20,6 +21,11 @@ const router = createRouter({
       path: "/insight",
       name: "insight",
       component: insight,
+    },
+    {
+      path: "/setting",
+      name: "settingg",
+      component: settingg,
     }
     
     ]

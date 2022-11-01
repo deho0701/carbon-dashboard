@@ -9,9 +9,10 @@
             <div>
                 <img class="pm-button" src="@/assets/minus.png" alt="">
                 <img class="pm-button" src="@/assets/plus.png" alt="">
-                <button class="add-group">+ 추가하기</button>
+                <button class="add-group" @click="isModal=true" type="button">+ 추가하기</button>
             </div>
-        </div>
+        </div><ModalView v-if="isModal" @close-modal="isModal=false"><EditGroup /></ModalView>
+        
     </div>
 </template>
 
@@ -64,6 +65,14 @@
         name :"group-header",
         components:{
 
+        },
+        data(){
+            return{
+                isModal:false
+            }
+        },
+        methods:{
+            
         }
     }
 </script>

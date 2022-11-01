@@ -4,24 +4,24 @@
             <img src="@/assets/livit.png" alt="icon" id="icon">
             <span>Livit</span>
         </div>
-        <div class="menu" style=" cursor: pointer;" onclick="location.href='';">
+        <div class="menu" style=" cursor: pointer;" onclick="location.href='/group';">
             <img src="@/assets/group.png" alt="" class="menu-icon">
             <a>조직 설계</a>
         </div>
-        <div class="menu" style=" cursor: pointer;" onclick="location.href='';">
-            <img src="@/assets/group.png" alt="" class="menu-icon">
+        <div class="menu" style=" cursor: pointer;" onclick="location.href='/measure';">
+            <img src="@/assets/co2.png" alt="" class="menu-icon">
             <a>탄소 측정</a>
         </div>
-        <div class="menu" style=" cursor: pointer;" onclick="location.href='';">
-            <img src="@/assets/group.png" alt="" class="menu-icon">
+        <div class="menu" style=" cursor: pointer;" onclick="location.href='/insight';">
+            <img src="@/assets/insight.png" alt="" class="menu-icon">
             <a>인사이트</a>
         </div>
         <div class="menu" style=" cursor: pointer;" onclick="location.href='';">
-            <img src="@/assets/group.png" alt="" class="menu-icon">
+            <img src="@/assets/survey.png" alt="" class="menu-icon">
             <a>서베이 요청</a>
         </div>
         <div class="menu" style=" cursor: pointer;" onclick="location.href='';">
-            <img src="@/assets/group.png" alt="" class="menu-icon">
+            <img src="@/assets/setting.png" alt="" class="menu-icon">
             <a>설정</a>
         </div>
         
