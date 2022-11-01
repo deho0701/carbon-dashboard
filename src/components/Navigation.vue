@@ -4,7 +4,6 @@
             <img src="@/assets/livit.png" alt="icon" id="icon">
             <span>Livit</span>
         </div>
-<<<<<<< HEAD
         <div class="menu" style=" cursor: pointer;" onclick="location.href='/group';">
             <img src="@/assets/group.png" alt="" class="menu-icon">
             <a>조직 설계</a>
@@ -15,18 +14,6 @@
         </div>
         <div class="menu" style=" cursor: pointer;" onclick="location.href='/insight';">
             <img src="@/assets/insight.png" alt="" class="menu-icon">
-=======
-        <div class="menu" style=" cursor: pointer;" onclick="location.href='./group';">
-            <img src="@/assets/group.png" alt="" class="menu-icon">
-            <a>조직 설계</a>
-        </div>
-        <div class="menu" style=" cursor: pointer;" onclick="location.href='./measure';">
-            <img src="@/assets/group.png" alt="" class="menu-icon">
-            <a>탄소 측정</a>
-        </div>
-        <div class="menu" style=" cursor: pointer;" onclick="location.href='./insight';">
-            <img src="@/assets/group.png" alt="" class="menu-icon">
->>>>>>> 4909e9825b0619ec60439cf3f68171585d164105
             <a>인사이트</a>
         </div>
         <div class="menu" style=" cursor: pointer;" onclick="location.href='';">
