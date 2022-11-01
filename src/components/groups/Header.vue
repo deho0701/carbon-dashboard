@@ -9,7 +9,7 @@
             <div>
                 <img class="pm-button" src="@/assets/minus.png" alt="">
                 <img class="pm-button" src="@/assets/plus.png" alt="">
-                <button class="add-group" @click="isModal=true" type="button">+ 추가하기</button>
+                <button class="add-group-button" @click="EditGroup" type="button">+ 추가하기</button> 
             </div>
         </div>        
     </div>
@@ -60,7 +60,7 @@
     background-color:#ededed;
     border-radius: 5px;
 }
-.add-group{
+.add-group-button{
     float: left;
     margin:1.3vh;
     width: 110px;
@@ -71,25 +71,30 @@
     font-weight: 600;
     font-size: 13px;
     color: #FFFFFF;
-
-
 }
 </style>
 
 
 <script>
+import { computed } from "vue";
+import { useStore } from "vuex";
+
     export default {
+        setup(){
+            const store = useStore(); //vuex 사용
+            const EditGroup = () => store.commit("OnEdit", );
+            return {EditGroup}
+        },
         name :"group-header",
         components:{
 
         },
         data(){
             return{
-                isModal:false
             }
         },
         methods:{
-            
+
         }
     }
 </script>
