@@ -22,11 +22,6 @@ const router = createRouter({
       name: "insight",
       component: insight,
     },
-    {
-      path: "/setting",
-      name: "settingg",
-      component: settingg,
-    }
     
     ]
 })

@@ -4,7 +4,7 @@
             <img src="@/assets/livit.png" alt="icon" id="icon">
             <span>Livit</span>
         </div>
-        <div class="menu" style=" cursor: pointer;" onclick="location.href='/group';">
+        <div class="menu" style=" cursor: pointer;" onclick="location.href='/';">
             <img src="@/assets/group.png" alt="" class="menu-icon">
             <a>조직 설계</a>
         </div>
