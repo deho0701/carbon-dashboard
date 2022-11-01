@@ -14,6 +14,9 @@ export default createStore({
     ,mutations:{
         OnEdit(state){
             state.EditGroups = true;
+        },
+        OffEdit(state){
+            state.EditGroups = false;
         }
     },
     //전처리 후 Mutations에 데이터 전달

@@ -4,7 +4,7 @@
         <div class="contents">
             <GroupHeader/>
             <GroupTree>  </GroupTree> 
-            <GroupAdd class="add-group" v-on:OnEditGroup="OnEdit" v-if="isView"/>
+            <GroupAdd class="add-group" v-if="isView"/>
             
         </div>
         
@@ -60,10 +60,7 @@ import GroupAdd from "@/components/groups/AddGroup.vue"
                 
             };
         },method:{
-            OnEdit(){
-                this.isView = true;
-                console.log(this.isView)
-            }
+
         }
     };
 </script>
