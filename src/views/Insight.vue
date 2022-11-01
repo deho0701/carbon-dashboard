@@ -1,10 +1,8 @@
 <template>
-    <div>
-        <ul>
-            <li>경상대</li>
-            <li>인문대</li>
-            <li v-for="group in list_group">{{group}}</li>
-        </ul>
+    <div id="app">
+      <div v-for="(person,index) in people" :key="person.name">
+        {{person}}
+      </div>
     </div>
 </template>
 
@@ -16,15 +14,12 @@
 <script>
     export default {
         name :"insight",
-        components:{
-            components:{
-            data() {
+        data() {
                 return{
-                    list_group:["경상대","인문대"]
-                };
-            }
+                    people:["경상대","인문대"]
+                }
         },
-
+        components:{
         }
     }
 </script>
