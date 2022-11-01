@@ -9,7 +9,11 @@
             <div>
                 <img class="pm-button" src="@/assets/minus.png" alt="">
                 <img class="pm-button" src="@/assets/plus.png" alt="">
+<<<<<<< HEAD
                 <button class="add-group" @click="isModal=true" type="button">+ 추가하기</button>
+=======
+                <button class="add-group">+　추가하기</button>
+>>>>>>> 4909e9825b0619ec60439cf3f68171585d164105
             </div>
         </div><ModalView v-if="isModal" @close-modal="isModal=false"><EditGroup /></ModalView>
         
@@ -34,6 +38,7 @@
     margin-top: 0;
 }
 .period{
+    float: left;
     max-height: 3vh;
     width: 200px;
     margin-top: 1.5vh;
@@ -41,20 +46,37 @@
     text-align: left;
     background-color: white;
     border-radius: 5px;
+    border-color: #ededed;
+    color:#8a8a8a;
 
 }
 .re{
+    float: left;
     max-height: 3.5vh;
     max-width: 3vw;
     margin:1.2vh;
 }
 .pm-button{
+    float: left;
     max-height: 3.5vh;
     max-width: 3vw;
     margin:1.3vh;
     border-radius: 5px;
+    background-color:#ededed;
+    border-radius: 5px;
 }
 .add-group{
+    float: left;
+    margin:1.3vh;
+    width: 110px;
+    height: 3.5vh;
+    background: #3DC984;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 13px;
+    color: #FFFFFF;
+
 
 }
 </style>
