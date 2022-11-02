@@ -30,12 +30,13 @@ body{
 import navigation from "@/components/Navigation.vue"
 import MeasureHeader from "@/components/measure/Header.vue"
 import Input1 from "@/components/measure/input1.vue"
+import measuretable from "@/components/measure/Measuretable.vue"
     export default {
         name :"measure",
         components:{
             navigation,
             MeasureHeader,
-            Input1
+            Input1,   
         }
     }
 </script>
