@@ -5,9 +5,9 @@
         <span class="group-lock-guide">회사 조직을 설계하세요</span>
         <button class="add-group-button-Intree" @click="OnEditGroup" type="button">+ 추가하기</button>
         </div>
-        <div v-if="!IfTreeNull"><!-- 그룹이 있으면 그룹 보여줌 -->
-          <blocks-tree class="tree" :data="treeData" :horizontal="treeOrientation=='1'" :collapsable="true" :props="{label: 'label', expand: 'expand', children: 'children',  key:'some_id'}">
-            <template #node="{data}" >
+        <div v-if="!IfTreeNull" id="tree" ><!-- 그룹이 있으면 그룹 보여줌 -->
+          <blocks-tree  id="tree" :data="treeData" :horizontal="treeOrientation=='1'" :collapsable="true" :props="{label: 'label', expand: 'expand', children: 'children',  key:'some_id'}">
+            <template #node="{data}" id="tree2" >
                 <GroupTreeNode :level=data.some_id :GroupName=data.label></GroupTreeNode>
             </template>
          </blocks-tree>
@@ -25,6 +25,8 @@
     background-size: 20px 20px;
 
     text-align: center;
+    max-width: 85vw;
+    max-height: 85vh;
   }
   .lock-group{
     width: 150px;
@@ -54,8 +56,12 @@
     bottom: 30%;
     transform: translate(-50%,-50%);
   }
-  .tree{
+  #tree{
     background: none;
+  }
+  .org-tree-node-label-inner{
+    box-shadow:none !important ;
+    padding: 0 !important;
   }
 </style>
 
@@ -96,7 +102,7 @@ import GroupTreeNode from "./GroupTreeNode.vue"
                           },
                       ]
                   },
-              ]
+              ],
           });
 
         return {
