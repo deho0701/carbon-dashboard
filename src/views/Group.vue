@@ -20,12 +20,10 @@ body{
 }
 .navigation{
     position:fixed;
-    
 
 }
 .contents{
     padding-left: 15vw;
-    z-index: 1;
 }
 .add-group{
     position: fixed; top: 0; right: 0;

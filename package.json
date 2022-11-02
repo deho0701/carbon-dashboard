@@ -13,6 +13,8 @@
     "vue": "^3.2.13",
     "vue-chartjs": "^4.1.1",
     "vue-google-charts": "^1.1.0",
+    "vue-tree-chart": "^1.2.9",
+    "vue3-blocks-tree": "^0.6.1",
     "vuex": "^4.1.0"
   },
   "devDependencies": {

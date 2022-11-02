@@ -1,8 +1,17 @@
 <template>
     <div class="group-tree">
+        <div v-if="IfTreeNull"><!-- 그룹이 없으면 보여줌 -->
         <img src="@/assets/LockGroup.png" alt="권한 따라 잠금" class="lock-group">
         <span class="group-lock-guide">회사 조직을 설계하세요</span>
         <button class="add-group-button-Intree" @click="OnEditGroup" type="button">+ 추가하기</button>
+        </div>
+        <div v-if="!IfTreeNull"><!-- 그룹이 있으면 그룹 보여줌 -->
+          <blocks-tree class="tree" :data="treeData" :horizontal="treeOrientation=='1'" :collapsable="true" :props="{label: 'label', expand: 'expand', children: 'children',  key:'some_id'}">
+            <template #node="{data}" >
+                <GroupTreeNode :level=data.some_id :GroupName=data.label></GroupTreeNode>
+            </template>
+         </blocks-tree>
+        </div>
     </div>
 </template>
 
@@ -45,21 +54,62 @@
     bottom: 30%;
     transform: translate(-50%,-50%);
   }
-
+  .tree{
+    background: none;
+  }
 </style>
 
 
 <script>
 import { useStore } from "vuex";
+import { defineComponent,ref,reactive } from 'vue';
+import GroupTreeNode from "./GroupTreeNode.vue"
+
     export default {
         setup(){
-            const store = useStore(); //vuex 사용
-            const OnEditGroup = () => store.commit("OnEdit", );
-            return {OnEditGroup}
+          const store = useStore(); //vuex 사용
+          const OnEditGroup = () => store.commit("OnEdit", );
+          const IfTreeNull=false;
+          let selected = ref([]);
+          let treeOrientation = ref("0"); //수직 or수평
+          let treeData = reactive({
+              label: 'root',
+              expand: true,
+              some_id: 1,
+              children: [
+                  { label: '상경대학', some_id: 2, },
+                  { label: '자연대학', some_id: 3, },
+                  { 
+                      label: '공과대학', 
+                      some_id: 4, 
+                      expand: false, 
+                      children: [
+                          { label: '항공우주 및 소프트웨어공학과', some_id: 5 },
+                          {  
+                              label: '기계공학과', 
+                              some_id: 6, 
+                              expand: false, 
+                              children: [
+                                  { label: 'subchild 11', some_id: 7 },
+                                  { label: 'subchild 22', some_id: 8 },
+                              ]
+                          },
+                      ]
+                  },
+              ]
+          });
+
+        return {
+          treeData,
+          selected,
+          treeOrientation,
+          OnEditGroup,
+          IfTreeNull
+          }
         },
         name :"Group-tree",
         components:{
-
+            GroupTreeNode
         }
     }
 </script>
