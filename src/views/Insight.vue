@@ -1,26 +1,27 @@
 <template>
-    <div id="app">
-      <div v-for="(person,index) in people" :key="person.name">
-        {{person}}
-      </div>
-    </div>
+  <div>
+    <h1 :class="{ red: isBind }">Class Bind</h1>
+    <button @click="setBind">바인딩</button>
+  </div>
 </template>
 
-<style>
-
-</style>
-
-
 <script>
-
-    export default {
-        name :"insight",
-        data() {
-                return{
-                    people:["경상대","인문대"]
-                }
-        },
-        components:{
-        }
-    }
+export default {
+  data() {
+    return {
+      isBind: false,
+    };
+  },
+  methods: {
+    setBind() {
+      this.isBind = !this.isBind;
+    },
+  },
+};
 </script>
+
+<style scoped>
+.red {
+  color: red;
+}
+</style>

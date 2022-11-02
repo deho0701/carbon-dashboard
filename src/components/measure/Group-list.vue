@@ -3,8 +3,8 @@
         <div class="board" >
             <div class="left-bar" style="float: left;  height: inherit;" >
                 <div class="title">
-                    <button class="group-list">조직 목록</button>
-                    <button class="group-chart">조직도</button>
+                    <button class="list_title" >조직 목록</button>
+                    <button class="list_title" >조직도</button>
                 </div>
                 <div class="list">
                     <ul class="list-list" style="list-style:none; font-weight:600 ; margin-right: 20px;">
@@ -55,7 +55,7 @@
     border-radius: 12px;
     margin: 30px;
 }
-.group-list{
+.list_title{
     font-family: 'Open Sans';
     font-weight: 600;
     font-size: 18px;
@@ -68,6 +68,7 @@
     border: 2px ;
     border-radius: 10px;
 }
+
 .group-chart{
     font-family: 'Open Sans';
     font-weight: 600;
@@ -85,7 +86,6 @@
     margin-right: 20px;
 
 }
-
 .select-list{ /*선택된 카테고리 리스트*/
     border:2px solid #d5d5d5; 
     border-radius: 10px; 
@@ -111,13 +111,13 @@
 }
 </style>
 
-
 <script>
 
     export default {
         name :"group-list",
         data() {
             return{
+                isclick:false,
                 list_number:["1차 카테고리","2차 카테고리","3차 카테고리"],
                 list_category:[
                     {image:'group.png' ,name:"경상대"},
@@ -126,6 +126,11 @@
                 list_group:[{image: 'group.png' ,name:"경상대"},
                         {image:'group.png' ,name:"상경대학"}
                 ]
+            }
+        },
+        methods:{
+            setBind(){
+                this.isclick=!this.isclick
             }
         },
         components:{
