@@ -1,5 +1,5 @@
 <template>
-    <div class="group-tree-node">
+    <div class="group-tree-node" @click="Onpreview">
         <div class="group-tree-node-top">
             <span class="group-tree-node-GroupName">{{GroupName}}</span>
         </div>
@@ -64,7 +64,7 @@
     font-size: 18px;
 }
 .group-tree-node-manager{
-    font-size:0.9vw;
+    font-size:0.7vw;
     position: absolute;
     top: 90%;
     left: 15%;
@@ -78,15 +78,15 @@
     left: 50%;
     transform: translate(-50%, -50%);
     font-weight: 600;
-    font-size: 1.2vw;
+    font-size: 1vw;
 }
 .group-tree-node-totalEmission-left{
     position: absolute;
     top: 26%;
-    left: 30%;
+    left: 35%;
     transform: translate(-50%, -50%);
     font-weight: 600;
-    font-size: 1vw;
+    font-size: 0.9vw;
 }
 .group-tree-node-totalEmission-right{
     position: absolute;
@@ -101,7 +101,8 @@
 
 
 <script>
-
+import { computed } from "vue";
+import { useStore } from "vuex";
 export default{ 
     name:'GroupTreeNode',
     components:{},
@@ -117,8 +118,13 @@ export default{
         GroupName:String
     },
     setup(props){
-        var level = props.level
-        const GroupName = props.GroupName
+        var level = props.level;
+        const GroupName = props.GroupName;
+
+        const store = useStore(); //vuex 사용
+        const Onpreview = () => store.commit("OnGroupPreview", );
+
+        return{GroupName,level,Onpreview}
     },
     created(){},
     mounted(){},

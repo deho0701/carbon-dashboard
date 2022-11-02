@@ -4,7 +4,8 @@ import { createStore } from "vuex";
 export default createStore({
     //관리 해야할 데이터 선언
     state: {
-        EditGroups : false
+        EditGroups : false,
+        GroupPreview : false
     }
     //상태 가공 후 state 데이터 호출
     ,getters:{
@@ -17,6 +18,12 @@ export default createStore({
         },
         OffEdit(state){
             state.EditGroups = false;
+        },
+        OnGroupPreview(state){
+            state.GroupPreview = true;
+        },
+        OffGroupPreview(state){
+            state.GroupPreview = false;
         }
     },
     //전처리 후 Mutations에 데이터 전달

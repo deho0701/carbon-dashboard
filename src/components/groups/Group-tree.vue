@@ -5,7 +5,7 @@
         <span class="group-lock-guide">회사 조직을 설계하세요</span>
         <button class="add-group-button-Intree" @click="OnEditGroup" type="button">+ 추가하기</button>
         </div>
-        <div v-if="!IfTreeNull" id="tree" ><!-- 그룹이 있으면 그룹 보여줌 -->
+        <div v-if="!IfTreeNull" ><!-- 그룹이 있으면 그룹 보여줌 -->
           <blocks-tree  id="tree" :data="treeData" :horizontal="treeOrientation=='1'" :collapsable="true" :props="{label: 'label', expand: 'expand', children: 'children',  key:'some_id'}">
             <template #node="{data}" id="tree2" >
                 <GroupTreeNode :level=data.some_id :GroupName=data.label></GroupTreeNode>
@@ -58,6 +58,7 @@
   }
   #tree{
     background: none;
+    margin-top: 4vh;
   }
   .org-tree-node-label-inner{
     box-shadow:none !important ;
@@ -90,7 +91,7 @@ import GroupTreeNode from "./GroupTreeNode.vue"
                       some_id: 4, 
                       expand: false, 
                       children: [
-                          { label: '항공우주 및 소프트웨어공학과', some_id: 5 },
+                          { label: '항공소프트웨어공학과', some_id: 5 },
                           {  
                               label: '기계공학과', 
                               some_id: 6, 

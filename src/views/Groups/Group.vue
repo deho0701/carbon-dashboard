@@ -11,8 +11,8 @@
                
             </PinchScrollZoom>     줌 기능 -->
             <GroupTree>  </GroupTree> 
-            <GroupAdd class="add-group" v-if="isView"/>
-            
+            <GroupAdd class="add-group" v-if="AddisView"/>
+            <GroupPreview class="group-preview" v-if="Preview"/>
         </div>
         
     </div>
@@ -45,6 +45,9 @@ body{
 .add-group{
     position: fixed; top: 0; right: 0;
 }
+.group-preview{
+    position: fixed; top: 0; right: 0;
+}
 </style>
 
 
@@ -55,6 +58,7 @@ import navigation from "@/components/Navigation.vue"
 import GroupHeader from "@/components/groups/Header.vue"
 import GroupTree from "@/components/groups/Group-tree.vue"
 import GroupAdd from "@/components/groups/AddGroup.vue"
+import GroupPreview from "@/components/groups/Preview.vue"
 
 import PinchScrollZoom, { PinchScrollZoomEmitData } from "@coddicat/vue3-pinch-scroll-zoom";
 //import EditGroup from  "@/components/groups/Date.vue"
@@ -65,11 +69,13 @@ import PinchScrollZoom, { PinchScrollZoomEmitData } from "@coddicat/vue3-pinch-s
             navigation,
             GroupHeader,
             GroupTree,
-            GroupAdd,PinchScrollZoom
+            GroupAdd,PinchScrollZoom,
+            GroupPreview
         },
         setup(){
             const store = useStore(); //vuex 사용
-            var isView = computed(() => store.state.EditGroups);
+            var AddisView = computed(() => store.state.EditGroups);
+            var Preview = computed(() => store.state.GroupPreview);
 
             var zoomer ={
                 scale: 1,
@@ -78,7 +84,7 @@ import PinchScrollZoom, { PinchScrollZoomEmitData } from "@coddicat/vue3-pinch-s
       translateX: 0,
       translateY: 0 
             }
-            return {isView,zoomer}
+            return {AddisView,zoomer,Preview}
         },
 
         method:{

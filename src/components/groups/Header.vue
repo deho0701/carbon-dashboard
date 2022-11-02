@@ -2,8 +2,8 @@
     <div class="group-header">
         <p class="group-name">조직 설계</p>
         <div class="group-setting">
-            <p style="margin-left:4vw" >회사 조직</p>
-            <p style="margin-left:4vw">구성원 등록하기</p>
+            <router-link to="/group" style="margin-left:4vw">회사 조직</router-link>
+            <router-link to="/group/employee" style="margin-left:4vw" >구성원 등록하기</router-link>
             <button class="period">기간 설정하기</button>
             <img class="re" src="@/assets/re.png" alt="">
             <div>
