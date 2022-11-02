@@ -3,6 +3,13 @@
         <navigation class="navigation"/>
         <div class="contents">
             <GroupHeader/>
+            <!--  <PinchScrollZoom  ref="zoomer"       :translate-x="150"
+      :translate-y="150" :width="1400" :height="800" :scale="scale"       @scaling="(e) => onEvent('scaling', e)"
+      @startDrag="(e) => onEvent('startDrag', e)"
+      @stopDrag="(e) => onEvent('stopDrag', e)"
+      @dragging="(e) => onEvent('dragging', e)" style="border: 1px solid black">
+               
+            </PinchScrollZoom>     줌 기능 -->
             <GroupTree>  </GroupTree> 
             <GroupAdd class="add-group" v-if="isView"/>
             
@@ -24,7 +31,17 @@ body{
 }
 .contents{
     padding-left: 15vw;
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: scroll;
+    -ms-overflow-style: none;
 }
+.contents::-webkit-scrollbar { 
+    display: none;
+    width: 0 !important;
+}
+
 .add-group{
     position: fixed; top: 0; right: 0;
 }
@@ -38,6 +55,8 @@ import navigation from "@/components/Navigation.vue"
 import GroupHeader from "@/components/groups/Header.vue"
 import GroupTree from "@/components/groups/Group-tree.vue"
 import GroupAdd from "@/components/groups/AddGroup.vue"
+
+import PinchScrollZoom, { PinchScrollZoomEmitData } from "@coddicat/vue3-pinch-scroll-zoom";
 //import EditGroup from  "@/components/groups/Date.vue"
 
     export default {
@@ -46,18 +65,23 @@ import GroupAdd from "@/components/groups/AddGroup.vue"
             navigation,
             GroupHeader,
             GroupTree,
-            GroupAdd
+            GroupAdd,PinchScrollZoom
         },
         setup(){
             const store = useStore(); //vuex 사용
             var isView = computed(() => store.state.EditGroups);
-            return {isView}
+
+            var zoomer ={
+                scale: 1,
+      originX: 0,
+      originY: 0,
+      translateX: 0,
+      translateY: 0 
+            }
+            return {isView,zoomer}
         },
-        data(){
-            return{
-                
-            };
-        },method:{
+
+        method:{
 
         }
     };
