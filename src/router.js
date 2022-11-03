@@ -3,6 +3,7 @@ import group from "./views/Groups/Group"
 import employee from "./views/Groups/Employee"
 import measure from "./views/measureVue/Measure"
 import input1 from "./views/measureVue/Input1Measure"
+import register from "./views/measureVue/Register"
 import insight from "./views/Insight"
 
 
@@ -28,12 +29,19 @@ const router = createRouter({
       path: "/measure/input1",
       name: "input1",
       component: input1 ,
+      
+    },
+    {
+      path: "/measure/register",
+      name: "register",
+      component: register,
     },
     {
       path: "/insight",
       name: "insight",
       component: insight,
-    }
+    },
+    
     
     ]
 })
