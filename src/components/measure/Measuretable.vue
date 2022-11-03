@@ -1,5 +1,5 @@
 <template>
-    <table class="tg" style="undefined;table-layout: fixed; ">
+    <table class="tg" style="border-radius: 40px;table-layout: fixed; ">
         <colgroup>
             <col style="width: 40px">
             <col style="width: 207px">
@@ -9,7 +9,7 @@
             <col style="width: 109px">
             <col style="width: 146px">
             <col style="width: 97px">
-            <col style="width: 105px">
+            <col style="width: 250px">
         </colgroup>
         <thead>
             <tr>

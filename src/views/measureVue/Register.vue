@@ -3,7 +3,7 @@
         <navigation class="navigation"/>
         <div class="contents">
             <MeasureHeader/>
-            <Input1/>
+            <input2/>
         </div>
     </div>
 </template>
@@ -17,26 +17,23 @@ body{
     display: flex;
 }
 .navigation{
-    z-index: 1;
     position:fixed;
 
 }
-.contents{
-    padding-left: 15vw;
-}
+
 </style>
 
 
 <script>
 import navigation from "@/components/Navigation.vue"
+import input2 from "@/components/measure/input2.vue"
 import MeasureHeader from "@/components/measure/Header.vue"
-import Input1 from "@/components/measure/input1.vue"
     export default {
         name :"measure",
         components:{
             navigation,
             MeasureHeader,
-            Input1,   
+            input2
         }
     }
 </script>

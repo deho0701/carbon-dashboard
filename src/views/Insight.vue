@@ -1,27 +1,24 @@
 <template>
-  <div>
-    <h1 :class="{ red: isBind }">Class Bind</h1>
-    <button @click="setBind">바인딩</button>
+  <div class="measure-main">
+      <navigation class="navigation"/>
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      isBind: false,
-    };
-  },
-  methods: {
-    setBind() {
-      this.isBind = !this.isBind;
-    },
-  },
-};
-</script>
 
-<style scoped>
-.red {
-  color: red;
+<style>
+.navigation{
+  z-index: 1;
+  position:fixed;
 }
 </style>
+
+
+<script>
+import navigation from "@/components/Navigation.vue"
+  export default {
+      name :"insight",
+      components:{
+          navigation,
+      }
+  }
+</script>
