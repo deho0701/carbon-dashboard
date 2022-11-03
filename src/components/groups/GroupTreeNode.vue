@@ -10,12 +10,12 @@
                 <span>scope1,2</span>
                 <span>{{scope12CarbonEmission}}kg</span>
             </div>
-            <div>baarrrrrrrr</div>
+            <meter value="0.6">dasdas</meter>
             <div class="group-tree-node-emission-graph">
                 <span>scope3</span>
                 <span>{{scope3CarbonEmission}}kg</span>
             </div>
-            <div>baarrrrrrrr</div>
+            <meter value="0.6">dasdas</meter>
         </div>
         <div class="group-tree-node-bottom">
             <span class="group-tree-node-manager">담당자</span>
@@ -122,7 +122,7 @@ export default{
         const GroupName = props.GroupName;
 
         const store = useStore(); //vuex 사용
-        const Onpreview = () => store.commit("OnGroupPreview", );
+        const Onpreview = () => store.commit("OnGroupPreview","total" );
 
         return{GroupName,level,Onpreview}
     },

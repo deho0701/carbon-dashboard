@@ -5,7 +5,8 @@ export default createStore({
     //관리 해야할 데이터 선언
     state: {
         EditGroups : false,
-        GroupPreview : false
+        GroupPreview : false,
+
     }
     //상태 가공 후 state 데이터 호출
     ,getters:{
@@ -19,8 +20,8 @@ export default createStore({
         OffEdit(state){
             state.EditGroups = false;
         },
-        OnGroupPreview(state){
-            state.GroupPreview = true;
+        OnGroupPreview(state,corrent){
+            state.GroupPreview = corrent;
         },
         OffGroupPreview(state){
             state.GroupPreview = false;

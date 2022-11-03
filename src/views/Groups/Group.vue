@@ -12,7 +12,9 @@
             </PinchScrollZoom>     줌 기능 -->
             <GroupTree>  </GroupTree> 
             <GroupAdd class="add-group" v-if="AddisView"/>
-            <GroupPreview class="group-preview" v-if="Preview"/>
+            <GroupPreview class="group-preview" v-if="Preview=='total'"/>
+            <GroupPreviewDetail class="group-preview" v-if="Preview=='detail'"/>
+            <GroupPreviewInfo class="group-preview" v-if="Preview=='info'"/>
         </div>
         
     </div>
@@ -58,7 +60,9 @@ import navigation from "@/components/Navigation.vue"
 import GroupHeader from "@/components/groups/Header.vue"
 import GroupTree from "@/components/groups/Group-tree.vue"
 import GroupAdd from "@/components/groups/AddGroup.vue"
-import GroupPreview from "@/components/groups/Preview.vue"
+import GroupPreview from "@/components/groups/PreviewEmission"
+import GroupPreviewDetail from "@/components/groups/PreviewDetailEmission.vue"
+import GroupPreviewInfo from   "@/components/groups/PreviewInfo.vue"
 
 import PinchScrollZoom, { PinchScrollZoomEmitData } from "@coddicat/vue3-pinch-scroll-zoom";
 //import EditGroup from  "@/components/groups/Date.vue"
@@ -70,7 +74,9 @@ import PinchScrollZoom, { PinchScrollZoomEmitData } from "@coddicat/vue3-pinch-s
             GroupHeader,
             GroupTree,
             GroupAdd,PinchScrollZoom,
-            GroupPreview
+            GroupPreview,
+            GroupPreviewDetail,
+            GroupPreviewInfo
         },
         setup(){
             const store = useStore(); //vuex 사용
