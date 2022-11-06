@@ -30,12 +30,16 @@
     width: 75%;
     max-height: 67vh;
     overflow: scroll;
-    -ms-overflow-style: none;
 }
-.emission-list::-webkit-scrollbar { 
-    display: none;
-    width: 0 !important;
+
+.emission-list::-webkit-scrollbar{ 
+    width: 6px;
 }
+.emission-list::-webkit-scrollbar-thumb{ 
+    background: linear-gradient(#0e7a2eab, #55f74041);
+    border-radius: 25px;
+}
+
 .emission-list-item{
     margin: 1vh;
     height: 50px;

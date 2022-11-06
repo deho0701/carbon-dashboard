@@ -30,7 +30,6 @@ body{
 .navigation{
     position:fixed;
     z-index: 1;
-
 }
 .contents{
     padding-left: 15vw;
