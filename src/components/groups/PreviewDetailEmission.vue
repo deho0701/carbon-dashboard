@@ -9,8 +9,8 @@
         </div>
         <div class="emission-list">
             <div v-for="item in EmissionList" :key="item.label" class="emission-list-item">
-                <span class="emission-list-item-icon">{{item.icon}}</span> 
-                <span>{{item.label}}</span>
+                <img class="emission-list-item-icon" :src="item.iconSrc">{{item.icon}}
+                <span class="emission-list-item-lable">{{item.label}}</span>
                 <span class="emission-list-item-wight">{{item.weight}} kg</span>
             </div>
         </div>
@@ -28,27 +28,40 @@
     top: 15%;
     transform: translateX(-50%);
     width: 75%;
+    max-height: 67vh;
+    overflow: scroll;
+    -ms-overflow-style: none;
+}
+.emission-list::-webkit-scrollbar { 
+    display: none;
+    width: 0 !important;
 }
 .emission-list-item{
     margin: 1vh;
-    height: 4vh;
-    
+    height: 50px;
 }
 .emission-list-item:hover{
-    border: 1px solid;
     border-radius: 5px;
-    margin: 1vh;
-    height: 4vh;
+    background-color:rgba(180, 180, 180, 0.377) ;
 }
 .emission-list-item-icon{
-    border: 1px solid;
+    float: left;
     width:  44px;
     height: 44px;
+}
+.emission-list-item-lable{
+    float: left;
+    color:#615B5B;
+    font-weight: 700;
+    padding: 14px;
+    vertical-align:middle;
 }
 .emission-list-item-wight{
     float: right;
     font-size: large;
     font-weight: 700;
+    padding: 10px;
+    vertical-align:middle;
 }
 </style>
 
@@ -70,12 +83,23 @@ export default{
         const OnTotalPreview = () => store.commit("OnGroupPreview", "total");
         const OnDetailPreview = () => store.commit("OnGroupPreview", "detail");
         const OnInfoPreview = () => store.commit("OnGroupPreview", "info");
+        
+        const imgSrc = "~assets/previewDetail/"
 
         const EmissionList =[
-            {icon:1, label:"고정연소",weight:10},
-            {icon:1, label:"이동연소",weight:250},
-            {icon:1, label:"탈루배출",weight:30},
-            {icon:1, label:"고정연소",weight:40}
+            {iconSrc:require('@/assets/previewDetail/1.png'), label:"고정연소",weight:10},
+            {iconSrc:require('@/assets/previewDetail/2.png'), label:"이동연소",weight:250},
+            {iconSrc:require('@/assets/previewDetail/3.png'), label:"탈루배출",weight:30},
+            {iconSrc:require('@/assets/previewDetail/3.png'), label:"탈루배출",weight:30},
+            {iconSrc:require('@/assets/previewDetail/3.png'), label:"탈루배출",weight:30},
+            {iconSrc:require('@/assets/previewDetail/3.png'), label:"탈루배출",weight:30},
+            {iconSrc:require('@/assets/previewDetail/3.png'), label:"탈루배출",weight:30},
+            {iconSrc:require('@/assets/previewDetail/3.png'), label:"탈루배출",weight:30},
+            {iconSrc:require('@/assets/previewDetail/3.png'), label:"탈루배출",weight:30},
+            {iconSrc:require('@/assets/previewDetail/3.png'), label:"탈루배출",weight:30},
+            {iconSrc:require('@/assets/previewDetail/3.png'), label:"탈루배출",weight:30},
+            {iconSrc:require('@/assets/previewDetail/3.png'), label:"탈루배출",weight:30},
+            {iconSrc:require('@/assets/previewDetail/4.png'), label:"고정연소",weight:40}
         ]
         return{Offpreview,EmissionList,
             OnTotalPreview,OnDetailPreview,OnInfoPreview}

@@ -8,16 +8,21 @@
             <div class="select-preview-item" @click="OnInfoPreview">정보</div>
         </div>
         <div class="preview-group-infos">
-            <div>그룹 정보</div>
-            <div class="blank"></div>
-            <div>그룹 정보</div>
-            <div class="blank"></div>
-            <div>그룹 정보</div>
-            <div class="blank"></div>
-            <div>그룹 정보</div>
-            <div class="blank"></div>
-            <div>그룹 정보</div>
-            <div class="blank"></div>
+            <div style="font-size:large;margin:2vh 0 1.5vh">그룹 정보</div>
+            <div>그룹명</div>
+            <input class="blank">
+            <div>분류</div>
+            <input class="blank">
+            <div>대표자</div>
+            <input class="blank">
+            <div>설명</div>
+            <input class="blank">
+
+            <div style="font-size:large;margin:5vh 0 1.5vh">부가 정보 </div>
+            <div>관리자 </div>
+            <input class="blank">
+            <div>지역</div>
+            <input class="blank">
         </div>
         <div class="preview-move-button">
             <button class="preview-info-save">저장하기</button>
@@ -26,6 +31,27 @@
 </template>
     
 <style>
+.close-preview{
+    background: none;
+    border: none;
+    width: 20px;
+    height: 20px;
+}
+.preview-group-infos{
+    position: absolute;
+    margin-left: 3.5vw;
+    margin-top: 8vh;
+    font-weight: 700;
+}
+.blank{
+    width:16vw;
+    background-color: #F5F5F5;
+    border: none;
+    border-radius: 8px;
+    height: 4vh;
+    margin-bottom:1.5vh ;
+}
+
 .preview-info-save{
     margin:2vh;
     width: 167px;

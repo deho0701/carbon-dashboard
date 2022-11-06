@@ -8,16 +8,18 @@
         <div class="select-preview-item" @click="OnInfoPreview">정보</div>
     </div>
     <div class="preview-text-groupname">{{GroupName}} 탄소 배출량</div>
-    <div>{{TotalEmission}}KG</div>
+    <div class="preview-text-totalEmission">{{TotalEmission}}KG</div>
 
-    <div>전체 대비 탄소 배출량 비율</div>
-    <meter class="preview-TotalEmission-ratio"></meter>
+    <div class="preview-emission-list">
+        <div>전체 대비 탄소 배출량 비율</div>
+        <progress class="preview-TotalEmission-ratio"></progress>
+        
+        <div style="margin-top:4vh">{{scope12CarbonEmission}}kg</div>
+        <progress class="preview-scope-ratio" value="40" max="100"></progress>
+        <div>{{scope3CarbonEmission}}kg</div>
+        <progress class="preview-scope-ratio"></progress>
+    </div>        
 
-    <div>{{scope12CarbonEmission}}kg</div>
-    <meter></meter>
-
-    <div>{{scope3CarbonEmission}}kg</div>
-    <meter></meter>
     <div class="preview-move-button">
         <button class="move-PreviewToEditEmission">탄소 배출 입력하기</button>
         <button class="move-PreviewToEditEmission">리포트 이동하기</button>
@@ -49,6 +51,22 @@
     margin-left:4vw;
     margin-top:10vh;
 }
+.preview-text-totalEmission{
+    font-size:24px;
+    font-weight:550;
+    margin-left:4vw;
+    margin-top:1.5vh;
+    color: #3DC984;
+}
+.preview-emission-list{
+    position: absolute;
+    left: 53%;
+    top: 30%;
+    transform: translateX(-50%);
+    width: 75%;
+    max-height: 67vh;
+    font-size: 18px;
+}
 .select-preview{
     background-color: #F0F2F5;
     display: flex;
@@ -60,17 +78,19 @@
     transform: translateX(-50%);  
     justify-content: center;
     font-weight: 700;
-    
+    border-radius:12px ;
 }
 .select-preview-item{
-    padding:0.5vw;
+    margin:3px ;
+    padding:6px;
     color:rgba(0, 0, 0, 0.5);
     
 }
 .select-preview-item:hover{
-    padding:0.5vw;
+    padding:6px;
     background-color:white ;
     color:#3DC984;
+    border-radius: 10px;
 }
 .move-PreviewToEditEmission{
     
@@ -91,16 +111,31 @@
     text-align: center;
     position: absolute;
     left: 50%;
-    bottom: 10%;
+    bottom: 7%;
     transform: translateX(-50%);  
 }
 .preview-TotalEmission-ratio{
-    position: absolute;
-width: 374px;
-height: 16px;
-
-background: rgba(217, 217, 217, 0.5);
-border-radius: 10px;
+    width: 320px;
+    height: 16px;
+    background: rgba(217, 217, 217, 0.5);
+    border-radius: 40px;
+}
+.preview-scope-ratio{
+    width: 320px;
+    height: 16px;
+    border-radius: 20px;
+    background: #D9D9D9;
+}
+/* 프로그래스바 옵션 */
+progress::-webkit-progress-bar {
+    border: 0;
+    border-radius: 20px;
+    background-color: #D9D9D9;
+}
+progress::-webkit-progress-value {
+    border: 0;
+    border-radius: 20px;
+    background-color: #3DC984;
 }
 </style>
 
