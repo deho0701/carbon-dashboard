@@ -12,10 +12,13 @@
             <div>그룹명</div>
             <input class="blank">
             <div>분류</div>
-            <input class="blank">
+            <select class="preview-classification" @change="changeClassification" v-model="selected">
+                <option disabled value="">분류를 선택해 주세요</option>
+                <option v-for="choise in classificationOption" :value="choise" :key="choise">{{choise}}</option>
+            </select>
             <div>대표자</div>
             <input class="blank">
-            <div>설명</div>
+            <div>설명</div> 
             <input class="blank">
 
             <div style="font-size:large;margin:5vh 0 1.5vh">부가 정보 </div>
@@ -51,7 +54,14 @@
     height: 4vh;
     margin-bottom:1.5vh ;
 }
-
+.preview-classification{
+    width:16vw;
+    background-color: #F5F5F5;
+    border: none;
+    border-radius: 8px;
+    height: 4vh;
+    margin-bottom:1.5vh ;
+}
 .preview-info-save{
     margin:2vh;
     width: 167px;
@@ -82,7 +92,7 @@ export default{
     components:{},
     data(){
         return{
-            sampleData:''
+            selected:''
         };
     },
     setup(){
@@ -92,13 +102,30 @@ export default{
         const OnDetailPreview = () => store.commit("OnGroupPreview", "detail");
         const OnInfoPreview = () => store.commit("OnGroupPreview", "info");
 
+        const classificationOption = [
+            "기업 소유 운영 건물",
+            "기업 소유 운영 차량",
+            "기숙사",
+            "민간 건물 임차 사용",
+            "민간 임대 건물(전기 사용량 계측 불가)",
+            "민간 임대 건물(전기 사용량 계측 가능)",
+            "민간 임대 건물(고정연소, 수도, 폐기물)",
+            "위탁 운영차량",
+            "직원 통근 차량"
+
+        ];
 
         return{Offpreview,
-            OnTotalPreview,OnDetailPreview,OnInfoPreview}
+            OnTotalPreview,OnDetailPreview,OnInfoPreview,
+            classificationOption}
     },
     created(){},
     mounted(){},
     unmounted(){},
-    methods:{}
+    methods:{
+        changeClassification(){
+            console.log(this.selected)
+        }
+    }
 }
 </script>

@@ -30,14 +30,18 @@
     width: 75%;
     max-height: 67vh;
     overflow: scroll;
-    -ms-overflow-style: none;
 }
-.emission-list::-webkit-scrollbar { 
-    display: none;
-    width: 0 !important;
+
+.emission-list::-webkit-scrollbar{ 
+    width: 6px;
 }
+.emission-list::-webkit-scrollbar-thumb{ 
+    background: linear-gradient(#0e7a2eab, #55f74041);
+    border-radius: 25px;
+}
+
 .emission-list-item{
-    margin: 1vh;
+    margin: 1.8vh;
     height: 50px;
 }
 .emission-list-item:hover{
@@ -90,16 +94,17 @@ export default{
             {iconSrc:require('@/assets/previewDetail/1.png'), label:"고정연소",weight:10},
             {iconSrc:require('@/assets/previewDetail/2.png'), label:"이동연소",weight:250},
             {iconSrc:require('@/assets/previewDetail/3.png'), label:"탈루배출",weight:30},
-            {iconSrc:require('@/assets/previewDetail/3.png'), label:"탈루배출",weight:30},
-            {iconSrc:require('@/assets/previewDetail/3.png'), label:"탈루배출",weight:30},
-            {iconSrc:require('@/assets/previewDetail/3.png'), label:"탈루배출",weight:30},
-            {iconSrc:require('@/assets/previewDetail/3.png'), label:"탈루배출",weight:30},
-            {iconSrc:require('@/assets/previewDetail/3.png'), label:"탈루배출",weight:30},
-            {iconSrc:require('@/assets/previewDetail/3.png'), label:"탈루배출",weight:30},
-            {iconSrc:require('@/assets/previewDetail/3.png'), label:"탈루배출",weight:30},
-            {iconSrc:require('@/assets/previewDetail/3.png'), label:"탈루배출",weight:30},
-            {iconSrc:require('@/assets/previewDetail/3.png'), label:"탈루배출",weight:30},
-            {iconSrc:require('@/assets/previewDetail/4.png'), label:"고정연소",weight:40}
+            {iconSrc:require('@/assets/previewDetail/4.png'), label:"폐기물 처리시설",weight:30},
+            {iconSrc:require('@/assets/previewDetail/5.png'), label:"비료사용",weight:30},
+            {iconSrc:require('@/assets/previewDetail/6.png'), label:"대학소유동물",weight:30},
+            {iconSrc:require('@/assets/previewDetail/7.png'), label:"산림에 의한 흡수",weight:30},
+            {iconSrc:require('@/assets/previewDetail/8.png'), label:"전력",weight:30},
+            {iconSrc:require('@/assets/previewDetail/9.png'), label:"스팀(열)",weight:30},
+            {iconSrc:require('@/assets/previewDetail/10.png'), label:"수도",weight:30},
+            {iconSrc:require('@/assets/previewDetail/11.png'), label:"폐기물",weight:30},
+            {iconSrc:require('@/assets/previewDetail/12.png'), label:"통근/통학",weight:30},
+            {iconSrc:require('@/assets/previewDetail/13.png'), label:"출장",weight:40},
+            {iconSrc:require('@/assets/previewDetail/14.png'), label:"위착운영 차량",weight:40}
         ]
         return{Offpreview,EmissionList,
             OnTotalPreview,OnDetailPreview,OnInfoPreview}
