@@ -26,7 +26,6 @@
                     <div style="margin-left:10px">
                         <img :src= "text.image" style="height: 35px; vertical-align:-30%; margin-right: 20px; margin-bottom: 5px;" alt=""/>
                         {{text.name}}
-                        
                     </div>
                 </li>
             </div>
@@ -68,7 +67,7 @@
 }
 .input1_back_btn{
     border-radius: 7px;
-    border: 2px solid #d5d5d5;
+    border: 2px solid #E9E9E9;
     height: 50px;
     width: 50px;
     background-color: #ffffff;
@@ -113,14 +112,14 @@
 }
 
 .measure_btn{
-    width: 120px;
-    height: 40px;
-    margin-top: 40px;
-    margin-left: 20px;
-    background: #ffffff;
-    border-radius: 7px;
-    border:1px solid #d5d5d5;
+    height: 35px;
+    width: 110px;
     font-size: 14px;
+    margin-top: 40px;
+    margin-left: 10px;
+    background: #ffffff;
+    border-radius: 5px;
+    border:1px solid #E9E9E9;
 }
 .measure_btn:hover{
     background: #f0f0f0;
@@ -133,7 +132,7 @@
     background: #3DC984;
     color:#FFFFFF;
     width: 110px;
-    margin-left: 20px;
+    margin-left: 15px;
     border:none;
     float: right;
 }
@@ -141,37 +140,34 @@
     background: #2cb570;
 }
 #btn_excle{
-    margin-left: 20px;
+    margin-left: 15px;
     float: right;
 }
 
 #btn_search{
-    width: 40px;
+    width: 35px;
     float: right;
-    margin-left: 20px;
 }
 
 .m_table{
-    margin-top:20px;
+    margin-top:25px;
     height: 250px;
     width: 100%;
 }
 .page_btn{
     margin-top: 50px;
-    margin-left: 35%;
-    margin-right: 35%;
+    margin-left:36%;
+    text-align: center;
     width: auto;
- 
 }
 .page_btn_list{
-    margin-left: 20px;
+    margin-left: 15px;
     float: left;
     list-style: none;
     background: #FFFFFF;
     line-height: 30px;
     height: 30px;
     width: 30px;
-    text-align: center;
     border-radius: 5px;
     color: #223354;
     font-weight: 600;

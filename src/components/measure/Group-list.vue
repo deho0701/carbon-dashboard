@@ -10,9 +10,10 @@
                     <ul class="list-list" style="list-style:none; font-weight:600 ; margin-right: 20px;">
                         <li style="margin-bottom:50px; font-size: 14px; color: #3D3E3F;" v-for="number in list_number">{{number.category_title}}
                             <div v-for="category in list_category">
-                            <li class ="category_content"  v-if="number.index == category.category">
+                            <li class="category_content" v-if="number.index == category.category" @click="select_category">
                                 <img style="margin-right:20px; width: 50px; vertical-align: middle;" src="@/assets/building.png" alt="" v-if="number.index==1">
                                 <h class ="category_image2" v-if="number.index!=1">{{category.image}}</h>{{category.name}}
+                                <img src="@/assets/check.png" alt="" style="width:30px; vertical-align: middle; float: right;" v-if="category.check==true">
                             </li> 
                             </div>
                         </li>
@@ -24,6 +25,7 @@
             <div class="right-bar" style = "float: left; position:relative">
                 <ul calss="select_group" style="list-style: none; position: absolute;">
                    <li class="select-list" v-for="group in select_group">
+                    <img style="margin-left:25px; margin-right:20px; width: 60px; vertical-align: middle;" src="@/assets/building.png" alt="" v-if="group.category==1">
                     <h class="category_image2" id="right_bar_icon" v-if="group.category!=1">{{group.image}}</h>{{group.name}}
                    <button class="select-btn" onclick="location.href='/measure/input1';">+　입력하기</button></li>
                 </ul>
@@ -174,6 +176,7 @@
             return{
                 titleclick: true,
                 chartclick: false,
+                check: true,
 
                 list_number:[
                     {index:"1", category_title: "1차 카테고리"},
@@ -184,12 +187,12 @@
                     {category:"1", image:'building.png' ,name:"경상대", check:false},
                     {category:"2" ,image:'상', name:"상경대학", check:true},
                     {category:"2" ,image:'공', name:"공과대학", check:true},
-                    {category:"3" ,image:'경', name:"경영학과", check:true},
-                    {category:"3" ,image:'항', name:"항공우주 및 소프트웨어학과", check:true},
+                    {category:"3" ,image:'경', name:"경영학과", check:false},
+                    {category:"3" ,image:'항', name:"항공우주 및 소프트웨어학과", check:false},
                 ],
                 select_group:[
-                    {category:"2", image:'상', name:"상경대학", check:true},
-                    {category:"2", image:'공', name:"공과대학", check:true}
+                    {category:"2", image:'상', name:"상경대학"},
+                    {category:"2", image:'공', name:"공과대학"}
                 ]
             }
         },
@@ -203,6 +206,9 @@
                 this.titleclick=false,
                 this.chartclick=true
             
+            },
+            select_category(){
+                check=!check
             }
         },
         components:{
