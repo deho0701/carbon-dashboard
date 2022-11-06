@@ -1,11 +1,12 @@
 <template>
     <div class="group-tree">
+      <button @click="change">조직설계 온오프</button> <!-- 임시 -->
         <div v-if="IfTreeNull"><!-- 그룹이 없으면 보여줌 -->
-        <img src="@/assets/LockGroup.png" alt="권한 따라 잠금" class="lock-group">
-        <span class="group-lock-guide">회사 조직을 설계하세요</span>
-        <button class="add-group-button-Intree" @click="OnEditGroup" type="button">+ 추가하기</button>
+          <img src="@/assets/LockGroup.png" alt="권한 따라 잠금" class="lock-group">
+          <span class="group-lock-guide">회사 조직을 설계하세요</span>
+          <button class="add-group-button-Intree" @click="OnEditGroup" type="button">+ 추가하기</button>
         </div>
-        <div v-if="!IfTreeNull" ><!-- 그룹이 있으면 그룹 보여줌 -->
+        <div v-else><!-- 그룹이 있으면 그룹 보여줌 -->
           <blocks-tree  id="tree" :data="treeData" :horizontal="treeOrientation=='1'" :collapsable="true" :props="{label: 'label', expand: 'expand', children: 'children',  key:'some_id'}">
             <template #node="{data}" id="tree2" >
                 <GroupTreeNode :level=data.some_id :GroupName=data.label></GroupTreeNode>
@@ -76,7 +77,12 @@ import GroupTreeNode from "./GroupTreeNode.vue"
         setup(){
           const store = useStore(); //vuex 사용
           const OnEditGroup = () => store.commit("OnEdit", );
-          const IfTreeNull=false;
+          var IfTreeNull=ref(false);
+          function change(){
+            console.log(this.IfTreeNull)
+            this.IfTreeNull = !this.IfTreeNull
+          }
+
           let selected = ref([]);
           let treeOrientation = ref("0"); //수직 or수평
           let treeData = reactive({
@@ -111,7 +117,7 @@ import GroupTreeNode from "./GroupTreeNode.vue"
           selected,
           treeOrientation,
           OnEditGroup,
-          IfTreeNull
+          IfTreeNull,change
           }
         },
         name :"Group-tree",

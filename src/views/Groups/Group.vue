@@ -85,10 +85,10 @@ import PinchScrollZoom, { PinchScrollZoomEmitData } from "@coddicat/vue3-pinch-s
 
             var zoomer ={
                 scale: 1,
-      originX: 0,
-      originY: 0,
-      translateX: 0,
-      translateY: 0 
+                originX: 0,
+                originY: 0,
+                translateX: 0,
+                translateY: 0 
             }
             return {AddisView,zoomer,Preview}
         },

@@ -5,7 +5,6 @@
             <GroupHeader/>
             <div class="group-employee-registration">
                 <div class="group-employee-registration-table">
-                    <div>adawdawdwa</div>
                     <EmployeeTable></EmployeeTable>
                 </div>
                 

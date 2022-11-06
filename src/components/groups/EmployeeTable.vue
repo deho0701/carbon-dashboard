@@ -41,9 +41,6 @@
     .employee-check{
         scale: 1.4;
     }
-    .employee-check-column{
-        
-    }
     .tg  {border-collapse:collapse;border-spacing:0;}
     .tg td{border-color:#d5d5d5;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
     overflow:hidden;padding:10px 5px;word-break:normal;}
@@ -51,7 +48,7 @@
     font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
     .tg .tg-8t2t{background-color:#ffffff;border-color:#d5d5d5;color:#9b9b9b;text-align:left;vertical-align:top}
     .tg .tg-vcze{justify-content: center;        display: flex;
-        background-color:#ffffff;border-color:#d5d5d5;color:#333333;text-align:left;vertical-align:top}
+        background-color:#ffffff;border-color:#d5d5d5;color:#b6b6b6;text-align:left;vertical-align:top}
     .tg .tg-j0i3{justify-content: center;        display: flex;
         background-color:#f7f7f7;border-color:#d5d5d5;color:#656565;text-align:left;vertical-align:top}
     .tg .tg-s8v6{background-color:#ffffff;border-color:#d5d5d5;color:#0a0707;text-align:left;vertical-align:top}
