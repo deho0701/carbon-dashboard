@@ -1,16 +1,24 @@
+<!-- 탄소 배출 측정 첫 화면 -->
 <template>
-    <div class ="body">
-        <div class="board" >
+    <div class ="body"> 
+        <div class="board" >   
+            <!-- 조직목록, 조직도 화면 -->
             <div class="left-bar" style="float: left;  height: inherit;" >
+                <!-- 조직목록, 조직도 버튼 -->
                 <div class="title">
                     <button :class="{list_title : titleclick  ,'non_click_title' : chartclick}" @click="clickList">조직 목록</button>
                     <button :class="{list_title : chartclick , 'non_click_title' : titleclick}" @click="clickChart">조직도</button>
                 </div>
+                <!-- 버튼 이벤트에 따른 조직목록, 조직도 화면 -->
                 <div :class="{list : titleclick}" v-if="titleclick == true">
+                    <!-- 조직 목록 표시 -->
                     <ul class="list-list" style="list-style:none; font-weight:600 ; margin-right: 20px;">
+                        <!-- number.category_title : 'n'차 카테고리 표시-->
                         <li style="margin-bottom:50px; font-size: 14px; color: #3D3E3F;" v-for="number in list_number">{{number.category_title}}
                             <div v-for="category in list_category">
                             <li class="category_content" v-if="number.index == category.category" @click="select_category">
+                                <!-- number.index ==1 이면 1차 카테고리를 나타냄 -->
+                                <!-- 조직목록 표시 -->
                                 <img style="margin-right:20px; width: 50px; vertical-align: middle;" src="@/assets/building.png" alt="" v-if="number.index==1">
                                 <h class ="category_image2" v-if="number.index!=1">{{category.image}}</h>{{category.name}}
                                 <img src="@/assets/check.png" alt="" style="width:30px; vertical-align: middle; float: right;" v-if="category.check==true">
@@ -20,6 +28,7 @@
                     </ul>
                 </div>
             </div>
+            <!-- 체크한 조직 보여지는 화면 -->
             <div style ="border-left : 2px solid #d5d5d5; height : inherit; float: left;">
             </div>
             <div class="right-bar" style = "float: left; position:relative">
