@@ -30,7 +30,7 @@ body{
 <script>
 import navigation from "@/components/Navigation.vue"
 import MeasureHeader from "@/components/measure/Header.vue"
-import Input1 from "@/components/measure/Divide-carbon/input1/input1.vue"
+import Input1 from "@/components/measure/input1/input1.vue"
     export default {
         name :"measure",
         components:{
