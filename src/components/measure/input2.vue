@@ -32,10 +32,10 @@
             </div>
             
             <!-- 탄소 배출 내용 테이블 -->
-            <div class="info_board" id="info_board_bottom">
+            <div class="info_board" id="info_board_bottom" v-if ="info_board_defalt==true">
                 <button class= "measure_btn" id="btn_del_input2">선택 삭제</button> 
                 <button class= "measure_btn" id="btn_edit_input2">수정하기</button>
-                <div style="text-align: center; width:inherit; border: 1px solid rgba(206, 206, 206, 0.5); border-radius: 7px; margin-top: 15px; height: 350px; "  >
+                <div style="text-align: center; width:inherit; border: 1px solid rgba(206, 206, 206, 0.5); border-radius: 7px; margin-top: 15px; height: 350px; ">
                     <img style="margin-top:10%; width: 5%;" src="@/assets/exclamationMark.png" alt=""/>
                     <div style="margin-top:30px">데이터가 존재하지 않습니다.</div>
                 </div>
@@ -43,6 +43,18 @@
                     <li class ="page_btn_list" id="input2_page_btn_list" v-for="page in page_list">{{page}}</li>
                 </ul>
             </div>    
+
+            <div class="info_board" id="info_board_bottom" v-if ="info_board_defalt==false">
+                <button class= "measure_btn" id="btn_del_input2">선택 삭제</button> 
+                <button class= "measure_btn" id="btn_edit_input2">수정하기</button>
+                <div style="text-align: center; width:inherit; border: 1px solid rgba(206, 206, 206, 0.5); border-radius: 7px; margin-top: 15px; height: 350px;">
+                    <img style="margin-top:10%; width: 5%;" src="@/assets/exclamationMark.png" alt=""/>
+                    <div style="margin-top:30px">데이터가 존재하지 않습니다.</div>
+                </div>
+                <ul class = "page_btn">
+                    <li class ="page_btn_list" id="input2_page_btn_list" v-for="page in page_list">{{page}}</li>
+                </ul>
+            </div>  
         </div>
         <!-- 등록/ 취소 버튼쓰 -->
         <div style="margin-left: 36%;">
