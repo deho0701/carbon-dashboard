@@ -1,4 +1,3 @@
-<!--탄소 배출 내용 입력의 전력 사용 부분 -->
 <template>
     <div class="add_info_divide" id="building_name_text">건물명 / 배출 시설명
         <input type="text" class="addInfo_input" id ="building_name_input" placeholder="경상대 본관">
@@ -16,48 +15,38 @@
             <option value="1">직접 입력</option>
         </select>
     </div>
-    <div class="add_info_divide" >전력 사용량
-        <input class="addInfo_input" id="usage_input" placeholder="12,456">
-        <select class="addInfo_input" id="power_usage_drop">
-            <option value="0">kwh</option>
-            <option value="1">wh</option>
+    <div class="add_info_divide">연료 종류
+        <select class="addInfo_input" id="supplier_drop_steam">
+            <option value="0">스팀(열전용)</option>
+            <option value="1">스팀(열병합)</option>
+            <option value="2">스팀(일반)</option>
+        </select>
+    </div>
+    <div class="add_info_divide" >열 사용량
+        <input class="addInfo_input" id="steam_usage_input" placeholder="12,456">
+        <select class="addInfo_input" id="steam_usage_drop">
+            <option value="0">Gh</option>
+            <option value="1">Mh</option>
         </select>
     </div>
 </template>
 
 <style>
-     #building_name_text{
-        margin-top:20px
-    }
-    #building_name_input{
-        margin-top:0px;
-        width:20%;
-        background: #ffffff;
-        border: 1px solid #DDE2E5;
-        margin-left: 20px;
-    }
 
-    #operating_entity_input{
+    #supplier_drop_steam{
         width: 20%;
-        margin-left: 95px;
-        color: #727374
-        
-    }
-
-    #supplier_drop{
-        width: 20%;
-        margin-left: 110px;
+        margin-left: 90px;
         color: #727374
     }
-    
-    #usage_input{
-        margin-left:75px;
+
+    #steam_usage_input{
+        margin-left:90px;
         width:15%;
         background: #ffffff;
         border: 1px solid #DDE2E5;
     }
 
-    #power_usage_drop{
+    #steam_usage_drop{
         width: 5%;
         margin-left: 20px;
         color: #727374;
@@ -69,7 +58,7 @@
 
 <script>
     export default {
-        name :"power_usage",
+        name :"steam_usage",
         data() {
         },
         components:{ 

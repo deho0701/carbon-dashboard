@@ -1,3 +1,5 @@
+<!--탄소 배출 측정의 탄소 배출 내용 테이블-->
+
 <template>
     <table class="tg" style="border-radius: 40px;table-layout: fixed; ">
         <colgroup>
