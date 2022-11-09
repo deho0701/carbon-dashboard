@@ -27,7 +27,7 @@
                 <li class ="info_text" v-for="text in info_Group_Text">
                     <div style="margin-left:10px">
                         <img :src= "text.image" style="height: 35px; vertical-align:-30%; margin-right: 20px; margin-bottom: 5px;" alt=""/>
-                        {{text.name}}
+                        {{text.category_Info}} <div style="margin-left:50px; font-size: 16px; font-weight: 400; color: #223354;; display:inline-block;">{{text.name}}</div>
                     </div>
                 </li>
             </div>
@@ -193,9 +193,9 @@
                 N_emssions:0,
                 M_emssions:0,
                 info_Group_Text:[
-                    {image: require("@/assets/group_name.png"), name:"그룹명"},
-                    {image: require("@/assets/category.png"), name:"카테고리"},
-                    {image: require("@/assets/manager.png"), name:"관리자"}
+                    {image: require("@/assets/group_name.png"), category_Info:"그룹명",name:'경상대'},
+                    {image: require("@/assets/category.png"), category_Info:"카테고리",name:'경상대 > 공과대학 > 항공 우주 및 소프트웨어'},
+                    {image: require("@/assets/manager.png"), category_Info:"관리자",name:''}
                 ],
                 page_list:["<","1","2","3","4","5",">"]
             }
