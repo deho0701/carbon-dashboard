@@ -4,9 +4,11 @@
             <button class="input1_back_btn" onclick="location.href='/measure';"> ◀ </button>
         </div>
         <div class="total_carbon" >
-            <img style=" margin:30px; width: 70px; height: 70px; float: left; position: relative;" src="@/assets/co2_background.png" alt="" class="menu-icon"/>
-            <div style="color:#223354; font-size:20px; font-weight:600; margin-top:20px; position: relative; float: left;">총 탄소 배출량
-                <div class="chart"></div>
+            <img style=" vertical-align: middle; width: 80px; height: 80px; margin-top:10px; float: left;" src="@/assets/co2_background.png" alt="" class="menu-icon"/>
+            <div style="margin-left: 30px; color:#223354; font-size:20px; margin-top: 10px; font-weight:600; position: relative; float: left;">총 탄소 배출량
+                <div class="chart">
+                    <chart style="border-radius: 20px;"></chart>
+                </div>
             </div>
             <div style="margin-right:40px">
                 <div class="emissions">
@@ -80,14 +82,14 @@
     margin-top: 30px;
     background-color: #ffffff;
     border-radius: 5px;
-    height: 13vh;
-    
+    height: 11vh;
+    padding: 30px;
 
 }
 .emissions{
     float:right; 
     margin-right: 50px;
-    margin-top: 15px;
+
 }
 .text_{
     text-align: center;
@@ -98,6 +100,10 @@
     font-weight: 600;
     color: #223354;
     font-size: 20px;
+}
+.chart{
+    margin-top: 10px;
+    
 }
 
 .info_text{
@@ -177,6 +183,8 @@
 
 <script>
     import measuretable from "@/components/measure/Measuretable.vue"
+    import chart from "@/components/measure/input1/chart.ts"
+
     export default {
         name :"input1",
         props:["selected_group"],
@@ -193,7 +201,9 @@
             }
         },
         components:{
-           measuretable
+           measuretable,
+           chart
+           
         },
     }
     
