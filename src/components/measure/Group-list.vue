@@ -183,6 +183,7 @@
     export default {
         name :"group-list",
         data() {
+            
             return{
                 titleclick: true,
                 chartclick: false,
