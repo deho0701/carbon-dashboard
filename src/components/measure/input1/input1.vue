@@ -4,17 +4,19 @@
             <button class="input1_back_btn" onclick="location.href='/measure';"> ◀ </button>
         </div>
         <div class="total_carbon" >
-            <img style=" margin:30px; width: 70px; height: 70px; float: left; position: relative;" src="@/assets/co2_background.png" alt="" class="menu-icon"/>
-            <div style="color:#223354; font-size:20px; font-weight:600; margin-top:20px; position: relative; float: left;">총 탄소 배출량
-                <div class="chart"></div>
+            <img style=" vertical-align: middle; width: 80px; height: 80px; margin-top:10px; float: left;" src="@/assets/co2_background.png" alt="" class="menu-icon"/>
+            <div style="margin-left: 30px; color:#223354; font-size:20px; margin-top: 10px; font-weight:600; position: relative; float: left;">총 탄소 배출량
+                <div class="chart">
+                    <chart style="border-radius: 20px;"></chart>
+                </div>
             </div>
             <div style="margin-right:40px">
                 <div class="emissions">
-                    <p class ="text_">0CO2kg</p>
+                    <p class ="text_">{{N_emssions}}CO2kg</p>
                     <p class ="text_" id="text_kor">질소 배출량</p>
                 </div>
                 <div class="emissions">
-                    <p class ="text_">0CO2kg</p>
+                    <p class ="text_">{{M_emssions}}CO2kg</p>
                     <p class ="text_" id="text_kor">메탄 배출량</p>
                 </div>
             </div>
@@ -25,8 +27,7 @@
                 <li class ="info_text" v-for="text in info_Group_Text">
                     <div style="margin-left:10px">
                         <img :src= "text.image" style="height: 35px; vertical-align:-30%; margin-right: 20px; margin-bottom: 5px;" alt=""/>
-                        {{text.name}}
-                        
+                        {{text.category_Info}} <div style="margin-left:50px; font-size: 16px; font-weight: 400; color: #223354;; display:inline-block;">{{text.name}}</div>
                     </div>
                 </li>
             </div>
@@ -68,7 +69,7 @@
 }
 .input1_back_btn{
     border-radius: 7px;
-    border: 2px solid #d5d5d5;
+    border: 2px solid #E9E9E9;
     height: 50px;
     width: 50px;
     background-color: #ffffff;
@@ -81,14 +82,14 @@
     margin-top: 30px;
     background-color: #ffffff;
     border-radius: 5px;
-    height: 13vh;
-    
+    height: 11vh;
+    padding: 30px;
 
 }
 .emissions{
     float:right; 
     margin-right: 50px;
-    margin-top: 15px;
+
 }
 .text_{
     text-align: center;
@@ -99,6 +100,10 @@
     font-weight: 600;
     color: #223354;
     font-size: 20px;
+}
+.chart{
+    margin-top: 10px;
+    
 }
 
 .info_text{
@@ -113,14 +118,14 @@
 }
 
 .measure_btn{
-    width: 120px;
-    height: 40px;
-    margin-top: 40px;
-    margin-left: 20px;
-    background: #ffffff;
-    border-radius: 7px;
-    border:1px solid #d5d5d5;
+    height: 35px;
+    width: 110px;
     font-size: 14px;
+    margin-top: 40px;
+    margin-left: 10px;
+    background: #ffffff;
+    border-radius: 5px;
+    border:1px solid #E9E9E9;
 }
 .measure_btn:hover{
     background: #f0f0f0;
@@ -133,7 +138,7 @@
     background: #3DC984;
     color:#FFFFFF;
     width: 110px;
-    margin-left: 20px;
+    margin-left: 15px;
     border:none;
     float: right;
 }
@@ -141,37 +146,34 @@
     background: #2cb570;
 }
 #btn_excle{
-    margin-left: 20px;
+    margin-left: 15px;
     float: right;
 }
 
 #btn_search{
-    width: 40px;
+    width: 35px;
     float: right;
-    margin-left: 20px;
 }
 
 .m_table{
-    margin-top:20px;
+    margin-top:25px;
     height: 250px;
     width: 100%;
 }
 .page_btn{
     margin-top: 50px;
-    margin-left: 35%;
-    margin-right: 35%;
+    margin-left:36%;
+    text-align: center;
     width: auto;
- 
 }
 .page_btn_list{
-    margin-left: 20px;
+    margin-left: 15px;
     float: left;
     list-style: none;
     background: #FFFFFF;
     line-height: 30px;
     height: 30px;
     width: 30px;
-    text-align: center;
     border-radius: 5px;
     color: #223354;
     font-weight: 600;
@@ -181,20 +183,27 @@
 
 <script>
     import measuretable from "@/components/measure/Measuretable.vue"
+    import chart from "@/components/measure/input1/chart.ts"
+
     export default {
         name :"input1",
+        props:["selected_group"],
         data() {
             return{
+                N_emssions:0,
+                M_emssions:0,
                 info_Group_Text:[
-                    {image: require("@/assets/group_name.png"), name:"그룹명"},
-                    {image: require("@/assets/category.png"), name:"카테고리"},
-                    {image: require("@/assets/manager.png"), name:"관리자"}
+                    {image: require("@/assets/group_name.png"), category_Info:"그룹명",name:'경상대'},
+                    {image: require("@/assets/category.png"), category_Info:"카테고리",name:'경상대 > 공과대학 > 항공 우주 및 소프트웨어'},
+                    {image: require("@/assets/manager.png"), category_Info:"관리자",name:''}
                 ],
                 page_list:["<","1","2","3","4","5",">"]
             }
         },
         components:{
-           measuretable
+           measuretable,
+           chart
+           
         },
     }
     
