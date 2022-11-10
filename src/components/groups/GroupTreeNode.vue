@@ -6,12 +6,12 @@
         <div class="group-tree-node-mid">
             <span class="group-tree-node-totalEmission-left">전체 탄소 배출량 </span>
             <span class="group-tree-node-totalEmission-right"> {{ scope12CarbonEmission+scope3CarbonEmission}} kg</span>
-            <div class="group-tree-node-emission-graph">           
+            <div class="group-tree-node-emission-graph12">           
                 <span>scope1,2</span>
                 <span>{{scope12CarbonEmission}}kg</span>
             </div>
-            <progress value="0.6">dasdas</progress>
-            <div class="group-tree-node-emission-graph">
+            <progress value="0.4" class="">dasdas</progress>
+            <div class="group-tree-node-emission-graph3">
                 <span>scope3</span>
                 <span>{{scope3CarbonEmission}}kg</span>
             </div>
@@ -32,12 +32,33 @@
     border-radius:15px;
     background: #FFFFFF;
 }
-.group-tree-node-emission-graph{
+.group-tree-node-emission-graph12{
     display:flex;
     justify-content: space-between;
     padding: 1vw;
-    padding: 2.5vw 0.5vw 0 0.5vw ;
+    padding: 3vw 0.5vw 0 0.5vw ;
 }
+.group-tree-node-emission-graph3{
+    display:flex;
+    justify-content: space-between;
+    padding: 1vw 0.5vw 0 0.5vw ;
+}
+.group-tree-node-mid progress{
+    width: 200px;
+    height: 20px;
+}
+.group-tree-node-mid progress::-webkit-progress-bar {
+    border: 0;
+    border-radius: 20px;
+    background-color: #d9d9d9;
+}
+progress::-webkit-progress-value {
+    border: 0;
+    border-radius: 20px;
+    background-color: #3DC984;
+}
+
+
 .group-tree-node-top{
     border-radius: 15px 15px 0 0;
     background-color: #3C5C85;
