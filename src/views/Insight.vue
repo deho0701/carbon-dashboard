@@ -19,6 +19,9 @@ import navigation from "@/components/Navigation.vue"
       name :"insight",
       components:{
           navigation,
-      }
+      },
+      data() {
+
+      },
   }
 </script>
