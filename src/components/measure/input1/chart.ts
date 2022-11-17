@@ -31,7 +31,7 @@ export default defineComponent({
     },
     height: {
       type: Number,
-      default: 70
+      default: 100
     },
     cssClasses: {
       default: '',
@@ -59,6 +59,7 @@ export default defineComponent({
         {
           label : 'Scpoe1',
           backgroundColor: ['#E0F599'],
+          borderRadius:10,
           data: [40],
         },
         {
@@ -69,6 +70,7 @@ export default defineComponent({
         {
           label : 'Scpoe3',
           backgroundColor: ['#15575C'],
+          borderRadius:10,
           data: [40],
         }
       ]
@@ -85,7 +87,7 @@ export default defineComponent({
           labels : {
             padding: 10,
             usePointStyle: true,
-            boxWidth:10,
+            boxWidth:20,
             boxHeight:10,
             color:'#223354'
           }

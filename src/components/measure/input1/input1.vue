@@ -7,7 +7,7 @@
             <img style=" vertical-align: middle; width: 80px; height: 80px; margin-top:10px; float: left;" src="@/assets/co2_background.png" alt="" class="menu-icon"/>
             <div style="margin-left: 30px; color:#223354; font-size:20px; margin-top: 10px; font-weight:600; position: relative; float: left;">총 탄소 배출량
                 <div class="chart">
-                    <chart style="border-radius: 20px;"></chart>
+                    <chart></chart>
                 </div>
             </div>
             <div style="margin-right:40px">
@@ -34,17 +34,17 @@
         </div>
 
         <div>
-            <button class="measure_btn" id="btn_del">선택삭제</button>
-            <button class="measure_btn" id="btn_copy">복사하기</button>
-            <button class="measure_btn" id="btn_edit">수정하기</button>
+            <button class="measure_btn" id="btn_del" @click="del_btn">선택삭제</button>
+            <button class="measure_btn" id="btn_copy" @click="copy_btn">복사하기</button>
+            <button class="measure_btn" id="btn_edit" @click="edit_btn">수정하기</button>
 
             <button class="measure_btn" id="btn_regi"  onclick="location.href='/measure/register';" >+　등록하기</button>
             <button class="measure_btn" id="btn_excle">엑셀 업로드</button>
-            <img class="measure_btn"  id="btn_search" src="@/assets/plus.png" alt=""/>
+            <img class="measure_btn"  id="btn_search" src="@/assets/search.png" alt=""/>
         </div>
 
         <div>
-            <measuretable class="m_table"/>
+            <measuretable class="m_table" v-bind:emssion_info_list="emssion_info_list_parent"/>
         </div>
 
         <div class="page_btn">
@@ -103,6 +103,7 @@
 }
 .chart{
     margin-top: 10px;
+
     
 }
 
@@ -187,7 +188,6 @@
 
     export default {
         name :"input1",
-        props:["selected_group"],
         data() {
             return{
                 N_emssions:0,
@@ -197,6 +197,13 @@
                     {image: require("@/assets/category.png"), category_Info:"카테고리",name:'경상대 > 공과대학 > 항공 우주 및 소프트웨어'},
                     {image: require("@/assets/manager.png"), category_Info:"관리자",name:''}
                 ],
+                emssion_info_list_parent:[
+                    {checked:false,content:"경영학과 직원 출퇴근",building:"1,423kwh",emissions:"1,352",start:"2022.01.01",end:"2022.01.05",source:"고정연소",scope:"Scope 1", category: "경상대 > 경영대학 > 경영학과"},
+                    {checked:false,content:"경영학과 직원 출퇴근",building:"1,423kwh",emissions:"1,352",start:"2022.01.01",end:"2022.01.05",source:"고정연소",scope:"Scope 1", category: "경상대 > 경영대학 > 경영학과"},
+                    {checked:false,content:"경영학과 직원 출퇴근",building:"1,423kwh",emissions:"1,352",start:"2022.01.01",end:"2022.01.05",source:"고정연소",scope:"Scope 1", category: "경상대 > 경영대학 > 경영학과"},
+                    {checked:false,content:"경영학과 직원 출퇴근",building:"1,423kwh",emissions:"1,352",start:"2022.01.01",end:"2022.01.05",source:"고정연소",scope:"Scope 1", category: "경상대 > 경영대학 > 경영학과"},
+                    {checked:false,content:"경영학과 직원 출퇴근",building:"1,423kwh",emissions:"1,352",start:"2022.01.01",end:"2022.01.05",source:"고정연소",scope:"Scope 1", category: "경상대 > 경영대학 > 경영학과"},
+                ],
                 page_list:["<","1","2","3","4","5",">"]
             }
         },
@@ -205,6 +212,11 @@
            chart
            
         },
+        methods:{
+            del_btn(){
+                
+            }
+        }
     }
     
 </script>
