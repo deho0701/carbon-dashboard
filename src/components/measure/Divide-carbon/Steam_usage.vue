@@ -25,8 +25,8 @@
     <div class="add_info_divide" >열 사용량
         <input class="addInfo_input" id="steam_usage_input" placeholder="12,456">
         <select class="addInfo_input" id="steam_usage_drop">
-            <option value="0">Gh</option>
-            <option value="1">Mh</option>
+            <option value="0">GJ</option>
+            <option value="1">MJ</option>
         </select>
     </div>
 </template>
