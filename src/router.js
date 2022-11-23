@@ -1,4 +1,5 @@
 import {  createRouter, createWebHistory } from "vue-router"
+import login from "./views/Login"
 import group from "./views/Groups/Group"
 import employee from "./views/Groups/Employee"
 import measure from "./views/measureVue/Measure"
@@ -7,9 +8,15 @@ import register from "./views/measureVue/Register"
 import insight from "./views/Insight"
 
 
+
 const router = createRouter({
   history: createWebHistory(),
   routes:[
+    {
+      path: "/",
+      name: "login",
+      component: login,
+    },
     {
       path: "/group/employee",
       name: "employee",
