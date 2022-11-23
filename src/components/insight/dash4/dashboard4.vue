@@ -25,7 +25,8 @@
         color: #aeaeae;
     }
     .더보기_btn:hover{
-        color:#5A5A5A
+        color:#5A5A5A;
+        cursor: pointer;
     }
 </style>
 

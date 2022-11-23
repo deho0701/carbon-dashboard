@@ -46,6 +46,7 @@
 
     .전체보기_btn:hover{
         color: #5A5A5A;
+        cursor: pointer;
     }
 
     .type_group_btn{

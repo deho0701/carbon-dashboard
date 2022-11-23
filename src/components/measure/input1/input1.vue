@@ -130,6 +130,7 @@
 }
 .measure_btn:hover{
     background: #f0f0f0;
+    cursor: pointer;
 }
 #btn_del{
     margin-left: 0px;
@@ -145,6 +146,7 @@
 }
 #btn_regi:hover{
     background: #2cb570;
+    cursor: pointer;
 }
 #btn_excle{
     margin-left: 15px;

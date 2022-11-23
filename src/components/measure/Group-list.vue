@@ -109,6 +109,7 @@
 .category_content:hover{
     border-radius: 10px;
     background-color: #f6f6f6;
+    
 }
 .select-list{ /*선택된 카테고리 리스트*/
     border:2px solid #d5d5d5; 
@@ -134,6 +135,7 @@
 }
 .select-btn:hover{
     background: #2cb570;
+    cursor: pointer;
 }
 #right_bar_icon{
     margin-left: 30px;
