@@ -9,12 +9,12 @@
 
         <div class="type_contents" v-if="typeClick==true">
             <div  v-for="(emission_dash,index) in emission_dash_list">
-                <div style="width:inherit; height: 80px;">
+                <div style="width:inherit; height: 70px;">
                     <div style="float: left;">
-                    <div style="margin-top:20px; font-weight: 600; color:#5A5A5A">{{emission_dash.name}}</div>
-                    <div style= "margin-top:5px; color:#9F9696">{{emission_dash.num}}개 항목</div>
+                        <div style="margin-top:10px; font-weight: 600; color:#5A5A5A">{{emission_dash.name}}</div>
+                        <div style= "margin-top:5px; color:#9F9696">{{emission_dash.num}}개 항목</div>
                     </div>
-                    <p style="float:right; margin-top:32px;font-weight: 600;">{{emission_dash.emission}}kg</p>
+                    <p style="float:right; margin-top:23px;font-weight: 600;">{{emission_dash.emission}}kg</p>
                 </div>
                 <div style="width:inherit; height:2px; background: #E3E3E3;" v-if ="index!=4"> </div>
             </div>
@@ -92,6 +92,11 @@
         border: none;
         background:#3DC984;
         color:#FFFFFF;
+    }
+    .type_contents{
+        overflow: scroll;
+        margin-top:1vh;
+        height: 37vh;
     }
 
 </style>

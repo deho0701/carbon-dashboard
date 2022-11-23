@@ -13,8 +13,7 @@
             </div>
             <div>
               <dashboard4Vue></dashboard4Vue>
-              <div class="dashboard" id="dashboard5">
-              </div>
+              <Dashboard5></Dashboard5>
               <Dashboard6></Dashboard6>
             </div>
           </div>
@@ -36,22 +35,6 @@
     border:2px solid #d5d5d5;
     margin-bottom: 2vh;
   }
- 
-
-
-
-  #dashboard5{
-    float: left;
-    width: 34vw;
-    height: 40vh;
-    margin-left:1vw;
-  }
-  #dashboard6{
-    float: left;
-    width: 24.4vw;
-    height: 40vh;
-    margin-left:1vw;
-  }
 
 </style>
 
@@ -63,16 +46,19 @@ import dashboard2Vue from "@/components/insight/dashboard2.vue"
 import dashboard3Vue from "@/components/insight/dash3/dashboard3.vue"
 import dashboard4Vue from "@/components/insight/dash4/dashboard4.vue"
 import Dashboard6 from "@/components/insight/dash6/dashboard6.vue"
+import Dashboard5 from "@/components/insight/dashboard5.vue"
   export default {
       name :"insight",
       components:{
-        navigation,
-        insight_header,
-        dashboard1Vue,
-        dashboard2Vue,
-        dashboard3Vue,
-        dashboard4Vue,
-        Dashboard6
+          navigation,
+          insight_header,
+          dashboard1Vue,
+          dashboard2Vue,
+          dashboard3Vue,
+          dashboard4Vue,
+          Dashboard5,
+          Dashboard6,
+          
       },
       data() {
         return{

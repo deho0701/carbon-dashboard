@@ -7,15 +7,15 @@
             <span class="group-tree-node-totalEmission-left">전체 탄소 배출량 </span>
             <span class="group-tree-node-totalEmission-right"> {{ scope12CarbonEmission+scope3CarbonEmission}} kg</span>
             <div class="group-tree-node-emission-graph12">           
-                <span>scope1,2</span>
-                <span>{{scope12CarbonEmission}}kg</span>
+                <span style="color: #4F4F4F; ">scope1,2</span>
+                <span style="color: #5A6A89; font-size: 14px; font-weight: 600;">{{scope12CarbonEmission}}kg</span>
             </div>
-            <progress value="0.4" class="">dasdas</progress>
+            <progress value="0.4" class="progress_bar">dasdas</progress>
             <div class="group-tree-node-emission-graph3">
-                <span>scope3</span>
-                <span>{{scope3CarbonEmission}}kg</span>
+                <span style="color: #4F4F4F;">scope3</span>
+                <span style="color: #5A6A89; font-size: 14px; font-weight: 600;">{{scope3CarbonEmission}}kg</span>
             </div>
-            <progress value="0.6">dasdas</progress>
+            <progress value="0.6" class="progress_bar">dasdas</progress>
         </div>
         <div class="group-tree-node-bottom">
             <span class="group-tree-node-manager">담당자</span>
@@ -30,6 +30,7 @@
     height: 271px;
 
     border-radius:15px;
+    border: none;
     background: #FFFFFF;
 }
 .group-tree-node-emission-graph12{
@@ -45,17 +46,19 @@
 }
 .group-tree-node-mid progress{
     width: 200px;
-    height: 20px;
+    height: 11px;
+    border: none;
 }
 .group-tree-node-mid progress::-webkit-progress-bar {
     border: 0;
     border-radius: 20px;
-    background-color: #d9d9d9;
+    background-color: #EDEDED;
 }
-progress::-webkit-progress-value {
+
+.group-tree-node-mid progress::-webkit-progress-value {
     border: 0;
     border-radius: 20px;
-    background-color: #3DC984;
+    background: #62BC8A;
 }
 
 
@@ -73,6 +76,7 @@ progress::-webkit-progress-value {
 .group-tree-node-bottom{
     border:1px solid #D9DBE9 ;
     border-radius: 0 0 15px 15px;
+    background: #f6f6f6;
     margin-top:0;
     height: 48px;
     
@@ -91,6 +95,7 @@ progress::-webkit-progress-value {
     left: 15%;
     transform: translate(-50%, -50%);
     text-align: left;
+    color:#4F4F4F;
 
 }
 .group-tree-node-managerName{
@@ -100,6 +105,7 @@ progress::-webkit-progress-value {
     transform: translate(-50%, -50%);
     font-weight: 600;
     font-size: 1vw;
+    color:#6D6D6D;
 }
 .group-tree-node-totalEmission-left{
     position: absolute;
@@ -108,6 +114,7 @@ progress::-webkit-progress-value {
     transform: translate(-50%, -50%);
     font-weight: 600;
     font-size: 0.9vw;
+    color:#6D6D6D;
 }
 .group-tree-node-totalEmission-right{
     position: absolute;
@@ -116,6 +123,7 @@ progress::-webkit-progress-value {
     transform: translate(-50%, -50%);
     font-weight: 600;
     font-size: 1vw;
+    color: #5A6A89;
 }
 
 </style>
@@ -131,7 +139,7 @@ export default{
         return{
             scope12CarbonEmission:2,
             scope3CarbonEmission:4,
-            manager:"ming",
+            manager:"귀요ming",
         };
     },
     props:{

@@ -52,7 +52,8 @@ export default defineComponent({
           backgroundColor: ['#FFA800', '#9FD72A', '#49C5E0','#3B72FF','#FF3B3B'], 
           data: [80, 40, 20,50,40],
           cutout:60,
-          borderWidth:3
+          borderWidth:3,
+          pointStyle:'star'
         }
       ]
     }
@@ -64,10 +65,10 @@ export default defineComponent({
         legend: {
           position:'bottom' as const,
           labels : {
-            usePointStyle: true,
             boxWidth:20,
             boxHeight:20,
-            align: 'middle' as const
+            align: 'middle' as const,
+            usePointStyle:true
           }
         },
       },
