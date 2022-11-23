@@ -18,7 +18,8 @@
 
 <style>
 .group-tree{
-    height: 86vh;   /*header랑 합쳐서 100이 되어야 함*/
+    min-height: 86vh;   /*header랑 합쳐서 100이 되어야 함*/
+    height: inherit;
     position: relative;
     /* 점 배경 */
     background-image: linear-gradient(to bottom, transparent, transparent 10%, #F7F9FB 10%),
@@ -27,7 +28,6 @@
 
     text-align: center;
     max-width: 85vw;
-    max-height: 85vh;
   }
   .lock-group{
     width: 150px;

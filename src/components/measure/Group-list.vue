@@ -48,18 +48,20 @@
 <style>
 
 .body{
-    padding:2%;
+    padding:3%;
     position:relative;
     background: #F8F8F8;;
-    width: inherit;
-    height: 86vh;
+    width: 85vw;
+    min-height: 87vh;
+    height:inherit;
     
 }
 .board{
     position: absolute;
     background: #FFFFFF;
     width: 80vw;
-    height: 75vh;
+    min-height: 75vh;
+    height: inherit;
     border-radius: 10px;
     border:2px solid #d5d5d5
     
