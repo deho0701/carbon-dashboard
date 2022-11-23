@@ -29,7 +29,7 @@ export default defineComponent({
     },
     height: {
       type: Number,
-      default: 300
+      default: 250
     },
     cssClasses: {
       default: '',
@@ -70,7 +70,7 @@ export default defineComponent({
             boxWidth:20,
             boxHeight:20,
           }
-        },
+        }
       },
     }
 
