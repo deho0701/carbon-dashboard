@@ -1,3 +1,4 @@
+<!--  -->
 <template>
     <div class="add_info_divide" id="building_name_text">건물명 / 배출 시설명
         <input type="text" class="addInfo_input" id ="building_name_input" placeholder="경상대 본관">
@@ -41,14 +42,14 @@
 
     #steam_usage_input{
         margin-left:90px;
-        width:15%;
+        width:14%;
         background: #ffffff;
         border: 1px solid #DDE2E5;
     }
 
     #steam_usage_drop{
-        width: 5%;
-        margin-left: 20px;
+        width: 4.6%;
+        margin-left: 1%;
         color: #727374;
         margin-bottom: 20px;
     }

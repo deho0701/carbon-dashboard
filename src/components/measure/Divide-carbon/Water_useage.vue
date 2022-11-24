@@ -1,4 +1,4 @@
-<!--수도 사용 내용 입력의 전력 사용 부분 -->
+<!--수도 사용 내용 입력의 사용 부분 -->
 <template>
     <div class="add_info_divide" id="building_name_text">건물명 / 배출 시설명
         <input type="text" class="addInfo_input" id ="building_name_input" placeholder="본관">

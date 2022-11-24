@@ -1,26 +1,23 @@
 <!--탄소 배출 내용 입력의 전력 사용 부분 -->
 <template>
-    <div class="add_info_divide" id="building_name_text">건물명 / 배출 시설명
-        <input type="text" class="addInfo_input" id ="building_name_input" placeholder="경상대 본관">
-    </div>
-    <div class="add_info_divide">운영주체
+    <div class="add_info_divide">산림 유형
         <select class="addInfo_input" id="operating_entity_input">
-            <option value="0">기업 소유 및 운영</option>
-            <option value="1">민간 임차</option>
+            <option value="0">혼효림</option>
+            <option value="1">활엽수</option>
+            <option value="2">침엽수</option>
         </select>
         
     </div>
-    <div class="add_info_divide">공급처
-        <select class="addInfo_input" id="supplier_drop">
-            <option value="0">한국전력공사</option>
-            <option value="1">직접 입력</option>
+    <div class="add_info_divide">확보자료 유형
+        <select class="addInfo_input" id="supplier_drop" style="margin-left:65px">
+            <option value="0">임야면적</option>
+            <option value="1">조림면적</option>
         </select>
     </div>
-    <div class="add_info_divide" >전력 사용량
-        <input class="addInfo_input" id="usage_input" placeholder="12,456">
+    <div class="add_info_divide" >범위
+        <input class="addInfo_input" id="usage_input" style="margin-left:125px" placeholder="12">
         <select class="addInfo_input" id="power_usage_drop">
-            <option value="0">kwh</option>
-            <option value="1">wh</option>
+            <option value="0">ha</option>
         </select>
     </div>
 </template>
@@ -50,19 +47,6 @@
         color: #727374
     }
     
-    #usage_input{
-        margin-left:75px;
-        width:15%;
-        background: #ffffff;
-        border: 1px solid #DDE2E5;
-    }
-
-    #power_usage_drop{
-        width: 5%;
-        margin-left: 20px;
-        color: #727374;
-        margin-bottom: 20px;
-    }
 
    
 </style>

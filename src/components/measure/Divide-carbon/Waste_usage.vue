@@ -1,4 +1,4 @@
-<!--폐기물 내용 입력의 전력 사용 부분 -->
+<!--폐기물 내용 입력의 사용 부분 -->
 <template>
     <div class="add_info_divide" id="building_name_text">건물명 / 배출 시설명
         <input type="text" class="addInfo_input" id ="building_name_input" placeholder="본관">
@@ -67,7 +67,7 @@
     color: #727374
 }
 #emissions{
-    width: 20%;
+    width: 1%;
     margin-left: 60px;
     color: #727374;
     background: #ffffff;

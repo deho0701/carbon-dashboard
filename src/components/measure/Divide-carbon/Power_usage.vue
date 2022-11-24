@@ -54,14 +54,14 @@
     
     #usage_input{
         margin-left:75px;
-        width:15%;
+        width:14%;
         background: #ffffff;
         border: 1px solid #DDE2E5;
     }
 
     #power_usage_drop{
-        width: 5%;
-        margin-left: 20px;
+        width: 4.6%;
+        margin-left: 1%;
         color: #727374;
         margin-bottom: 20px;
     }
