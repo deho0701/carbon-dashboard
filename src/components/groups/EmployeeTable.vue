@@ -67,19 +67,19 @@
         },
         setup(){
             var employees =[
-                {checked:false,name:"김재현",call:"010-2532-3242",eamil:"asda@dsa.net",groupInfo:"경상대",position:"교수",employeeNumber:"1231241",authority:"관리자"},
-                {checked:false,name:"김재현",call:"010-2532-3242",eamil:"asda@dsa.net",groupInfo:"경상대",position:"교수",employeeNumber:"1231241",authority:"변경"},
-                {checked:false,name:"김재현",call:"010-2532-3242",eamil:"asda@dsa.net",groupInfo:"경상대",position:"교수",employeeNumber:"1231241",authority:"변경"},
-                {checked:false,name:"김재현",call:"010-2532-3242",eamil:"asda@dsa.net",groupInfo:"경상대",position:"교수",employeeNumber:"1231241",authority:"변경"},
-                {checked:false,name:"김재현",call:"010-2532-3242",eamil:"asda@dsa.net",groupInfo:"경상대",position:"교수",employeeNumber:"1231241",authority:"변경"},
-                {checked:false,name:"김재현",call:"010-2532-3242",eamil:"asda@dsa.net",groupInfo:"경상대",position:"교수",employeeNumber:"1231241",authority:"변경"},
-                {checked:false,name:"김재현",call:"010-2532-3242",eamil:"asda@dsa.net",groupInfo:"경상대",position:"교수",employeeNumber:"1231241",authority:"변경"},
-                {checked:false,name:"김재현",call:"010-2532-3242",eamil:"asda@dsa.net",groupInfo:"경상대",position:"교수",employeeNumber:"1231241",authority:"변경"},
-                {checked:false,name:"김재현",call:"010-2532-3242",eamil:"asda@dsa.net",groupInfo:"경상대",position:"교수",employeeNumber:"1231241",authority:"변경"},
-                {checked:false,name:"김재현",call:"010-2532-3242",eamil:"asda@dsa.net",groupInfo:"경상대",position:"교수",employeeNumber:"1231241",authority:"변경"},
-                {checked:false,name:"김재현",call:"010-2532-3242",eamil:"asda@dsa.net",groupInfo:"경상대",position:"교수",employeeNumber:"1231241",authority:"변경"},
-                {checked:false,name:"김재현",call:"010-2532-3242",eamil:"asda@dsa.net",groupInfo:"경상대",position:"교수",employeeNumber:"1231241",authority:"변경"},
-                {checked:false,name:"김재현",call:"010-2532-3242",eamil:"asda@dsa.net",groupInfo:"경상대",position:"교수",employeeNumber:"1231241",authority:"변경"}
+                {checked:false,name:"김재현",call:"010-2532-3242",eamil:"asda@dsa.net",groupInfo:"경상대",position:"정교수",employeeNumber:"20173628",authority:"관리자"},
+                {checked:false,name:"박수연",call:"010-2532-3242",eamil:"dawgsrggg@dsa.net",groupInfo:"공과대학",position:"부교수",employeeNumber:"20154334",authority:"변경"},
+                {checked:false,name:"박채연",call:"010-2532-3242",eamil:"33hh4h4h@dsa.net",groupInfo:"상경대",position:"부교수",employeeNumber:"1231241",authority:"변경"},
+                {checked:false,name:"김규민",call:"010-2532-3242",eamil:"asda@dsa.net",groupInfo:"상경대",position:"교직원",employeeNumber:"1231241",authority:"변경"},
+                {checked:false,name:"정혜미",call:"010-2532-3242",eamil:"fwesf34sdf@dsa.net",groupInfo:"공과대학",position:"교직원",employeeNumber:"1231241",authority:"변경"},
+                {checked:false,name:"김재림",call:"010-2532-3242",eamil:"jibaegagosupda@dsa.net",groupInfo:"공과대학",position:"대학원생",employeeNumber:"1231241",authority:"변경"},
+                {checked:false,name:"박준하",call:"010-2532-3242",eamil:"dawwwqzfe@dsa.net",groupInfo:"공과대학",position:"대학원생",employeeNumber:"1231241",authority:"변경"},
+                {checked:false,name:"하수진",call:"010-2532-3242",eamil:"qweuio@dsa.net",groupInfo:"상경대",position:"대학원생",employeeNumber:"1231241",authority:"변경"},
+                {checked:false,name:"유지민",call:"010-2532-3242",eamil:"sgsfwefsfs@dsa.net",groupInfo:"상경대",position:"대학원생",employeeNumber:"1231241",authority:"변경"},
+                {checked:false,name:"황주영",call:"010-2532-3242",eamil:"asda@dsa.net",groupInfo:"공과대학",position:"학부생",employeeNumber:"1231241",authority:"변경"},
+                {checked:false,name:"정대호",call:"010-2532-3242",eamil:"dawdaDFA@dsa.net",groupInfo:"공과대학",position:"학부생",employeeNumber:"1231241",authority:"변경"},
+                {checked:false,name:"김재민",call:"010-2532-3242",eamil:"VSFHTR@dsa.net",groupInfo:"공과대학",position:"학부생",employeeNumber:"1231241",authority:"변경"},
+                {checked:false,name:"박준수",call:"010-2532-3242",eamil:"f5ef52@dsa.net",groupInfo:"상경대",position:"학부생",employeeNumber:"1231241",authority:"변경"}
                 
             ]
 

@@ -2,9 +2,9 @@
     <div>
         <h1 class="login" id="title_login">탄소 중립 지원 플랫폼</h1>
         <div class="login">
-          <input type="text" placeholder="ID" class="in" ><br>
-          <input type="password" placeholder="passward" class="in"><br>
-          <input type="submit" id="login_btn" value="로그인하기" onclick="location.href='/group'" ><br>
+          <input placeholder="ID" class="in" v-model="ID" ><br>
+          <input type="password" placeholder="passward" class="in" v-model="PW"><br>
+          <button id="login_btn" @click="Confirm()" >로그인하기</button><br>
           <p class="login" id="foget_login_text">비밀번호를 잊으셨나요?</p>
         </div>
 
@@ -60,13 +60,22 @@
   </style>
   
   
-  <script>
-    export default {
-        name :"login",
-        components:{
-        },
-        data() {
+<script setup>
+
+const r_ID = "ho";
+const r_PW = "0000";
+
+var ID = '';
+var PW = '';
+
+function Confirm(){console.log(r_ID);
+  if ((r_ID === ID) && (r_PW ===PW)){
+    location.href = "/setting";
+  }else{
+    console.log(ID);
+  }
   
-        },
-    }
+}
+
   </script>
+  

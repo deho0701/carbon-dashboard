@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@coddicat/vue3-pinch-scroll-zoom": "^0.2.1",
+    "axios": "^1.2.0",
     "chart.js": "^3.9.1",
     "core-js": "^3.8.3",
     "vue": "^3.2.13",
@@ -16,6 +17,7 @@
     "vue-google-charts": "^1.1.0",
     "vue-tree-chart": "^1.2.9",
     "vue3-blocks-tree": "^0.6.1",
+    "vue3-google-map": "^0.15.0",
     "vuex": "^4.1.0"
   },
   "devDependencies": {

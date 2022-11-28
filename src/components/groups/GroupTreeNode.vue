@@ -139,7 +139,7 @@ export default{
         return{
             scope12CarbonEmission:2,
             scope3CarbonEmission:4,
-            manager:"귀요ming",
+            manager:"최상민",
         };
     },
     props:{

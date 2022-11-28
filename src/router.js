@@ -6,8 +6,9 @@ import measure from "./views/measureVue/Measure"
 import input1 from "./views/measureVue/Input1Measure"
 import register from "./views/measureVue/Register"
 import insight from "./views/Insight"
-
-
+import setting from "./views/Setting/Setting"
+import survey from "./views/Survey"
+import zaju from "./views/Drone"
 
 const router = createRouter({
   history: createWebHistory(),
@@ -48,6 +49,20 @@ const router = createRouter({
       name: "insight",
       component: insight,
     },
+    {
+      path: "/setting",
+      name: "setting",
+      component: setting,
+    },
+    {
+      path: "/survey",
+      name: "survey",
+      component: survey,
+    },{
+      path: "/zaju",
+      name: "zaju",
+      component: zaju,
+    }
     
     
     ]

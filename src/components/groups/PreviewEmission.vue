@@ -12,12 +12,12 @@
 
     <div class="preview-emission-list">
         <div>전체 대비 탄소 배출량 비율</div>
-        <progress class="preview-TotalEmission-ratio"></progress>
+        <progress class="preview-TotalEmission-ratio" value="100" max="100"></progress>
         
         <div style="margin-top:4vh">{{scope12CarbonEmission}}kg</div>
         <progress class="preview-scope-ratio" value="40" max="100"></progress>
         <div>{{scope3CarbonEmission}}kg</div>
-        <progress class="preview-scope-ratio"></progress>
+        <progress class="preview-scope-ratio" value="60" max="100"></progress>
     </div>        
 
     <div class="preview-move-button">

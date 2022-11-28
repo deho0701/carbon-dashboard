@@ -2,7 +2,7 @@
     <div class="nav">
         <div class="who">
             <img src="@/assets/livit.png" alt="icon" id="icon">
-            <span>Livit</span>
+            <span>ZAJU</span>
         </div>
         <div class="menu" style=" cursor: pointer;" onclick="location.href='/group';">
             <img src="@/assets/group.png" alt="" class="menu-icon">
@@ -16,11 +16,11 @@
             <img src="@/assets/insight.png" alt="" class="menu-icon">
             <a>인사이트</a>
         </div>
-        <div class="menu" style=" cursor: pointer;" onclick="location.href='';">
+        <div class="menu" style=" cursor: pointer;" onclick="location.href='/survey';">
             <img src="@/assets/survey.png" alt="" class="menu-icon">
             <a>서베이 요청</a>
         </div>
-        <div class="menu" style=" cursor: pointer;" onclick="location.href='';">
+        <div class="menu" style=" cursor: pointer;" onclick="location.href='/setting';">
             <img src="@/assets/setting.png" alt="" class="menu-icon">
             <a>설정</a>
         </div>
