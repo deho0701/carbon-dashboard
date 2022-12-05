@@ -21,8 +21,8 @@
     </div>        
 
     <div class="preview-move-button">
-        <button class="move-PreviewToEditEmission">탄소 배출 입력하기</button>
-        <button class="move-PreviewToEditEmission">리포트 이동하기</button>
+        <button class="move-PreviewToEditEmission"   onclick="location.href='/measure';">탄소 배출 입력하기</button>
+        <button class="move-PreviewToEditEmission" onclick="location.href='/insight';">리포트 이동하기</button>
     </div>
 </div>
 </template>
