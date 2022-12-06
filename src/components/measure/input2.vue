@@ -5,7 +5,7 @@
         </div>
         <div class="regi_category">
             <div>
-                <div style="margin-bottom: 20px; font-size: 19px;">카테고리</div>
+                <div style="margin-bottom: 20px; font-size: 19px; color:black;">카테고리</div>
                 <!-- 카테고리 보드판 -->
                 <button :class ="{category_select: SearchCategory ,'nonClick_category':SelectCategory}"  @click="clickSearch" id="search" >카테고리별 검색</button>
                 <button :class ="{category_select: SelectCategory, 'nonClick_category':SearchCategory }"  @click="clickSelect" id="select">카테고리명 선택</button><br>
@@ -21,7 +21,7 @@
             
             <div class = "info_board">
                 <!-- 추가 정보 입력하기 상단 -->
-                <div style="font-size: 19px;">추가정보 입력하기
+                <div style="font-size: 20px; color:black;">추가정보 입력하기
                 <button class="input1_back_btn" id="drop_btn" @click="clickInfoDrop" v-if ="info_board_defalt==true">▼</button>
                 <button class="input1_back_btn" id="drop_btn" @click="clickInfoDrop"  v-if ="info_board_defalt==false">▲</button></div>
                 
@@ -95,6 +95,7 @@
         box-shadow: 0px 3px 10px #d5d5d5, 0px 2px 2px #d5d5d5;
         border: 1px solid #d5d5d5;
         height: inherit;
+        color:black;
     }
     #info_board_bottom{
         padding-left: 40px;

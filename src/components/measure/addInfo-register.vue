@@ -1,12 +1,12 @@
 <!-- 추가 정보 입력하기 내용 -->
 <template>
     <div class="info_board" id="add_info">
-        <div>입력방식
+        <div style="color:black;">입력방식
             <label><input class="radio_btn" type="radio" name="methodRegist" value="직접 입력하기" checked>직접 입력하기</label>
             <label><input class="radio_btn" type="radio" name="methodRegist" value="엑셀 등록하기">엑셀 등록하기</label>
             <label><input class="radio_btn" type="radio" name="methodRegist" value="자동 연동하기">자동 연동하기</label>
         </div>
-        <div style="margin-top:30px">
+        <div style="margin-top:30px; ">
             탄소 배출 내용<br>
             <input type="text" class="addInfo_input" id="carbon_emissions_content">
         </div> 
@@ -42,7 +42,7 @@
     }
     .addInfo_input{
         width: 80%;
-        height: 30px;
+        height: 40px;
         margin-top: 20px;
         background: #F6F7FB;
         border: 0px;
