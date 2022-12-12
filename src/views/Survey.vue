@@ -5,7 +5,7 @@
         <surveyHeader></surveyHeader>
         <div class = body_servey>
             <div>
-                <button class="input1_back_btn" onclick="location.href='/measure';"> ◀ </button>
+                <button class="input1_back_btn"> ◀ </button>
             </div>
             <surveyBoardVue></surveyBoardVue>
         </div>
