@@ -3,7 +3,7 @@
     <div class ="body"> 
         <div class="board" >   
             <!-- 조직목록, 조직도 화면 -->
-            <div class="left-bar" style="float: left;  height: inherit; overflow: auto;" >
+            <div class="left-bar" style="float: left; height: inherit; width:27vw; overflow: auto;">
                 <!-- 조직목록, 조직도 버튼 -->
                 <div class="title">
                     <button :class="{list_title : titleclick  ,'non_click_title' : chartclick}" @click="clickList">조직 목록</button>
@@ -12,20 +12,26 @@
                 <!-- 버튼 이벤트에 따른 조직목록, 조직도 화면 -->
                 <div :class="{list : titleclick}" v-if="titleclick == true">
                     <!-- 조직 목록 표시 -->
-                    <ul class="list-list" style="list-style:none; font-weight:600 ; margin-right: 20px;">
+                    <ul class="list-list" style="list-style:none; font-weight:600 ; margin-right: 2vw;">
                         <!-- number.category_title : 'n'차 카테고리 표시-->
-                        <li style="margin-bottom:50px; font-size: 14px; color: #3D3E3F;" v-for="number in list_number">{{number.category_title}}
+                        <li style="margin-bottom:5vh; font-size: 0.8vw; color: #3D3E3F;" v-for="number in list_number">{{number.category_title}}
                             <div v-for="category in list_category">
                             <li class="category_content" v-if="number.index == category.category" @click="select_category(category)">
                                 <!-- number.index ==1 이면 1차 카테고리를 나타냄 -->
                                 <!-- 조직목록 표시 -->
-                                <img style="margin-right:20px; width: 50px; vertical-align: middle;" src="@/assets/building.png" alt="" v-if="number.index==1">
+                                <img style="margin-right:1.3vw; width: 3vw; vertical-align: middle;" src="@/assets/building.png" alt="" v-if="number.index==1">
                                 <h class ="category_image2" v-if="number.index!=1">{{category.image}}</h>{{category.name}}
-                                <img src="@/assets/check.png" alt="" style="width:30px; margin: 10px; float: right;" v-if="category.check==true">
+                                <img src="@/assets/check.png" alt="" style="width:1.5vw; margin: 1vw; float: right;" v-if="category.check==true">
                             </li> 
                             </div>
                         </li>
                     </ul>
+                </div>
+                
+                <div :class="{list : chartclick}" v-if="chartclick == true">
+                    g      
+                    <treeList ></treeList>
+
                 </div>
             </div>
             <div style ="border-left : 2px solid #d5d5d5; height : inherit; float: left;">
@@ -35,7 +41,7 @@
                 <!-- <div style="background: #3D3E3F; height: 800px; width: 100px;"></div> -->
                 <ul calss="select_group" style="list-style: none; position: absolute;">
                    <li class="select-list" v-for="group in select_group">
-                    <img style="margin-left:30px; margin-right:20px; width: 60px; vertical-align: middle;" src="@/assets/building.png" alt="" v-if="group.category==1">
+                    <img style="margin-left:1vw; margin-right:2vw; width: 60px; vertical-align: middle;" src="@/assets/building.png" alt="" v-if="group.category==1">
                     <h class="category_image2" id="right_bar_icon" v-if="group.category!=1">{{group.image}}</h>{{group.name}}
                    <button class="select-btn" onclick="location.href='/measure/input1';" @click="click_regi_page">+　입력하기</button></li>
                 </ul>
@@ -53,9 +59,8 @@
     background: #F8F8F8;;
     width: 85vw;
     height: 75.5vh;
-   
-    
 }
+
 .board{
     position: absolute;
     background: #FFFFFF;
@@ -64,23 +69,25 @@
     border-radius: 10px;
     border:2px solid #d5d5d5;
 }
+
 .title{
-    width: 450px;
-    height: 40px;
+    width:21vw;
+    height: auto;
     background: #F0F2F5;
     opacity: 0.5;
     border-radius: 12px;
-    margin: 30px;
+    margin: 2vw 3vw 1vw;
+    padding: 1%;
 }
 .category_image2{
-    margin-right:20px; 
-    width: 50px;
-    height: 50px;
+    margin-right:1.3vw; 
+    width: 3vw;
+    height: 3vw;
     background: #3DC984;
-    line-height: 48px;
+    line-height: 3vw;
     text-align: center;
     color: #FFFFFF;
-    border-radius: 10px;
+    border-radius: 0.6vw;
     display: inline-block;
 }
 
@@ -96,14 +103,11 @@
     border-radius: 10px;
 }
 .list{
-    margin-top: 40px;
-    margin-left:10px;
-    margin-right: 20px;
-
+    padding:2%;
 }
 .category_content{
-    margin-top:20px; 
-    font-size:18px; 
+    margin-top:2.5vh; 
+    font-size:1vw; 
     color: #000000
 }
 .category_content:hover{
@@ -113,24 +117,26 @@
 }
 .select-list{ /*선택된 카테고리 리스트*/
     border:2px solid #d5d5d5; 
-    border-radius: 10px; 
-    margin-bottom: 50px;
+    border-radius: 0.8vw; 
+    margin-bottom: 3vh;
+    padding: 0.5%;
     line-height: 10vh;
     height: 10vh;
-    width:40vw;
+    width: 44vw;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 1.2vw;
+    color: #000000;
 }
 .select-btn{ /*입력하기 버튼*/
     background: #3DC984;
     color:#FFFFFF;
     float: right;
-    margin-top: 30px;
-    margin-right: 30px;
+    margin:2.5vh ;
     border-radius: 7px;
     border: none; 
-    height:40px;
-    width: 110px;
+    height: 5.5vh;
+    width: 7.4vw;
+    font-size: 0.8vw;
     font-weight: 600;
 }
 .select-btn:hover{
@@ -138,11 +144,12 @@
     cursor: pointer;
 }
 #right_bar_icon{
-    margin-left: 30px;
-    height: 60px;
-    width: 60px;
-    line-height: 60px;
-    font-size: 20px;
+    margin-left: 1vw;
+    margin-right: 2vw;
+    height: 3vw;
+    width: 3vw;
+    line-height: 3vw;
+    font-size: 1vw;
     font-weight: 800;
 }
 
@@ -156,15 +163,13 @@
     .list_title{
         font-family: 'Open Sans';
         font-weight: 900;
-        font-size: 22px;
-        line-height: 30px;
-        width: 200px;
-        height: 35px;
-        margin-left: 10px;
-        margin-top: 1px;
+        font-size: 1.2vw;
+        line-height: auto;
+        width: 10vw;
+        height: 2vw;
         background: #ffffff;
-        border: 2px ;
-        border-radius: 10px;
+        border: none;
+        border-radius: 0.5vw;
         color: #3DC984;
      
     }
@@ -172,21 +177,20 @@
     .non_click_title{
         font-family: 'Open Sans';
         font-weight: 900;
-        font-size: 22px;
+        font-size: 1.2vw;
         line-height: 30px;
-        width: 200px;
-        height: 35px;
-        margin-left: 10px;
-        margin-top: 1px;
+        width: 10vw;
+        height: auto;
+        margin-left: 0.5vw;
         background: #F0F2F5;
-        border: 2px ;
-        border-radius: 10px;
-        
+        border: none;   
     }
 </style>
 <script>
+    import treeList from "@/components/measure/Tree-list.vue"
 
     export default {
+        
         name :"group-list",
         data() {
             
@@ -244,6 +248,7 @@
             }
         },
         components:{
+            treeList
         },
     }
     

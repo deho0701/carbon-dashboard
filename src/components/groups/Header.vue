@@ -35,7 +35,7 @@
 .group-header-move{
     margin: 1.5vh 4vw;
     color:#504f4f ;
-    font-weight: 700;
+    font-weight: 600;
     text-decoration: none;
 }
 .period{

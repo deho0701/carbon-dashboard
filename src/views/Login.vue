@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="padding-top: 1vh; padding-left: 41vw; padding-right: 40vw;">
         <h1 class="login" id="title_login">탄소 중립 지원 플랫폼</h1>
         <div class="login">
           <input placeholder="ID" class="in" v-model="ID" ><br>
@@ -14,17 +14,18 @@
   
   <style>
   .login{
-    font-size: 30px;
-    margin-left: 39vw;
+    font-size: 3.8vh;
     margin-top: 15vh;
     color: #3DC984;
- 
   }
   #title_login{
-    margin-left: 41vw;
+    width: 20vw;
+    min-width: 150px;
+    text-align: center;
   }
   .in{
     width: 20vw;
+    min-width: 150px;
     height: 5vh;
     margin-top: 1vh;
     border-radius: 15px;
@@ -32,6 +33,7 @@
   }
   #login_btn{
     width: 20.5vw;
+    min-width: 150px;
     height: 5vh;
     margin-top: 3vh;
     border-radius: 15px;
@@ -39,14 +41,14 @@
     background: linear-gradient(90deg, #3DC984 0%, #3DC984 100%);
     color:#ffffff;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 1.8vh;
 
   }
   #foget_login_text{
     color: #3DC984;
-    margin-left: 5.5vw;
     margin-top: 2vh;
-    font-size: 16px;
+    margin-left: 4vw;
+    font-size: 1vw;
   }
   #foget_login_text:hover{
     cursor: pointer;

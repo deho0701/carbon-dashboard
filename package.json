@@ -9,16 +9,20 @@
   },
   "dependencies": {
     "@coddicat/vue3-pinch-scroll-zoom": "^0.2.1",
-    "axios": "^1.2.0",
+    "axios": "^1.2.1",
     "chart.js": "^3.9.1",
     "core-js": "^3.8.3",
+    "v-treeview": "^0.2.1",
     "vue": "^3.2.13",
     "vue-chartjs": "^4.1.1",
     "vue-google-charts": "^1.1.0",
+    "vue-teatree": "^2.0.1",
     "vue-tree-chart": "^1.2.9",
+    "vue-tree-list": "^1.5.0",
     "vue3-blocks-tree": "^0.6.1",
     "vue3-google-map": "^0.15.0",
     "vue3-tree": "^0.11.4",
+    "vue3-treeselect": "^0.1.10",
     "vuex": "^4.1.0"
   },
   "devDependencies": {
