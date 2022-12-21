@@ -1,21 +1,21 @@
 <template>
     <div class="dashboard" id="dashboard5">
-        <div style="font-size:20px; font-weight: 900; color: #5A5A5A; height: 5vh; ">조직별 상위 탄소 배출량 순위
+        <div style="font-size:2.1vh; font-weight: 900; color: #5A5A5A; height: 5vh; ">조직별 상위 탄소 배출량 순위
             <button class="view_all_btn">view all</button>
         </div>
 
         <div  v-for="(rangking,index) in group_list">
-            <div style="width:inherit; height: 60px;">
+            <div style="width:inherit; height: 6.1vh;">
                 <div style="float: left;">
-                    <div style="margin-top:5px; font-weight: 600; color:#5A5A5A">{{rangking.name}}</div>
-                    <div style= "margin-top:5px; color:#9F9696">{{rangking.location}}</div>
+                    <div style="margin-top:0.5vh; font-size: 1.7vh; font-weight: 600; color:#5A5A5A">{{rangking.name}}</div>
+                    <div style= "margin-top:0.5vh; font-size: 1.6vh; color:#9F9696">{{rangking.location}}</div>
                 </div>
-                <span style="float:right; margin-top:18px; color:#00B912;" v-if="rangking.emission > rangking.pre_emission">　▲</span>
-                <span style="float:right; margin-top:18px; color:#FF0000;" v-if="rangking.emission < rangking.pre_emission">　▼</span>
-                <span style="float:right; margin-top:18px; color:#5A5A5A; font-size:22px; font-weight: bold;" v-if="rangking.emission == rangking.pre_emission">　-</span>
-                <span style="float:right; margin-top:18px;font-weight: 600;">{{rangking.emission}}kg</span>
+                <span style="float:right; margin-top:1.8vh; color:#00B912;" v-if="rangking.emission > rangking.pre_emission">　▲</span>
+                <span style="float:right; margin-top:1.8vh; color:#FF0000;" v-if="rangking.emission < rangking.pre_emission">　▼</span>
+                <span style="float:right; margin-top:1.8vh; color:#5A5A5A; font-size:2.3vh; font-weight: bold;" v-if="rangking.emission == rangking.pre_emission">　-</span>
+                <span style="float:right; margin-top:1.8vh; font-size: 1.7vh; font-weight: 600;">{{rangking.emission}}kg</span>
                 </div>
-            <div style="width:32vw; height:1px; background: #F4F4F4;" v-if ="index!=4"> </div> 
+            <div style="width:32vw; height:0.1vh; background: #F4F4F4;" v-if ="index!=4"> </div> 
         </div>
 
     </div>

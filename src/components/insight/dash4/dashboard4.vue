@@ -1,9 +1,9 @@
 <template>
     <div class="dashboard" id="dashboard4s">
-        <div style="font-size:20px; font-weight: 900; color: #5A5A5A; height: 8vh; ">총 탄소 배출량/상쇄량 
+        <div style="font-size:2vh; font-weight: 900; color: #5A5A5A; height: 8vh; ">총 탄소 배출량/상쇄량 
             <button class="더보기_btn">. . .</button>
         </div>
-        <chart4 style="height: auto; position:absolute;" ></chart4>
+        <chart4 style="height:26vh; width: 16vw; position:absolute;" ></chart4>
     </div>
 </template>
 
@@ -20,7 +20,7 @@
         float: right;
         background: none;
         border: none;
-        font-size: large;
+        font-size: 2vh;
         font-weight: 900;
         color: #aeaeae;
     }

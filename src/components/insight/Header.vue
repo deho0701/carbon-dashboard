@@ -9,6 +9,12 @@
 </template>
 
 <style>
+    .insight-header{
+        background-color: white;
+        width: 85vw;
+        height: 14vh;
+        overflow: hidden
+    }
 
 </style>
 

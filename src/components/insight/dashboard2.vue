@@ -9,14 +9,14 @@
 
         <div class="type_contents" v-if="typeClick==true">
             <div  v-for="(emission_dash,index) in emission_dash_list">
-                <div style="width:inherit; height: 70px;">
+                <div style="width:inherit; height: 7.1vh;">
                     <div style="float: left;">
-                        <div style="margin-top:10px; font-weight: 600; color:#5A5A5A">{{emission_dash.name}}</div>
-                        <div style= "margin-top:5px; color:#9F9696">{{emission_dash.num}}개 항목</div>
+                        <div style="margin-top:1.1vh; font-weight: 600; font-size: 1.7vh; color:#5A5A5A">{{emission_dash.name}}</div>
+                        <div style= "margin-top:0.5vh; color:#9F9696; font-size: 1.6vh;">{{emission_dash.num}}개 항목</div>
                     </div>
-                    <p style="float:right; margin-top:23px;font-weight: 600;">{{emission_dash.emission}}kg</p>
+                    <p style="float:right; margin-top:2.3vh; font-size: 1.7vh; font-weight: 600;">{{emission_dash.emission}}kg</p>
                 </div>
-                <div style="width:inherit; height:2px; background: #E3E3E3;" v-if ="index!=4"> </div>
+                <div style="width:inherit; height:0.2vh; background: #E3E3E3;" v-if ="index!=4"> </div>
             </div>
         </div>
     </div>
@@ -31,6 +31,7 @@
     }
 
     .dashboard_title{
+        font-size: 2.3vh;
         color:#5A5A5A;
         margin-top:0px;
         display: inline-block;
@@ -41,7 +42,7 @@
         background: none;
         border: 0px;
         color:#000000;
-        font-size: 14px;
+        font-size: 1.4vh;
     }
 
     .전체보기_btn:hover{
@@ -53,46 +54,47 @@
         height: 4vh;
         width: inherit;
         background: #F0F2F5;
-        border-radius: 8px;
+        border-radius: 0.8vh;
         color:#A3A9A6;
         font-weight: 600;
     }
     .non_click_type_group{
         float: left;
-        margin-top: 2px;
-        margin-bottom: 2px;
+        margin-top: 0.2vh;
+        margin-bottom: 0.2vh;
         height: 3.3vh;
         width:6.6vw;
         background: #F0F2F5;
-        border-radius: 8px;
         color:#A3A9A6;
         border: none;
         font-weight: 600;
     }
 
     .type_btn{
-        margin-top: 2px;
-        margin-bottom: 2px;
-        margin-left: 2px;
+        margin-top: 0.2vh;
+        margin-bottom: 0.2vh;
+        margin-left: 0.2vw;
         float: left;
         height: 3.3vh;
         width:6.6vw;
         border: none;
-        border-radius: 8px;
+        border-radius: 0.8vh;
         background:#3DC984;
         color:#FFFFFF;
+        font-weight: 600;
     }
 
     .group_btn{
-        margin-top: 2px;
-        margin-bottom: 2px;
-        margin-right: 2px;
+        margin-top: 0.2vh;
+        margin-bottom: 0.2vh;
+        margin-right: 0.2vh;
         float: left;
         height: 3.3vh;
         width: 6.6vw;
         border: none;
         background:#3DC984;
         color:#FFFFFF;
+        font-weight: 600;
     }
     .type_contents{
         overflow: scroll;

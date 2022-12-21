@@ -1,6 +1,6 @@
 <template>
     <div class="dashboard" id="dashboard6">
-        <chart6 style="  height: auto;"></chart6>
+        <chart6 style=" height: 27vh; width: 17.5vw;"></chart6>
     </div>
 </template>
 
