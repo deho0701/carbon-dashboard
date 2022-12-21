@@ -41,7 +41,7 @@
                 <!-- <div style="background: #3D3E3F; height: 800px; width: 100px;"></div> -->
                 <ul calss="select_group" style="list-style: none; position: absolute;">
                    <li class="select-list" v-for="group in select_group">
-                    <img style="margin-left:1vw; margin-right:2vw; width: 60px; vertical-align: middle;" src="@/assets/building.png" alt="" v-if="group.category==1">
+                    <img style="margin-left:1vw; margin-right:2vw; width: 3vw; vertical-align: middle; " src="@/assets/building.png" alt="" v-if="group.category==1">
                     <h class="category_image2" id="right_bar_icon" v-if="group.category!=1">{{group.image}}</h>{{group.name}}
                    <button class="select-btn" onclick="location.href='/measure/input1';" @click="click_regi_page">+　입력하기</button></li>
                 </ul>
@@ -124,8 +124,9 @@
     height: 10vh;
     width: 44vw;
     font-weight: 600;
-    font-size: 1.2vw;
+    font-size: 1.1vw;
     color: #000000;
+    
 }
 .select-btn{ /*입력하기 버튼*/
     background: #3DC984;
@@ -134,7 +135,7 @@
     margin:2.5vh ;
     border-radius: 7px;
     border: none; 
-    height: 5.5vh;
+    height: 4.5vh;
     width: 7.4vw;
     font-size: 0.8vw;
     font-weight: 600;
@@ -146,6 +147,7 @@
 #right_bar_icon{
     margin-left: 1vw;
     margin-right: 2vw;
+    margin-top: 1vh;
     height: 3vw;
     width: 3vw;
     line-height: 3vw;
@@ -204,16 +206,16 @@
                     {index:"2",category_title: "2차 카테고리"},
                     {index:"3",category_title: "3차 카테고리"}
                 ],
+
                 list_category:[
                     {category:"1", image:'building.png' ,name:"경상대", check:''},
-                    {category:"2" ,image:'상', name:"상경대학", check:''},
-                    {category:"2" ,image:'공', name:"공과대학", check:''},
-                    {category:"3" ,image:'경', name:"경영학과", check:''},
+                    {category:"2" ,image:'상', name:"상경대학", check:''}, 
+                    {category:"2" ,image:'공', name:"공과대학", check:''}, 
+                    {category:"3" ,image:'경', name:"경영학과", check:''},   
                     {category:"3" ,image:'항', name:"항공우주 및 소프트웨어학과", check:''},
-                    {category:"3" ,image:'건', name:"건축공학과", check:''},
-                    
-                    
+                    {category:"3" ,image:'건', name:"건축공학과", check:''},                  
                 ],
+
                 select_group:[
                     //{category:"2" ,image:'상', name:"상경대학"},
                     //{category:"2" ,image:'공', name:"공과대학"},
