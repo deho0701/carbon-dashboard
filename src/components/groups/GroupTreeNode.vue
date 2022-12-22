@@ -7,13 +7,13 @@
             <span class="group-tree-node-totalEmission-left">전체 탄소 배출량 </span>
             <span class="group-tree-node-totalEmission-right"> {{ scope12CarbonEmission+scope3CarbonEmission}} kg</span>
             <div class="group-tree-node-emission-graph12">           
-                <span style="color: #4F4F4F; ">scope1,2</span>
-                <span style="color: #5A6A89; font-size: 14px; font-weight: 600;">{{scope12CarbonEmission}}kg</span>
+                <span style="color: #4F4F4F; font-size: 1.5vh; ">scope1,2</span>
+                <span style="color: #5A6A89; font-size: 1.4vh; font-weight: 600;">{{scope12CarbonEmission}}kg</span>
             </div>
             <progress value="0.4" class="progress_bar">dasdas</progress>
             <div class="group-tree-node-emission-graph3">
-                <span style="color: #4F4F4F;">scope3</span>
-                <span style="color: #5A6A89; font-size: 14px; font-weight: 600;">{{scope3CarbonEmission}}kg</span>
+                <span style="color: #4F4F4F; font-size: 1.5vh;">scope3</span>
+                <span style="color: #5A6A89; font-size: 1.4vh; font-weight: 600;">{{scope3CarbonEmission}}kg</span>
             </div>
             <progress value="0.6" class="progress_bar">dasdas</progress>
         </div>
@@ -26,10 +26,9 @@
 
 <style>
 .group-tree-node{
-    width: 221px;
-    height: 271px;
-
-    border-radius:15px;
+    width: 12vw;
+    height: 28vh;
+    border-radius:1vw;
     border: none;
     background: #FFFFFF;
 }
@@ -45,54 +44,54 @@
     padding: 1vw 0.5vw 0 0.5vw ;
 }
 .group-tree-node-mid progress{
-    width: 200px;
-    height: 11px;
+    width: 11vw;
+    height: 1vh;
     border: none;
 }
 .group-tree-node-mid progress::-webkit-progress-bar {
     border: 0;
-    border-radius: 20px;
+    border-radius: 1vw;
     background-color: #EDEDED;
 }
 
 .group-tree-node-mid progress::-webkit-progress-value {
     border: 0;
-    border-radius: 20px;
+    border-radius:1vw;
     background: #62BC8A;
 }
 
 
 .group-tree-node-top{
-    border-radius: 15px 15px 0 0;
+    border-radius: 1vw 1vw 0 0;
     background-color: #3C5C85;
     color: white;
-    height:44px ;
+    height:4.5vh ;
 }
 .group-tree-node-mid{
     border:1px solid #D9DBE9 ;
     margin-top:0;
-    height:176px ;
+    height:18.2vh ;
 }
 .group-tree-node-bottom{
     border:1px solid #D9DBE9 ;
-    border-radius: 0 0 15px 15px;
+    border-radius: 0 0 1vw 1vw;
     background: #f6f6f6;
     margin-top:0;
-    height: 48px;
+    height: 4.8vh;
     
 }
 .group-tree-node-GroupName{
     position: absolute;
-    top: 8%;
+    top: 2.1vh;
     transform: translate(-50%, -50%);
     font-weight: 500;
-    font-size: 18px;
+    font-size: 1vw;
 }
 .group-tree-node-manager{
     font-size:0.7vw;
     position: absolute;
-    top: 90%;
-    left: 15%;
+    top: 25.2vh;
+    left: 2vw;
     transform: translate(-50%, -50%);
     text-align: left;
     color:#4F4F4F;
@@ -100,8 +99,8 @@
 }
 .group-tree-node-managerName{
     position: absolute;
-    top: 90%;
-    left: 50%;
+    top: 25.2vh;
+    left: 6.1vw;
     transform: translate(-50%, -50%);
     font-weight: 600;
     font-size: 1vw;
@@ -109,8 +108,8 @@
 }
 .group-tree-node-totalEmission-left{
     position: absolute;
-    top: 26%;
-    left: 35%;
+    top: 7.4vh;
+    left: 4.3vw;
     transform: translate(-50%, -50%);
     font-weight: 600;
     font-size: 0.9vw;
@@ -118,8 +117,8 @@
 }
 .group-tree-node-totalEmission-right{
     position: absolute;
-    top: 26%;
-    left: 80%;
+    top: 7.4vh;
+    left: 9.8vw;
     transform: translate(-50%, -50%);
     font-weight: 600;
     font-size: 1vw;

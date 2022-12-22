@@ -26,6 +26,11 @@
             <Fertilizer_useVue class="fertilizer_use_page" v-else-if = "selected_category_vue==8"></Fertilizer_useVue>
             <Animal_possessionVue class="animal_possession_page" v-else-if = "selected_category_vue==9"></Animal_possessionVue>
             <Forest_absorptionVue class="forest_absorptionVue_page" v-else-if = "selected_category_vue==10"></Forest_absorptionVue>
+            <Waste_disposalFillingVue class="forest_absorptionVue_page" v-else-if = "selected_category_vue==11"></Waste_disposalFillingVue>
+            <Waste_disposalIncinerationVue class="forest_absorptionVue_page" v-else-if = "selected_category_vue==12"></Waste_disposalIncinerationVue>
+            <Waste_disposalSewage_treatmentVue class="forest_absorptionVue_page" v-else-if = "selected_category_vue==13"></Waste_disposalSewage_treatmentVue>
+            <Waste_disposalBiologicalVue class="forest_absorptionVue_page" v-else-if = "selected_category_vue==14"></Waste_disposalBiologicalVue>
+            <Waste_disposalWastewaterVue class="forest_absorptionVue_page" v-else-if = "selected_category_vue==15"></Waste_disposalWastewaterVue>
         </div>
         <button class ="input2_regi_btn" id="add_info_regi_btn" style="margin-top:30px">상단 정보 등록</button>     
     </div>
@@ -98,6 +103,11 @@ import Fugitive_emissionsVue from './Divide-carbon/Fugitive_emissions.vue';
 import Fertilizer_useVue from './Divide-carbon/Fertilizer_use.vue';
 import Animal_possessionVue from './Divide-carbon/Animal_possession.vue';
 import Forest_absorptionVue from './Divide-carbon/Forest_absorption.vue';
+import Waste_disposalFillingVue from './Divide-carbon/Waste_disposal(filling).vue';
+import Waste_disposalIncinerationVue from './Divide-carbon/Waste_disposal(incineration).vue';
+import Waste_disposalSewage_treatmentVue from './Divide-carbon/Waste_disposal(sewage_treatment).vue';
+import Waste_disposalBiologicalVue from './Divide-carbon/Waste_disposal(biological).vue';
+import Waste_disposalWastewaterVue from './Divide-carbon/Waste_disposal(Wastewater).vue';
 
 
     export default {

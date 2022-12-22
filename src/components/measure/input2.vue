@@ -215,6 +215,11 @@ import measuretable from "@/components/measure/Measuretable.vue"
                     {index:"8", name:"비료 사용"},
                     {index:"9", name:"대학 소유 동물"},
                     {index:"10", name:"산림에 의한 흡수"},
+                    {index:"11",name:"폐기물 처리시설(매립)"},
+                    {index:"12", name:"폐기물 처리시설(소각)"},
+                    {index:"13", name: "폐기물 처리시설(하수처리)"},
+                    {index:"14", name: "폐기물 처리시설(생물학적처리)"},
+                    {index:"15", name: "폐기물 처리시설(폐수처리)"},
                 ],
                 page_list:["<","1","2","3","4","5",">"],
                 info_text: "고정연소란?고정연소:  보일러, 버너, 터빈, 히터, 소각로, 엔진, flare 등과 같은 고정된 장비들을 사용하여 전력, 스팀, 열 또는 동력을 생산하는데 사용되는 연료의 연소로부터 발생하는 배출"
