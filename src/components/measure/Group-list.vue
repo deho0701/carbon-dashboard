@@ -14,7 +14,7 @@
                     <!-- 조직 목록 표시 -->
                     <ul class="list-list" style="list-style:none; font-weight:600 ; margin-right: 2vw;">
                         <!-- number.category_title : 'n'차 카테고리 표시-->
-                        <li style="margin-bottom:5vh; font-size: 0.8vw; color: #3D3E3F;" v-for="number in list_number">{{number.category_title}}
+                        <li style=" margin-bottom:5vh; font-size: 0.8vw; color: #3D3E3F;" v-for="number in list_number">{{number.category_title}}
                             <div v-for="category in list_category">
                             <li class="category_content" v-if="number.index == category.category" @click="select_category(category)">
                                 <!-- number.index ==1 이면 1차 카테고리를 나타냄 -->
@@ -103,7 +103,7 @@
     border-radius: 10px;
 }
 .list{
-    padding:2%;
+    padding:1vw;
 }
 .category_content{
     margin-top:2.5vh; 
