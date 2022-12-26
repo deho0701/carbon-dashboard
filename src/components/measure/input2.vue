@@ -10,7 +10,7 @@
                 <button :class ="{category_select: SearchCategory ,'nonClick_category':SelectCategory}"  @click="clickSearch" id="search" >카테고리별 검색</button>
                 <button :class ="{category_select: SelectCategory, 'nonClick_category':SearchCategory }"  @click="clickSelect" id="select">카테고리명 선택</button><br>
                 <input :class ="{input_category: SearchCategory}" placeholder="카테고리를 검색하세요." v-if="SearchCategory==true"/> 
-                <select :class ="{input_category: SelectCategory}"  v-model="selected_category" mutiple placeholder="카테고리명을 선택하세요." v-if="SelectCategory==true" id="option">
+                <select :class ="{input_category: SelectCategory}"  v-model="selected_category" mutiple placeholder="카테고리명을 선택하세요." v-if="SelectCategory==true" id="option" onchange="clickCategory()">
                     <option v-for="category_name in category_option_list" :value="category_name.index">{{category_name.name}}</option>
                 </select>
                 <div :class="{info_text_category:SearchCategory}"  v-if="SearchCategory==true">카테고리를 선택해주세요.</div>
@@ -22,9 +22,9 @@
             <div class = "info_board">
                 <!-- 추가 정보 입력하기 상단 -->
                 <div style="font-size: 20px; color:black;">추가정보 입력하기
-                <button class="input1_back_btn" id="drop_btn" @click="clickInfoDrop" v-if ="info_board_defalt==true">▼</button>
-                <button class="input1_back_btn" id="drop_btn" @click="clickInfoDrop"  v-if ="info_board_defalt==false">▲</button></div>
-                
+                    <button class="input1_back_btn" id="drop_btn" @click="clickInfoDrop()" v-if ="info_board_defalt==true">▼</button>
+                    <button class="input1_back_btn" id="drop_btn" @click="clickInfoDrop()"  v-if ="info_board_defalt==false">▲</button>
+                </div>
             </div>
             <!-- 추가 정보 입력하기 내용  -->
             <div v-if="selected_category!=''">
@@ -199,8 +199,9 @@ import measuretable from "@/components/measure/Measuretable.vue"
                 SearchCategory:true,
                 SelectCategory:false,
                 info_board_defalt:true,
-                selected_category:'',
+                selected_category:'null',
                 info_table_defalt:true,
+                showCategory:'null',
 
                 emssion_info_list_input2:[],
 
@@ -240,9 +241,11 @@ import measuretable from "@/components/measure/Measuretable.vue"
                 this.SearchCategory=false,
                 this.SelectCategory=true
             },
+            clickCategory(){
+                this.info_board_defalt=false
+            },
             clickInfoDrop(){
                 this.info_board_defalt=!this.info_board_defalt
-
             }
         }
     }

@@ -1,20 +1,7 @@
 <!-- 추가 정보 입력하기 내용 -->
 <template>
     <div class="info_board" id="add_info">
-        <div style="color:black;">입력방식
-            <label><input class="radio_btn" type="radio" name="methodRegist" value="직접 입력하기" checked>직접 입력하기</label>
-            <label><input class="radio_btn" type="radio" name="methodRegist" value="엑셀 등록하기">엑셀 등록하기</label>
-            <label><input class="radio_btn" type="radio" name="methodRegist" value="자동 연동하기">자동 연동하기</label>
-        </div>
-        <div style="margin-top:30px; ">
-            탄소 배출 내용<br>
-            <input type="text" class="addInfo_input" id="carbon_emissions_content">
-        </div> 
-        <div style="margin-top:30px">기간 설정
-            <input class = "date_btn" id = "start_data" type="date" data-placeholder="시작 날짜" required aria-required="true">
-            <input class = "date_btn" id = "end_data" type="date">
-        </div>
-        <div style="margin-top:30px">구분<br>
+        <div><br>
             <!-- '구분'에서 카테고리별 상세 내용 -->
             <power_usageVue class="power_usage_page" v-if = "selected_category_vue==1"></power_usageVue>
             <steam_usageVue class="steam_usage_page" v-else-if = "selected_category_vue==2"></steam_usageVue>
@@ -37,57 +24,7 @@
 </template>
 
 <style>
-    #add_info{
-        margin-top: 0px;
-        border: 0px;
-    }
-
-    .radio_btn{
-        margin-left:60px; 
-    }
-    .addInfo_input{
-        width: 80%;
-        height: 40px;
-        margin-top: 20px;
-        background: #F6F7FB;
-        border: 0px;
-        border-radius: 7px;
-    }
-    #carbon_emissions_content{
-        height:35px;
-    }
-    .addInfo_input:focus{
-        outline: none;
-    }
-    .add_info_divide{
-        margin-top: 20px;
-        font-size: 14px;
-    }
-    .date_btn{
-        width: 150px;
-        margin-left: 60px;
-        height: 35px;
-        background: #F6F7FB;
-        border: 0px;
-        border-radius: 7px;
-        color: #727374;
-        padding-inline-start: 1%;
-        padding-inline-end: 1%;
-        content: attr(data-placeholder);
-    }
-    .date_btn:focus{
-        outline:none;
-    }
-    #add_info_regi_btn{
-        background:#3DC984;
-        border: none;
-        color: #ffffff;
-        margin-left: 46%;
-        margin-bottom: 20px;
-    }
-    #add_info_regi_btn:hover{
-        background:#2cb570;
-    }
+    
     
 
 
@@ -127,7 +64,12 @@ import Waste_disposalWastewaterVue from './Divide-carbon/Waste_disposal(Wastewat
             Fugitive_emissionsVue,
             Fertilizer_useVue,
             Animal_possessionVue,
-            Forest_absorptionVue
+            Forest_absorptionVue,
+            Waste_disposalFillingVue,
+            Waste_disposalIncinerationVue,
+            Waste_disposalSewage_treatmentVue,
+            Waste_disposalBiologicalVue,
+            Waste_disposalWastewaterVue
         },
         methods:{
         

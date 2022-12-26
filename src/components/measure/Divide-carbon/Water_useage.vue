@@ -1,5 +1,18 @@
 <!--수도 사용 내용 입력의 사용 부분 -->
 <template>
+    <div style="color:black;">입력방식
+            <label><input class="radio_btn" type="radio" name="methodRegist" value="직접 입력하기" checked>직접 입력하기</label>
+            <label><input class="radio_btn" type="radio" name="methodRegist" value="엑셀 등록하기">엑셀 등록하기</label>
+            <label><input class="radio_btn" type="radio" name="methodRegist" value="자동 연동하기">자동 연동하기</label>
+    </div>
+    <div style="margin-top:30px; ">
+        탄소 배출 내용<br>
+        <input type="text" class="addInfo_input" id="carbon_emissions_content">
+    </div> 
+    <div style="margin-top:30px">기간 설정
+        <input class = "date_btn" id = "start_data" type="date" data-placeholder="시작 날짜" required aria-required="true">
+        <input class = "date_btn" id = "end_data" type="date">
+    </div>
     <div class="add_info_divide" id="building_name_text">건물명 / 배출 시설명
         <input type="text" class="addInfo_input" id ="building_name_input" placeholder="본관">
     </div>
