@@ -27,42 +27,32 @@
                 </div>
             </div>
             <!-- 추가 정보 입력하기 내용  -->
-            <div v-if="selected_category!=''">
-                <add_regi :class="{add_regi_page: info_board_defalt}" v-bind:selected_category_vue="selected_category" v-if="info_board_defalt==false"></add_regi>
+            <div v-if="SelectCategory==true">
+                <add_regi :class="{add_regi_page: info_board_defalt}" v-bind:selected_category_vue="selected_category" 
+                v-if="info_board_defalt==false" v-on:childEvent="cilckRegister()"></add_regi>
             </div>
             
             <!-- 탄소 배출 내용 테이블 -->
             <div>
-                <div class="info_board" id="info_board_bottom" v-if="info_table_defalt==true">
+                <div class="info_board" id="info_board_bottom">
                     <button class= "measure_btn" id="btn_del_input2">선택 삭제</button> 
                     <button class= "measure_btn" id="btn_edit_input2">수정하기</button>
-                    <div style="text-align: center; width:inherit; border: 1px solid rgba(206, 206, 206, 0.5); border-radius: 7px; margin-top: 15px; height: 350px; ">
+                    <div  v-if="info_table_defalt==true" style="text-align: center; width:inherit; border: 1px solid rgba(206, 206, 206, 0.5); border-radius: 7px; margin-top: 15px; height: 350px; ">
                         <img style="margin-top:10%; width: 5%;" src="@/assets/exclamationMark.png" alt=""/>
                         <div style="margin-top:30px">데이터가 존재하지 않습니다.</div>
                     </div>
-                    <ul class = "page_btn">
-                        <li class ="page_btn_list" id="input2_page_btn_list" v-for="page in page_list">{{page}}</li>
-                    </ul>
+                    <div v-else-if="info_table_defalt==false">
+                        <measuretable class="m_table" v-bind:emssion_info_list=emssion_info_list_input2></measuretable>
+                    </div>
                 </div>
-
-                <div class="info_board" id="info_board_bottom" v-if="info_table_defalt==false">
-                    <button class= "measure_btn" id="btn_del_input2">선택 삭제</button> 
-                    <button class= "measure_btn" id="btn_edit_input2">수정하기</button>
-                    <measuretable class="m_table" v-bind:emssion_info_list=emssion_info_list_input2></measuretable>
-                    <ul class = "page_btn">
-                        <li class ="page_btn_list" id="input2_page_btn_list" v-for="page in page_list">{{page}}</li>
-                    </ul>
-                </div>
-               
             </div>
 
 
         </div>
         <!-- 등록/ 취소 버튼쓰 -->
         <div style="margin-left: 36%;">
-            <button class="input2_regi_btn" id="input2-register-btn">등록하기</button>
-            <button class="input2_regi_btn" id="input2-cancle-btn">취소하기</button>
-            
+            <button class="input2_regi_btn" id="input2-register-btn" @click="click_register_table">등록하기</button>
+            <button class="input2_regi_btn" id="input2-cancle-btn" onclick="location.href='/measure/input1';">취소하기</button>
         </div>
 
     </div>
@@ -182,15 +172,14 @@
     .input_category:focus{
         outline: none;
     }
-    .select_category{
-
-    }
+ 
 
     
 </style>
 <script>
 import add_regi from "@/components/measure/addInfo-register"
-import measuretable from "@/components/measure/Measuretable.vue"
+import measuretable from "@/components/measure/MeasuretableA.vue"
+
     export default {
         
         name :"input2",
@@ -222,7 +211,6 @@ import measuretable from "@/components/measure/Measuretable.vue"
                     {index:"14", name: "폐기물 처리시설(생물학적처리)"},
                     {index:"15", name: "폐기물 처리시설(폐수처리)"},
                 ],
-                page_list:["<","1","2","3","4","5",">"],
                 info_text: "고정연소란?고정연소:  보일러, 버너, 터빈, 히터, 소각로, 엔진, flare 등과 같은 고정된 장비들을 사용하여 전력, 스팀, 열 또는 동력을 생산하는데 사용되는 연료의 연소로부터 발생하는 배출"
             }
 
@@ -235,7 +223,8 @@ import measuretable from "@/components/measure/Measuretable.vue"
         methods:{
             clickSearch(){
                 this.SearchCategory=true,
-                this.SelectCategory=false
+                this.SelectCategory=false,
+                this.info_board_defalt=true
             },
             clickSelect(){
                 this.SearchCategory=false,
@@ -245,7 +234,14 @@ import measuretable from "@/components/measure/Measuretable.vue"
                 this.info_board_defalt=false
             },
             clickInfoDrop(){
+                
                 this.info_board_defalt=!this.info_board_defalt
+            },
+            cilckRegister(){
+                this.info_table_defalt=false
+            },
+            click_register_table(){
+                console.log("등록되었습니다")
             }
         }
     }
