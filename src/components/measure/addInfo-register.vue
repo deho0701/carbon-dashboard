@@ -19,12 +19,22 @@
             <Waste_disposalBiologicalVue class="forest_absorptionVue_page" v-else-if = "selected_category_vue==14"></Waste_disposalBiologicalVue>
             <Waste_disposalWastewaterVue class="forest_absorptionVue_page" v-else-if = "selected_category_vue==15"></Waste_disposalWastewaterVue>
         </div>
-        <button class ="input2_regi_btn" id="add_info_regi_btn" style="margin-top:30px">상단 정보 등록</button>     
+        <button class ="input2_regi_btn" id="add_info_regi_btn" @click="click_regi_btn()">상단 정보 등록</button>     
     </div>
 </template>
 
 <style>
-    
+        #add_info_regi_btn{
+            margin-top:6vh;
+            background:#3DC984;
+            border: none;
+            color: #ffffff;
+            margin-left: 34vw;
+            margin-bottom: 20px;
+        }
+        #add_info_regi_btn:hover{
+            background:#2cb570;
+        }   
     
 
 
@@ -72,7 +82,9 @@ import Waste_disposalWastewaterVue from './Divide-carbon/Waste_disposal(Wastewat
             Waste_disposalWastewaterVue
         },
         methods:{
-        
+            click_regi_btn(){
+                this.$emit("childEvent");
+            }
         }
     }
     
