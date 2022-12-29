@@ -5,7 +5,7 @@
             <!-- 조직목록, 조직도 화면 -->
             <div class="left-bar" style="float: left; height: inherit; width:27vw; overflow: auto;">
                 <!-- 조직목록, 조직도 버튼 -->
-                <div class="title">
+                <div class="title" style="position:">
                     <button :class="{list_title : titleclick  ,'non_click_title' : chartclick}" @click="clickList">조직 목록</button>
                     <button :class="{list_title : chartclick , 'non_click_title' : titleclick}" @click="clickChart">조직도</button>
                 </div>
