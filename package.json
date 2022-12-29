@@ -15,6 +15,8 @@
     "v-treeview": "^0.2.1",
     "vue": "^3.2.13",
     "vue-chartjs": "^4.1.1",
+    "vue-good-table": "^2.21.11",
+    "vue-good-table-next": "^0.2.1",
     "vue-google-charts": "^1.1.0",
     "vue-teatree": "^2.0.1",
     "vue-tree-chart": "^1.2.9",

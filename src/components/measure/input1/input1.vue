@@ -44,16 +44,8 @@
         </div>
 
         <div>
-            <measuretable class="m_table" v-bind:emssion_info_list="emssion_info_list_parent"/>
-        </div>
-
-        <div class="page_btn">
-            <ul>
-                <li class ="page_btn_list" v-for="page in page_list">{{page}}</li>
-            </ul>
-        </div>
-        <div style="height: 30px;">
-
+            <!-- <measuretable class="m_table" v-bind:emssion_info_list="emssion_info_list_parent"/> -->
+            <measuretable class="m_table"/>
         </div>
 
     </div>
@@ -159,33 +151,15 @@
 }
 
 .m_table{
-    margin-top:25px;
-    height: 250px;
+    margin-top:3vh;
     width: 100%;
-}
-.page_btn{
-    margin-top: 50px;
-    margin-left:36%;
-    text-align: center;
-    width: auto;
-}
-.page_btn_list{
-    margin-left: 15px;
-    float: left;
-    list-style: none;
-    background: #FFFFFF;
-    line-height: 30px;
-    height: 30px;
-    width: 30px;
-    border-radius: 5px;
-    color: #223354;
-    font-weight: 600;
+    margin-bottom: 3vh;
 }
 
 </style>
 
 <script>
-    import measuretable from "@/components/measure/Measuretable.vue"
+    import measuretable from "@/components/measure/MeasuretableA.vue"
     import chart from "@/components/measure/input1/chart.ts"
 
     export default {
@@ -206,7 +180,6 @@
                     {checked:false,content:"경영학과 직원 출퇴근",building:"1,423kwh",emissions:"1,352",start:"2022.01.01",end:"2022.01.05",source:"고정연소",scope:"Scope 1", category: "경상대 > 경영대학 > 경영학과"},
                     {checked:false,content:"경영학과 직원 출퇴근",building:"1,423kwh",emissions:"1,352",start:"2022.01.01",end:"2022.01.05",source:"고정연소",scope:"Scope 1", category: "경상대 > 경영대학 > 경영학과"},
                 ],
-                page_list:["<","1","2","3","4","5",">"]
             }
         },
         components:{

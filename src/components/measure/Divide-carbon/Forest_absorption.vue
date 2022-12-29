@@ -1,5 +1,18 @@
 <!--탄소 배출 내용 입력의 전력 사용 부분 -->
 <template>
+    <div style="color:black;">입력방식
+            <label><input class="radio_btn" type="radio" name="methodRegist" value="직접 입력하기" checked>직접 입력하기</label>
+            <label><input class="radio_btn" type="radio" name="methodRegist" value="엑셀 등록하기">엑셀 등록하기</label>
+    </div>
+    <div style="margin-top:30px; ">
+        탄소 배출 내용<br>
+        <input type="text" class="addInfo_input" id="carbon_emissions_content">
+    </div> 
+    <div style="margin-top:30px">기간 설정
+        <input class = "date_btn" id = "start_data" type="date" data-placeholder="시작 날짜" required aria-required="true">
+        <input class = "date_btn" id = "end_data" type="date">
+    </div>
+
     <div class="add_info_divide">산림 유형
         <select class="addInfo_input" id="operating_entity_input">
             <option value="0">혼효림</option>
