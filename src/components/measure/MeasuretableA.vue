@@ -71,7 +71,6 @@ import { VueGoodTable } from 'vue-good-table-next';
     },
     components: {
         VueGoodTable,
-        Tree,
     }
   };
   </script>
