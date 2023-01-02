@@ -29,16 +29,13 @@
                 </div>
                 
                 <div :class="{list : chartclick}" v-if="chartclick == true">
-                    g      
-                    <treeList ></treeList>
-
+                    <treeList style="margin-left:2vw; font-weight: 700;"></treeList>
                 </div>
             </div>
             <div style ="border-left : 2px solid #d5d5d5; height : inherit; float: left;">
             <!-- 체크한 조직 보여지는 화면 -->
             </div>
             <div class="right-bar" style = "float: left; position:relative; padding: 3%; height:66vh; width:47.146vw; overflow: auto;">
-                <!-- <div style="background: #3D3E3F; height: 800px; width: 100px;"></div> -->
                 <ul calss="select_group" style="list-style: none; position: absolute;">
                    <li class="select-list" v-for="group in select_group">
                     <img style="margin-left:1vw; margin-right:2vw; width: 3vw; vertical-align: middle; " src="@/assets/building.png" alt="" v-if="group.category==1">
@@ -190,7 +187,6 @@
 </style>
 <script>
     import treeList from "@/components/measure/Tree-list.vue"
-
     export default {
         
         name :"group-list",
