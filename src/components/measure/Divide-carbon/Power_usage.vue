@@ -7,15 +7,15 @@
             <label><input class="radio_btn" type="radio" name="methodRegist" value="2" v-model="input_regi">자동 연동하기</label>
         </div>
         <div v-if="input_regi == 0">
-            <div style="margin-top:6vh;">
+            <div style="margin-top:50px;">
             탄소 배출 내용<br>
             <input type="text" class="addInfo_input" id="carbon_emissions_content">
             </div> 
-            <div style="margin-top:6vh">기간 설정
+            <div style="margin-top:30px">기간 설정
                 <input class = "date_btn" id = "start_data" type="date" data-placeholder="시작 날짜" required aria-required="true">
                 <input class = "date_btn" id = "end_data" type="date">
             </div>
-            <div class="add_info_divide" id="building_name_text" style="margin-top:6vh">건물명 / 배출 시설명
+            <div class="add_info_divide" id="building_name_text" style="margin-top:4vh">건물명 / 배출 시설명
                 <input type="text" class="addInfo_input" id ="building_name_input" placeholder="경상대 본관">
             </div>
             <div class="add_info_divide">운영주체
@@ -33,9 +33,9 @@
             </div>
             <div class="add_info_divide" >전력 사용량
                 <input class="addInfo_input" id="usage_input" placeholder="12,456">
-                <select class="addInfo_input" id="power_usage_drop">
-                    <option value="0">kwh</option>
-                    <option value="1">wh</option>
+                <select v-model="unit_s" class="addInfo_input" id="power_usage_drop">
+                    <option value="kwh">kwh</option>
+                    <option value="wh">wh</option>
                 </select>
             </div>
         </div>
@@ -46,6 +46,8 @@
             <Power_usage_autoVue></Power_usage_autoVue>
         </div>
     </div>
+    {{ info_list }}
+    <button class ="input2_regi_btn" id="add_info_regi_btn" @click="click_regi_btn(unit_s)">상단 정보 등록</button>
 </template>
 
 <style>
@@ -78,7 +80,7 @@
     .date_btn{
         width: 150px;
         margin-left: 60px;
-        height: 35px;
+        height: 40px;
         background: #F6F7FB;
         border: 0px;
         border-radius: 7px;
@@ -91,9 +93,6 @@
         outline:none;
     }
 
-     #building_name_text{
-        margin-top:20px
-    }
     #building_name_input{
         margin-top:0px;
         width:20%;
@@ -138,14 +137,23 @@ import Power_usage_autoVue from './Power_usage_auto.vue';
         name :"power_usage",
         data() {
             return{
-                input_regi:0
+                unit_s:'kwh',
+                input_regi:0,
+                info_list:{content:"",data:"",emissions:"",StartDate:"",EndDate:"",scope:"Scope2"},
             }
         },
         components:{ 
             Power_usage_autoVue
         },
         methods:{
-        
+            click_regi_btn(unit_s){
+                var usage_input = document.getElementById('usage_input').value
+                this.info_list.content = document.getElementById('carbon_emissions_content').value
+                this.info_list.data =  usage_input+unit_s
+                this.info_list.emissions = usage_input+4
+                this.info_list.StartDate = document.getElementById('start_data').value
+                this.info_list.EndDate = document.getElementById('end_data').value
+            },  
         }
     }
 </script>

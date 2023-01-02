@@ -1,15 +1,15 @@
 <!--탄소 배출 내용 입력의 전력 사용 부분 -->
 <template>
     <div>
-        <div style="margin-top:6vh; ">
+        <div style="margin-top:50px; ">
             탄소 배출 내용<br>
             <input type="text" class="addInfo_input" id="carbon_emissions_content">
         </div> 
-        <div style="margin-top:6vh">기간 설정
+        <div style="margin-top:30px">기간 설정
             <input class = "date_btn" id = "start_data" type="date" data-placeholder="시작 날짜" required aria-required="true">
             <input class = "date_btn" id = "end_data" type="date">
         </div>
-        <div class="add_info_divide" id="building_name_text" style="margin-top:6vh">건물명 / 배출 시설명
+        <div class="add_info_divide" id="building_name_text" style="margin-top:4vh">건물명 / 배출 시설명
             <input type="text" class="addInfo_input" id ="building_name_input" placeholder="경상대 본관">
         </div>
         <div class="add_info_divide">운영주체
@@ -87,22 +87,19 @@
     #add_info_regi_btn:hover{
         background:#2cb570;
     }   
-     #building_name_text{
-        margin-top:6vh
-    }
     #kor_power_num_input1{
         margin-top:3vh;
         width:20%;
         background: #ffffff;
         border: 1px solid #DDE2E5;
-        margin-left: 4vw;
+        margin-left: 3.3vw;
     }
     #kor_power_num_input2{
         margin-top:3vh;
         width:20%;
         background: #ffffff;
         border: 1px solid #DDE2E5;
-        margin-left: 6vw;
+        margin-left: 5.2vw;
     }
 
 

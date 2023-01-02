@@ -20,7 +20,7 @@ export default{
     unmounted(){},
     methods:{
         pri:{
-            console.log(this.sampleData)
+            
         }
     }
 }
