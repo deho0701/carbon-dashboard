@@ -100,9 +100,8 @@
                 this.info_list.data = document.getElementById('usage_input').value+"마리"
                 this.info_list.emissions = usage_input+4
                 this.info_list.StartDate = document.getElementById('start_data').value
-      
                 this.info_list.EndDate = document.getElementById('end_data').value
-
+                this.$emit("childEvent");
             },
         }
     }

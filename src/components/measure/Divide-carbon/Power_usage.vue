@@ -135,6 +135,7 @@
 import Power_usage_autoVue from './Power_usage_auto.vue';
     export default {
         name :"power_usage",
+        emits:["childEvent"],
         data() {
             return{
                 unit_s:'kwh',
@@ -153,6 +154,7 @@ import Power_usage_autoVue from './Power_usage_auto.vue';
                 this.info_list.emissions = usage_input+4
                 this.info_list.StartDate = document.getElementById('start_data').value
                 this.info_list.EndDate = document.getElementById('end_data').value
+                this.$emit("childEvent",this.info_list);
             },  
         }
     }
