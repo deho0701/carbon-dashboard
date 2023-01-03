@@ -54,6 +54,7 @@
 
 <script>
     export default {
+    
         name :"power_usage",
         data() {
             return{
@@ -101,7 +102,6 @@
                 this.info_list.emissions = usage_input+4
                 this.info_list.StartDate = document.getElementById('start_data').value
                 this.info_list.EndDate = document.getElementById('end_data').value
-                this.$emit("childEvent");
             },
         }
     }

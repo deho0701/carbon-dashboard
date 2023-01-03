@@ -1,29 +1,33 @@
 <template>
-    <div>
-        <vue-good-table
-            :columns="columns"
-            :rows="rows" 
-            :select-options="{ enabled: true }"
-            :sort-options="{enabled: false}"
-            :pagination-options="{
-                enabled: true,
-                mode: 'pages',
-                perPage: 5
-            }"
-            >
-        </vue-good-table>
-    </div>
-  </template>
+  <div>
+      <vue-good-table
+          :columns="columns"
+          :rows="rows" 
+          :select-options="{ enabled: true }"
+          :sort-options="{enabled: false}"
+          :pagination-options="{
+              enabled: true,
+              mode: 'pages',
+              perPage: 5
+          }"
+          >
+      </vue-good-table>
+      {{content}}
+  </div>
+</template>
   
+<style>
+</style>
   
   <script>
 import 'vue-good-table-next/dist/vue-good-table-next.css'
 import { VueGoodTable } from 'vue-good-table-next';
-
+import {EventBus} from './input1/input1.vue'
   export default {
     name: 'my-component',
     data(){
       return {
+        content:'',
         columns: [
           {
             label: '탄소 배출 내용',
