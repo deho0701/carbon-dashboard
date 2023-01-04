@@ -39,7 +39,7 @@
                         <Mobile_combustionVue class="mobile_combustion_page" v-else-if = "selected_category==6" v-on:childEvent="cilckRegister()"></Mobile_combustionVue>
                         <Fugitive_emissionsVue class="fugitive_emissions_page" v-else-if = "selected_category==7" v-on:childEvent="cilckRegister()"></Fugitive_emissionsVue>
                         <Fertilizer_useVue class="fertilizer_use_page" v-else-if = "selected_category==8" v-on:childEvent="cilckRegister()"></Fertilizer_useVue>
-                        <Animal_possessionVue class="animal_possession_page" v-else-if = "selected_category==9" v-on:childEvent="cilckRegister()"></Animal_possessionVue>
+                        <Animal_possessionVue :info_list_input2="info_list_input2" @event="cilckRegister()" class="animal_possession_page" v-else-if = "selected_category==9"></Animal_possessionVue>
                         <Forest_absorptionVue class="forest_absorptionVue_page" v-else-if = "selected_category==10" v-on:childEvent="cilckRegister()"></Forest_absorptionVue>
                         <Waste_disposalFillingVue class="forest_absorptionVue_page" v-else-if = "selected_category==11" v-on:childEvent="cilckRegister()"></Waste_disposalFillingVue>
                         <Waste_disposalIncinerationVue class="forest_absorptionVue_page" v-else-if = "selected_category==12" v-on:childEvent="cilckRegister()"></Waste_disposalIncinerationVue>

@@ -165,6 +165,7 @@
         name :"input1",
         data() {
             return{
+                
                 N_emssions:0,
                 M_emssions:0,
                 info_Group_Text:[

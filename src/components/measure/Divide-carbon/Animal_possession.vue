@@ -54,6 +54,7 @@
 
 <script>
     export default {
+        props:["info_list_input2"],
     
         name :"power_usage",
         data() {
@@ -102,6 +103,7 @@
                 this.info_list.emissions = usage_input+4
                 this.info_list.StartDate = document.getElementById('start_data').value
                 this.info_list.EndDate = document.getElementById('end_data').value
+                this.$emit('event',this.info_list_input2=this.info_list)
             },
         }
     }
