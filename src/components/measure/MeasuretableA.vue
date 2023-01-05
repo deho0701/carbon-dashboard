@@ -1,6 +1,17 @@
 <template>
     <div>
+      <div>
+            <button class="measure_btn" id="btn_del" @click="del_btn()">선택삭제</button>
+            <button class="measure_btn" id="btn_copy" @click="copy_btn">복사하기</button>
+            <button class="measure_btn" id="btn_edit" @click="edit_btn">수정하기</button>
+
+            <button class="measure_btn" id="btn_regi"  onclick="location.href='/measure/register';" >+　등록하기</button>
+            <button class="measure_btn" id="btn_excle">엑셀 업로드</button>
+            <img class="measure_btn"  id="btn_search" src="@/assets/search.png" alt=""/>
+            {{ this.row_data }}
+        </div>
         <vue-good-table
+            @on-selected-rows-change="selectionChanged"
             :columns="columns"
             :rows="rows" 
             :select-options="{ enabled: true }"
@@ -11,6 +22,9 @@
                 perPage: 5
             }"
             >
+            <div slot="selected-row-actions">
+              <button>Action 1</button>
+            </div>
         </vue-good-table>
     </div>
   </template>
@@ -24,6 +38,7 @@ import { VueGoodTable } from 'vue-good-table-next';
     name: 'my-component',
     data(){
       return {
+        row_data:[],
         columns: [
           {
             label: '탄소 배출 내용',
@@ -71,6 +86,11 @@ import { VueGoodTable } from 'vue-good-table-next';
     },
     components: {
         VueGoodTable,
+    },
+    methods:{
+      del_btn(){
+        this.row_data.push();
+      }
     }
   };
   </script>
