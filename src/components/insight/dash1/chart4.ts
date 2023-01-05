@@ -66,7 +66,7 @@ export default defineComponent({
           position:'right' as const,
           labels : {
             usePointStyle: true,
-            padding:16,
+            padding:12,
             boxWidth:100,
             boxHeight:20,
           }

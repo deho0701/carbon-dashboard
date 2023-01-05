@@ -5,27 +5,38 @@
           <insight_header/>
           <div class="body" id="insight_body">
             <div style="float:right; margin-right:5vw; margin-top:0px;">
-              <button class="date_btn_insight">월</button>
-              <button class="date_btn_insight">년</button>
-              <button class="date_btn_insight" style="font-size:1.2vh;">최근 3년</button>
+              <button class="date_btn_insight" @click="click_month()">월</button>
+              <button class="date_btn_insight" @click="click_year()">년</button>
+              <button class="date_btn_insight" style="font-size:1.2vh;" @click="click_3year()">최근 3년</button>
             </div>
             <span style="font-size:24px; font-weight: bolder; color:#5A5A5A;">탄소배출량 전체보기</span><br>
             <span style ="font-size: 15px; color: #8D8D8D; margin-bottom:10px;">Carbon Emission Overview</span>
             
-            
+            <!-- 조직명, 전체 배출량, 총 탄소 배출량 대비 Scope 비율 -->
             <div>
               <dashboard1_nameVue></dashboard1_nameVue>
               <dashboard1_totalEmissionVue></dashboard1_totalEmissionVue>
               <dashboard1_scopeVue></dashboard1_scopeVue>
             </div>
-            <div>
+            <!-- 최근 3개년 히스토리 -->
+            <div v-if="history==true" style="margin-top:30vh; width:76vw; text-align: center;">
+              <span class="date_info_btn"> ＜ </span>
+              <span class="date_info">최근 3개년 히스토리</span>
+              <span class="date_info_btn"> ＞ </span>
               <dashboard2Vue></dashboard2Vue>
-              <dashboard3Vue></dashboard3Vue>
             </div>
-            <div>
-              <dashboard4Vue></dashboard4Vue>
-              <Dashboard5></Dashboard5>
-              <Dashboard6></Dashboard6>
+            <!-- 월 그래프 -->
+            <div v-if="category_dashboard_month==true" style="margin-top:30vh; width:76vw; text-align: center;">
+              <span class="date_info_btn" @click="click_back_month()"> ＜ </span>
+              <span class="date_info">{{ year }}년 {{ month }}월</span>
+              <span class="date_info_btn" @click="click_plus_month()"> ＞ </span>
+   
+            </div>
+            <!-- 년 그래프 -->
+            <div v-if="category_dashboard_year==true" style="margin-top:30vh; width:76vw; text-align: center;">
+              <span class="date_info_btn" @click="click_back_year()"> ＜ </span>
+              <span class="date_info">{{ year }}년</span>
+              <span class="date_info_btn" @click="click_plus_year()"> ＞ </span>
             </div>
           </div>
       </div>
@@ -41,6 +52,17 @@
     background: #FFFFFF;
     border: 1px solid #CFCFCF;
     border-radius: 1.1vh;
+  }
+  .date_info{
+    font-size:4vh;
+    color:#5A5A5A;
+    font-weight: bolder;
+  }
+  .date_info_btn{
+    height: 5vh;
+    width: 5vh;
+    font-size: 4.5vh;
+    font-weight: bolder;
   }
   #insight_body{
     height: 130vh;
@@ -61,8 +83,8 @@ import insight_header from "@/components/insight/Header.vue"
 import dashboard1_nameVue from "@/components/insight/dash1/dashboard1_name.vue"
 import dashboard1_totalEmissionVue from "@/components/insight/dash1/dashboard1_totalEmission.vue"
 import dashboard1_scopeVue from "@/components/insight/dash1/dashboard1_scope.vue"
-import dashboard2Vue from "@/components/insight/dashboard2.vue"
-import dashboard3Vue from "@/components/insight/dash3/dashboard3.vue"
+import dashboard3Vue from "@/components/insight/dashboard3.vue"
+import dashboard2Vue from "@/components/insight/dash3/dashboard2.vue"
 import dashboard4Vue from "@/components/insight/dash4/dashboard4.vue"
 import Dashboard6 from "@/components/insight/dash6/dashboard6.vue"
 import Dashboard5 from "@/components/insight/dashboard5.vue"
@@ -83,8 +105,53 @@ import Dashboard5 from "@/components/insight/dashboard5.vue"
       },
       data() {
         return{
+          history:false,
+          category_dashboard_month:true,
+          category_dashboard_year:false,
+          month:1,
+          year:2023
         }
 
       },
+      methods:{
+        click_month(){
+          this.category_dashboard_month = true
+          this.category_dashboard_year = false
+          this.history = false
+        },
+        click_year(){
+          this.category_dashboard_month = false
+          this.category_dashboard_year = true
+          this.history = false
+        },
+        click_3year(){
+          this.history = true
+          this.category_dashboard_month = false
+          this.category_dashboard_year = false
+        },
+        click_back_month(){
+          if(this.month == 1){
+            this.month=12
+          }
+          else if (1<this.month <= 12){
+            this.month=this.month-1
+          }
+        },
+        click_plus_month(){
+          if(this.month == 12){
+            this.month=1
+            this.year=this.year+1
+          }
+          else if (1<=this.month < 12){
+            this.month=this.month+1
+          }
+        },
+        click_back_year(){
+          this.year=this.year-1
+        },
+        click_plus_year(){
+          this.year=this.year+1
+        }
+      }
   }
 </script>

@@ -6,14 +6,14 @@
 <style>
     #dashboard3{
         float: left;
-        margin-left:1vw;
-        width: 58.5vw;
-        height: 45vh;
+        width: 76vw;
+        height: 55vh;
         padding: 2%;
+        margin-top:3vh;
     }
 </style>
 <script>
-import chart3 from './chart3';
+import chart3 from './chart2';
   export default {
       name :"dashboard_3",
       components:{

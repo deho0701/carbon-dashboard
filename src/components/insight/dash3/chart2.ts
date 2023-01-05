@@ -31,7 +31,7 @@ export default defineComponent({
     },
     height: {
       type: Number,
-      default: 400
+      default: 600
     },
     cssClasses: {
       default: '',
@@ -51,45 +51,29 @@ export default defineComponent({
   setup(props) {
     const chartData = {
       labels: [
-        '01','02','03','04','05','06','07','08','09','10','11','12'
+        '2021년','2022년','2023년'
       ],
       datasets: [
         {
-          label : '이동연소',
-          backgroundColor: ['#4339F2'],
-          borderRadius:30,
-          data: [40, 50, 60,40,20,50,10,50,40,60,50,43],
-          barThickness: 20,
+          label : 'Scope1',
+          backgroundColor: ['#E0F599'],
+          data: [210000,210000,210000],
+          barThickness: 50,
         },
         {
-          label : '고정연소',
-          backgroundColor: ['#34B53A'],
-          data: [40, 50, 60,30,50,50,30,50,40,60,50,43],
-          barThickness: 20,
+          label : 'Scope2',
+          backgroundColor: ['#62BC8A'],
+          data: [1300000,1000200,420123],
+          barThickness: 50,
         },
         {
-          label : '임직원 출퇴근',
-          backgroundColor: ['#FFB200'],
-          borderRadius:30,
-          data: [40, 50, 60,60,70,50,60,50,40,60,50,43],
-          barThickness: 20,
-        },
-        {
-          label : '비료 사용',
-          backgroundColor: ['#FF0000'],
-          borderRadius:30,
-          data: [0,0,0,0,10,0,0,20,0,0,0,0],
-          barThickness: 20,
-        },
-        {
-          label : '기타',
-          backgroundColor: ['#5A6A89'],
-    
-          borderRadius:30,
-          data: [40, 50, 60,30,60,50,40,50,40,60,50,43],
-          barThickness: 20,
-        },
-      ]
+          label : 'Scope3',
+          backgroundColor: ['#15575C'],
+          data: [420123,850000,123000],
+          barThickness: 50,
+        }
+      ],
+      
     }
 
     const chartOptions = {
@@ -97,14 +81,12 @@ export default defineComponent({
       maintainAspectRatio: false,
       plugins:{
         legend: {
-          position:'top' as const,
+          position:'right' as const,
           align	: 'start' as const,
           labels : {
-            padding: 50,
-            
-            usePointStyle: true,
-            boxWidth:20,
-            boxHeight:20,
+            padding: 40,
+            boxWidth:30,
+            boxHeight:30,
             color:'#223354'
           }
 
@@ -112,22 +94,17 @@ export default defineComponent({
       },
       scales:{
         xAxes:{
-          stacked:true,
           ticks:{
             padding:20
-          },
-          
+          },  
           grid:{
             display:false
           }
         },
         yAxes:{
-          stacked:true,
           grid:{
             display:false
           },
-          max:300
-          
         },
       },
     }
