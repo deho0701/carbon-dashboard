@@ -4,12 +4,12 @@
             <label><input class="radio_btn" type="radio" name="methodRegist" value="직접 입력하기" checked>직접 입력하기</label>
             <label><input class="radio_btn" type="radio" name="methodRegist" value="엑셀 등록하기">엑셀 등록하기</label>
     </div>
-    <div style="margin-top:30px; ">
+    <div style="margin-top:50px; ">
         탄소 배출 내용<br>
         <input type="text" class="addInfo_input" id="carbon_emissions_content">
     </div> 
-    <div class="add_info_divide" id="building_name_text">시설명/위치
-        <input type="text" class="addInfo_input" id ="building_name_input" placeholder="경상대 본관">
+    <div class="add_info_divide" id="building_name_text" style="margin-top:4vh;">시설명/위치
+        <input type="text" class="addInfo_input" style="margin-left:94px;" id ="building_name_input" placeholder="경상대 본관">
     </div>
     <div style="margin-top:30px">매립 시작 날짜
         <input class = "date_btn" id = "start_data" type="date" data-placeholder="시작 날짜" required aria-required="true">
@@ -22,15 +22,15 @@
         </select>
     </div>
     <div class="add_info_divide">폐기물 세부 구분
-        <select class="addInfo_input" id="supplier_drop" v-if="kindOfwaste == '0'">
+        <select class="addInfo_input" id="supplier_drop" v-if="kindOfwaste == '0'" style="margin-left:61px;">
             <option v-for = "waste in waste_life_list" >{{waste}}</option>
         </select>
-        <select class="addInfo_input" id="supplier_drop" v-else-if="kindOfwaste == '1'">
+        <select class="addInfo_input" id="supplier_drop" v-else-if="kindOfwaste == '1'" style="margin-left:61px;">
             <option v-for = "waste in waste_corpor_list" >{{waste}}</option>
         </select>
     </div>
     <div class="add_info_divide">매립 시설 유형
-        <select class="addInfo_input" id="supplier_drop_steam">
+        <select class="addInfo_input" id="supplier_drop_steam" style="margin-left:73px">
             <option value="0">관리형 매립지 - 혐기성</option>
             <option value="1">관리형 매립지 - 준호기성</option>
             <option value="2">비관리형 매립지 - 매립고 5cm 이상</option>
@@ -39,11 +39,13 @@
         </select>
     </div>
     <div class="add_info_divide" >매립 양
-        <input class="addInfo_input" id="steam_usage_input" placeholder="12,456">
+        <input class="addInfo_input" id="steam_usage_input" placeholder="12,456" style="margin-left:120px">
         <select class="addInfo_input" id="steam_usage_drop">
             <option value="0">톤</option>
         </select>
     </div>
+    {{info_list}}
+    <button class ="input2_regi_btn" id="add_info_regi_btn" @click="click_regi_btn()">상단 정보 등록</button>
 </template>
 
 <style>
@@ -76,6 +78,7 @@
         name :"waste_disposal_filling",
         data() {
             return{
+                info_list:{content:"",data:"",emissions:"",StartDate:"",EndDate:"",scope:"Scope1"},
                 kindOfwaste: "0",
                 waste_life_list:[
                     "혼합 폐기물",
@@ -109,6 +112,15 @@
         components:{ 
         },
         methods:{
+            click_regi_btn(){
+                var usage_input = document.getElementById('steam_usage_input').value
+                this.info_list.content = document.getElementById('carbon_emissions_content').value
+                this.info_list.data =  usage_input+"m^3"
+                this.info_list.emissions = usage_input+4
+                this.info_list.StartDate = document.getElementById('start_data').value
+                this.info_list.EndDate = document.getElementById('end_data').value
+                this.$emit("childEvent");
+            }, 
         
         }
     }

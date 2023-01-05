@@ -25,11 +25,11 @@ export default defineComponent({
     },
     width: {
       type: Number,
-      default: 150
+      default: 50
     },
     height: {
       type: Number,
-      default: 250
+      default: 50
     },
     cssClasses: {
       default: '',
@@ -47,11 +47,11 @@ export default defineComponent({
   },
   setup(props) {
     const chartData = {
-      labels: ['상쇄량','배출량'],
+      labels: ['Scope1','Scope2','Scope3'],
       datasets: [
         {
-          backgroundColor: ['#FFB200', '#3DC984'], 
-          data: [36,64],
+          backgroundColor: ['#E0F599', '#62BC8A','#15575C'], 
+          data: [50,64,60],
           cutout:0,
           borderWidth:0
         }
@@ -63,11 +63,11 @@ export default defineComponent({
       maintainAspectRatio: false,
       plugins:{
         legend: {
-          position:'bottom' as const,
+          position:'right' as const,
           labels : {
             usePointStyle: true,
-            padding:30,
-            boxWidth:20,
+            padding:16,
+            boxWidth:100,
             boxHeight:20,
           }
         }

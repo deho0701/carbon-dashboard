@@ -1,84 +1,79 @@
 <template>
-    <v-treeview :items="items"></v-treeview>
-  </template>
+  <Tree style="color:black; font-size:2vh"
+    :nodes="data"
+    :use-icon="true"
+    @nodeClick="onNodeClick"
+  />
   
-  <script>
+</template>
 
-  
-    export default {
-      data: () => ({
-        items: [
+<script>
+import { ref } from "vue";
+import Tree from "vue3-tree";
+import "vue3-tree/dist/style.css";
+
+export default {
+  components: {
+    Tree,
+  },
+  setup() {
+    const data = ref([
+      {
+        id: 1,
+        label: "경상대",
+        nodes: [
           {
-            id: 1,
-            name: 'Applications :',
-            children: [
-              { id: 2, name: 'Calendar : app' },
-              { id: 3, name: 'Chrome : app' },
-              { id: 4, name: 'Webstorm : app' },
+            id: 2,
+            label: "상경대학",
+            nodes:[
+              {
+                id: 3,
+                label:"경영학과"
+              }
             ],
           },
           {
-            id: 5,
-            name: 'Documents :',
-            children: [
+            id: 4,
+            label: "공과대학",
+            nodes: [
+              {
+                id: 5,
+                label: "항공우주 및 소프트웨어 학과",
+              },
               {
                 id: 6,
-                name: 'vuetify :',
-                children: [
-                  {
-                    id: 7,
-                    name: 'src :',
-                    children: [
-                      { id: 8, name: 'index : ts' },
-                      { id: 9, name: 'bootstrap : ts' },
-                    ],
-                  },
-                ],
+                label: "건축공학과",
               },
-              {
-                id: 10,
-                name: 'material2 :',
-                children: [
-                  {
-                    id: 11,
-                    name: 'src :',
-                    children: [
-                      { id: 12, name: 'v-btn : ts' },
-                      { id: 13, name: 'v-card : ts' },
-                      { id: 14, name: 'v-window : ts' },
-                    ],
-                  },
-                ],
-              },
-            ],
-          },
-          {
-            id: 15,
-            name: 'Downloads :',
-            children: [
-              { id: 16, name: 'October : pdf' },
-              { id: 17, name: 'November : pdf' },
-              { id: 18, name: 'Tutorial : html' },
-            ],
-          },
-          {
-            id: 19,
-            name: 'Videos :',
-            children: [
-              {
-                id: 20,
-                name: 'Tutorials :',
-                children: [
-                  { id: 21, name: 'Basic layouts : mp4' },
-                  { id: 22, name: 'Advanced techniques : mp4' },
-                  { id: 23, name: 'All about app : dir' },
-                ],
-              },
-              { id: 24, name: 'Intro : mov' },
-              { id: 25, name: 'Conference introduction : avi' },
             ],
           },
         ],
-      }),
+      },
+    ]);
+    const searchText = ref("");
+    const onNodeExpanded = (node, state) => {
+      console.log("state: ", state);
+      console.log("node: ", node);
+    };
+
+    const onUpdate = (nodes) => {
+      console.log("nodes:", nodes);
+    };
+
+    const onNodeClick = (node) => {
+      console.log(node);
+     
     }
-  </script>
+
+    return {
+      data,
+      searchText,
+      onNodeExpanded,
+      onUpdate,
+      onNodeClick,
+    };
+  },
+};
+</script>
+
+<style lang="scss">
+</style>

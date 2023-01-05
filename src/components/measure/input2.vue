@@ -28,8 +28,26 @@
             </div>
             <!-- 추가 정보 입력하기 내용  -->
             <div v-if="SelectCategory==true">
-                <add_regi :class="{add_regi_page: info_board_defalt}" v-bind:selected_category_vue="selected_category" 
-                v-if="info_board_defalt==false" v-on:childEvent="cilckRegister()"></add_regi>
+                <div :class="{add_regi_page: info_board_defalt}" v-if="info_board_defalt==false" >
+                    <div class="info_board" id="add_info"><br>
+                        <!-- '구분'에서 카테고리별 상세 내용 -->
+                        <power_usageVue class="power_usage_page" v-if = "selected_category==1" v-on:childEvent="cilckRegister()"></power_usageVue>
+                        <steam_usageVue class="steam_usage_page" v-else-if = "selected_category==2" v-on:childEvent="cilckRegister()"></steam_usageVue>
+                        <Water_useageVue class="water_usage_page" v-else-if = "selected_category==3" v-on:childEvent="cilckRegister()"></Water_useageVue>
+                        <Waste_usageVue class="wast_usage_page" v-else-if = "selected_category==4" v-on:childEvent="cilckRegister()"></Waste_usageVue>
+                        <Stationary_combustionVue class="stationary_combustion_page" v-else-if = "selected_category==5" v-on:childEvent="cilckRegister()"></Stationary_combustionVue>
+                        <Mobile_combustionVue class="mobile_combustion_page" v-else-if = "selected_category==6" v-on:childEvent="cilckRegister()"></Mobile_combustionVue>
+                        <Fugitive_emissionsVue class="fugitive_emissions_page" v-else-if = "selected_category==7" v-on:childEvent="cilckRegister()"></Fugitive_emissionsVue>
+                        <Fertilizer_useVue class="fertilizer_use_page" v-else-if = "selected_category==8" v-on:childEvent="cilckRegister()"></Fertilizer_useVue>
+                        <Animal_possessionVue :info_list_input2="info_list_input2" @event="cilckRegister()" class="animal_possession_page" v-else-if = "selected_category==9"></Animal_possessionVue>
+                        <Forest_absorptionVue class="forest_absorptionVue_page" v-else-if = "selected_category==10" v-on:childEvent="cilckRegister()"></Forest_absorptionVue>
+                        <Waste_disposalFillingVue class="forest_absorptionVue_page" v-else-if = "selected_category==11" v-on:childEvent="cilckRegister()"></Waste_disposalFillingVue>
+                        <Waste_disposalIncinerationVue class="forest_absorptionVue_page" v-else-if = "selected_category==12" v-on:childEvent="cilckRegister()"></Waste_disposalIncinerationVue>
+                        <Waste_disposalSewage_treatmentVue class="forest_absorptionVue_page" v-else-if = "selected_category==13" v-on:childEvent="cilckRegister()"></Waste_disposalSewage_treatmentVue>
+                        <Waste_disposalBiologicalVue class="forest_absorptionVue_page" v-else-if = "selected_category==14" v-on:childEvent="cilckRegister()"></Waste_disposalBiologicalVue>
+                        <Waste_disposalWastewaterVue class="forest_absorptionVue_page" v-else-if = "selected_category==15" v-on:childEvent="cilckRegister()"></Waste_disposalWastewaterVue>
+                    </div> 
+                </div>
             </div>
             
             <!-- 탄소 배출 내용 테이블 -->
@@ -44,7 +62,9 @@
                     <div v-else-if="info_table_defalt==false">
                         <measuretable class="m_table" v-bind:emssion_info_list=emssion_info_list_input2></measuretable>
                     </div>
+                    
                 </div>
+                {{ info_list_input2 }}
             </div>
 
 
@@ -101,22 +121,20 @@
     #btn_edit_input2{
         margin-top:0px
     }
-
-
     #drop_btn{
         float: right;
-        width: 40px;
-        height: 40px;
+        width: 4.1vh;
+        height: 4.1vh;
         vertical-align: middle;
     }
     .input2_regi_btn{
-        margin-top: 40px;
+        margin-top:4vh;
         background:#ffffff;
-        border: 2px solid #d5d5d5;
-        border-radius: 10px;
+        border: 0.3vh solid #d5d5d5;
+        border-radius: 1vh;
         height: 45px;
-        width: 150px;
-        margin-left: 50px;
+        width: 8vw;
+        margin-left: 2.5vw;
         font-size: 14px;
     }
     .input2_regi_btn:hover{
@@ -131,11 +149,22 @@
         background:#2cb570;
     }
     .add_regi_page{
-        padding-left: 40px;
+        padding-left: 50px;
         padding-right: 40px;
         padding-bottom: 60px;
         margin-top: 0px;
         border: 0px;
+    }
+    #add_info_regi_btn{
+        margin-top:2vh;
+        background:#3DC984;
+        border: none;
+        color: #ffffff;
+        margin-left: 35vw;
+        margin-bottom: 20px;
+    }
+    #add_info_regi_btn:hover{
+        background:#2cb570;
     }
 
 </style>
@@ -167,7 +196,6 @@
         width: 80%;
         height: 30px;
         margin-top:10px
-        
     }
     .input_category:focus{
         outline: none;
@@ -177,11 +205,24 @@
     
 </style>
 <script>
-import add_regi from "@/components/measure/addInfo-register"
 import measuretable from "@/components/measure/MeasuretableA.vue"
+import power_usageVue from './Divide-carbon/Power_usage.vue';
+import steam_usageVue from './Divide-carbon/Steam_usage.vue';
+import Water_useageVue from './Divide-carbon/Water_useage.vue';
+import Waste_usageVue from './Divide-carbon/Waste_usage.vue';
+import Stationary_combustionVue from './Divide-carbon/Stationary_combustion.vue';
+import Mobile_combustionVue from './Divide-carbon/Mobile_combustion.vue';
+import Fugitive_emissionsVue from './Divide-carbon/Fugitive_emissions.vue';
+import Fertilizer_useVue from './Divide-carbon/Fertilizer_use.vue';
+import Animal_possessionVue from './Divide-carbon/Animal_possession.vue';
+import Forest_absorptionVue from './Divide-carbon/Forest_absorption.vue';
+import Waste_disposalFillingVue from './Divide-carbon/Waste_disposal(filling).vue';
+import Waste_disposalIncinerationVue from './Divide-carbon/Waste_disposal(incineration).vue';
+import Waste_disposalSewage_treatmentVue from './Divide-carbon/Waste_disposal(sewage_treatment).vue';
+import Waste_disposalBiologicalVue from './Divide-carbon/Waste_disposal(biological).vue';
+import Waste_disposalWastewaterVue from './Divide-carbon/Waste_disposal(Wastewater).vue';
 
-    export default {
-        
+    export default { 
         name :"input2",
         data() {
             return{
@@ -192,7 +233,7 @@ import measuretable from "@/components/measure/MeasuretableA.vue"
                 info_table_defalt:true,
                 showCategory:'null',
 
-                emssion_info_list_input2:[],
+                info_list_input2:{content:"",data:"",emissions:"",StartDate:"",EndDate:"",scope:""},
 
                 category_option_list:[
                     {index:"1", name:"전력 사용"},
@@ -216,9 +257,22 @@ import measuretable from "@/components/measure/MeasuretableA.vue"
 
         },
         components:{ 
-            add_regi,
-            measuretable
-            
+            power_usageVue,
+            steam_usageVue,
+            Water_useageVue,
+            Waste_usageVue,
+            Stationary_combustionVue,
+            Mobile_combustionVue,
+            Fugitive_emissionsVue,
+            Fertilizer_useVue,
+            Animal_possessionVue,
+            Forest_absorptionVue,
+            Waste_disposalFillingVue,
+            Waste_disposalIncinerationVue,
+            Waste_disposalSewage_treatmentVue,
+            Waste_disposalBiologicalVue,
+            Waste_disposalWastewaterVue,
+            measuretable,  
         },
         methods:{
             clickSearch(){
@@ -234,11 +288,15 @@ import measuretable from "@/components/measure/MeasuretableA.vue"
                 this.info_board_defalt=false
             },
             clickInfoDrop(){
-                
                 this.info_board_defalt=!this.info_board_defalt
             },
-            cilckRegister(){
+            cilckRegister(childEvent){
                 this.info_table_defalt=false
+                this.info_list_input2.content = childEvent.content
+                this.info_list_input2.data = childEvent.data
+                this.info_list_input2.StartDate = childEvent.StartDate
+                this.info_list_input2.EndDate = childEvent.EndDate
+                this.info_list_input2.scope = childEvent.scope
             },
             click_register_table(){
                 console.log("등록되었습니다")

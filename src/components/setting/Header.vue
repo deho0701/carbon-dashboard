@@ -13,13 +13,7 @@
     padding-bottom: 2%;
     padding-top: 1%
   }
-  .dashboard{
-    background: #FFFFFF;
-    width: 76.5vw;
-    border-radius: 10px;
-    border:2px solid #d5d5d5;
-    margin-bottom: 2vh;
-  }
+
 </style>
 
 

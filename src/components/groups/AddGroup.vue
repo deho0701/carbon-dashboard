@@ -3,6 +3,7 @@
     <h2 class="edit-group-title">조직도 편집</h2>
     <h3>전체 {{GroupNum}} </h3>
     <div class="add-group-iinput">
+        <TreeListVue></TreeListVue>
 
     </div>
     <button class="add-group-commit" @click="OffEditGroup">저장하기</button>
@@ -46,10 +47,13 @@
 
 <script>
 import { useStore } from "vuex";
+import TreeListVue from "../measure/Tree-list.vue";
 
 export default{ 
     name:'',
-    components:{},
+    components:{
+        TreeListVue
+    },
     data(){
         return{
             GroupNum:0
