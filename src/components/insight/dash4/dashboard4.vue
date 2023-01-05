@@ -31,7 +31,7 @@
 </style>
 
 <script>
-import chart4 from './chart4';
+import chart4 from '../dash1/chart4';
   export default {
       name :"dashboard_4",
       components:{
