@@ -1,15 +1,17 @@
 <template>
-    <div class="dashboard" id="dashboard3">
-      <chart3 style="width:inherit; height: inherit;"></chart3>
+    <div class="dashboard" id="dashboard2">
+      <chart3 style="width:inherit; height: inherit; "></chart3>
     </div>
 </template>
 <style>
-    #dashboard3{
+    #dashboard2{
+        background-color:transparent;
         float: left;
         width: 76vw;
         height: 55vh;
         padding: 2%;
         margin-top:3vh;
+        border: none;
     }
 </style>
 <script>

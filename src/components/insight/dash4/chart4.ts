@@ -51,46 +51,27 @@ export default defineComponent({
   setup(props) {
     const chartData = {
       labels: [
-        '2021년','2022년','2023년'
+        '고정연소','이동연소','탈루배출','폐기물 처리시설','비료사용','폐기물','대학 동물 사육','산림에 의한 흡수','전력'
+        
       ],
       datasets: [
         {
           label : 'Scope1',
-          backgroundColor: ['#E0F599'],
-          data: [210000,210000,210000],
-          barThickness: 50,
+          borderRadius:20,
+          backgroundColor: ['#15575C','#62BC8A','#A0A0A0','#C7C5C5','#EAE7E7','#F1F1F1','#F1F1F1','#F1F1F1','#F1F1F1','#F1F1F1',],
+          data: [142,132,120,100,75,60,42,30,20],
+          barThickness: 20,
+          padding:4,
         },
-        {
-          label : 'Scope2',
-          backgroundColor: ['#62BC8A'],
-          data: [1300000,1000200,420123],
-          barThickness: 50,
-        },
-        {
-          label : 'Scope3',
-          backgroundColor: ['#15575C'],
-          data: [420123,850000,123000],
-          barThickness: 50,
-        }
       ],
-      
+      indexAxis:'y'
     }
 
     const chartOptions = {
       responsive: true,
       maintainAspectRatio: false,
       plugins:{
-        legend: {
-          position:'right' as const,
-          align	: 'start' as const,
-          labels : {
-            padding: 40,
-            boxWidth:30,
-            boxHeight:30,
-            color:'#223354'
-          }
-
-        },
+        legend: {display: false} 
       },
       scales:{
         xAxes:{
@@ -100,6 +81,7 @@ export default defineComponent({
           grid:{
             display:false
           }
+
         },
         yAxes:{
           grid:{
@@ -107,6 +89,7 @@ export default defineComponent({
           },
         },
       },
+      indexAxis:'y' as const,
     }
 
     return () =>

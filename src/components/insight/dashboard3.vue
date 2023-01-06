@@ -1,33 +1,59 @@
 <template>
-    <div class="dashboard" id="dashboard2s">
-        <h3 class="dashboard_title">탄소 배출량</h3>
-        <button class="전체보기_btn">전체보기</button>
-        <div class="type_group_btn">
-            <button :class="{non_click_type_group : groupclick  ,'type_btn' : typeClick}" @click="click_type">타입별</button>
-            <button  :class="{non_click_type_group : typeClick  ,'type_btn' : groupclick}" @click="click_group">조직별</button>
+    <div  style="float:left; ">
+        <div class="dash_title" id="dash_title3">카테고리별 전체 배출량</div>
+        <div class="dashboard" id="dashboard3_top">
+            <span style="margin-left:4vw; color:#5A5A5A; font-weight: bolder;">{{date}}</span>
         </div>
-
-        <div class="type_contents" v-if="typeClick==true">
-            <div  v-for="(emission_dash,index) in emission_dash_list">
-                <div style="width:inherit; height: 7.1vh;">
-                    <div style="float: left;">
-                        <div style="margin-top:1.1vh; font-weight: 600; font-size: 1.7vh; color:#5A5A5A">{{emission_dash.name}}</div>
-                        <div style= "margin-top:0.5vh; color:#9F9696; font-size: 1.6vh;">{{emission_dash.num}}개 항목</div>
-                    </div>
-                    <p style="float:right; margin-top:2.3vh; font-size: 1.7vh; font-weight: 600;">{{emission_dash.emission}}kg</p>
+        <div class="dashboard" id="dashboard3_left">
+            <p class="dashboard3_left_scope">scope1</p>
+            <p class="dashboard3_left_scope">scope2</p>
+            <p class="dashboard3_left_scope">scope3</p>
+        </div>
+        <div class="dashboard" id="dashboard3_right">
+            <div>
+                <div v-for="item in EmissionList" :key="item.label" class="emission-list-item" style="height:3vh;">
+                    <img class="emission-list-item-icon" :src="item.iconSrc" style="width:3vh; height:3vh; ">{{item.icon}}
+                    <span class="emission-list-item-lable" style="font-size:1.8vh; background-color: aqua; height: 0vh; margin-left:1vw; padding: 0;">{{item.label}}</span>
+                    <span class="emission-list-item-wight" style="font-size:1.8vh; background-color:aquamarine; height: 0vh; margin-right:2vw; padding: 0; ">{{item.weight}} kg</span>
                 </div>
-                <div style="width:inherit; height:0.2vh; background: #E3E3E3;" v-if ="index!=4"> </div>
             </div>
         </div>
+        <div class="dashboard" id="dashboard3_bottom">
+            전체 {{ total }}tkg
+        </div>
     </div>
+    
 </template>
 
 <style>
-    #dashboard2s{
-        height:45vh;
-        width: 13.5vw;
-        float: left;
+    #dashboard3_top{
+        height:3vh;
+        width:36vw;
         padding: 2%;
+        text-align:center;
+    }
+    #dashboard3_left{
+        margin-top:0px;
+        height:70vh;
+        width:9vw;
+        float:left;
+        text-align:center;
+    }
+    #dashboard3_right{
+        margin-top:0px;
+        height:70vh;
+        width:28.3vw;
+        float:left;
+        text-align:center;
+    }
+    .dashboard3_left_scope{
+        margin-top:10vh;
+    }
+    #dashboard3_bottom{
+        padding:1vh;
+    }
+    #dash_title3{
+        text-align: start;
     }
 
     .dashboard_title{
@@ -114,13 +140,24 @@
         return{
             typeClick:true,
             groupclick:false,
-            emission_dash_list:[
-                {name: '이동연소' , emission: '1,234', num: '6'},
-                {name:'고정연소', emission:'1,234', num:'3'},
-                {name:'임직원 통근', emission:'1,234', num:'10'},
-                {name:'가축동물', emission:'1,234', num:'6'},
-                {name:'가축동물', emission:'1,234', num:'3'},
-            ]
+            EmissionList :[
+                {iconSrc:require('@/assets/previewDetail/1.png'), label:"고정연소",weight:10},
+                {iconSrc:require('@/assets/previewDetail/2.png'), label:"이동연소",weight:250},
+                {iconSrc:require('@/assets/previewDetail/3.png'), label:"탈루배출",weight:30},
+                {iconSrc:require('@/assets/previewDetail/4.png'), label:"폐기물 처리시설",weight:30},
+                {iconSrc:require('@/assets/previewDetail/5.png'), label:"비료사용",weight:30},
+                {iconSrc:require('@/assets/previewDetail/6.png'), label:"대학소유동물",weight:30},
+                {iconSrc:require('@/assets/previewDetail/7.png'), label:"산림에 의한 흡수",weight:30},
+                {iconSrc:require('@/assets/previewDetail/8.png'), label:"전력",weight:30},
+                {iconSrc:require('@/assets/previewDetail/9.png'), label:"스팀(열)",weight:30},
+                {iconSrc:require('@/assets/previewDetail/10.png'), label:"수도",weight:30},
+                {iconSrc:require('@/assets/previewDetail/11.png'), label:"폐기물",weight:30},
+                {iconSrc:require('@/assets/previewDetail/12.png'), label:"통근/통학",weight:30},
+                {iconSrc:require('@/assets/previewDetail/13.png'), label:"출장",weight:40},
+                {iconSrc:require('@/assets/previewDetail/14.png'), label:"위착운영 차량",weight:40}
+            ],
+            date:'2023년 1월',
+            total:'1,241'
         }
 
       },

@@ -1,5 +1,5 @@
 <template>
-    <div  style="float:left; ">
+    <div style="float:left; ">
         <div class="dash_title" >조직명</div>
         <div class="dashboard" id="dashboard1">
             <div style ="float: left; ">
