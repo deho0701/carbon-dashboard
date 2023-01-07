@@ -1,8 +1,8 @@
 <template>
-    <div  style="float:left; ">
+    <div style="float:left; width:38vw ">
         <div class="dash_title" id="dash_title3">카테고리별 전체 배출량</div>
         <div class="dashboard" id="dashboard3_top">
-            <span style="margin-left:4vw; color:#5A5A5A; font-weight: bolder;">{{date}}</span>
+            <span style="margin-left:4vw; color:#5A5A5A; font-weight: bolder; font-size:2.3vh;">{{year}}년 {{ month }}월</span>
         </div>
         <div class="dashboard" id="dashboard3_left">
             <p class="dashboard3_left_scope">scope1</p>
@@ -10,16 +10,17 @@
             <p class="dashboard3_left_scope">scope3</p>
         </div>
         <div class="dashboard" id="dashboard3_right">
-            <div>
-                <div v-for="item in EmissionList" :key="item.label" class="emission-list-item" style="height:3vh;">
+            <div style="padding:1vh">
+                <div v-for="item in EmissionList" :key="item.label" class="emission-list-item" style="height:4.3vh;">
                     <img class="emission-list-item-icon" :src="item.iconSrc" style="width:3vh; height:3vh; ">{{item.icon}}
-                    <span class="emission-list-item-lable" style="font-size:1.8vh; background-color: aqua; height: 0vh; margin-left:1vw; padding: 0;">{{item.label}}</span>
-                    <span class="emission-list-item-wight" style="font-size:1.8vh; background-color:aquamarine; height: 0vh; margin-right:2vw; padding: 0; ">{{item.weight}} kg</span>
+                    <span class="emission-list-item-lable" style="font-size:1.8vh; height: 0vh; margin-left:1vw; padding: 0;">{{item.label}}</span>
+                    <span class="emission-list-item-wight" style="font-size:1.8vh; height: 0vh; margin-right:10vw; color:#000000; padding: 0; ">{{item.weight}} kg</span>
                 </div>
             </div>
         </div>
         <div class="dashboard" id="dashboard3_bottom">
-            전체 {{ total }}tkg
+            <span style="float:left; margin-left:8vw; color:#615B5B; font-weight: bolder;" >전체 </span>
+            <sapn style="color:#376B7C; margin-left:2vw; font-weight: bolder;">{{ total }}kg</sapn>
         </div>
     </div>
     
@@ -34,15 +35,15 @@
     }
     #dashboard3_left{
         margin-top:0px;
-        height:70vh;
-        width:9vw;
+        height:87.6vh;
+        width:6vw;
         float:left;
         text-align:center;
     }
     #dashboard3_right{
         margin-top:0px;
-        height:70vh;
-        width:28.3vw;
+        height:87.6vh;
+        width:31.3vw;
         float:left;
         text-align:center;
     }
@@ -50,7 +51,12 @@
         margin-top:10vh;
     }
     #dashboard3_bottom{
-        padding:1vh;
+        padding:2vh;
+        margin-bottom:5vh;
+        height: 2vh;
+        width:35.6vw;
+        float:left;
+        margin-top: 0px;
     }
     #dash_title3{
         text-align: start;
@@ -156,7 +162,8 @@
                 {iconSrc:require('@/assets/previewDetail/13.png'), label:"출장",weight:40},
                 {iconSrc:require('@/assets/previewDetail/14.png'), label:"위착운영 차량",weight:40}
             ],
-            date:'2023년 1월',
+            year:2023,
+            month:1,
             total:'1,241'
         }
 

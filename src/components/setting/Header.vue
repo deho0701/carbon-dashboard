@@ -8,11 +8,6 @@
 </template>
 
 <style>
-#insight_body{
-    height: 130vh;
-    padding-bottom: 2%;
-    padding-top: 1%
-  }
 
 </style>
 

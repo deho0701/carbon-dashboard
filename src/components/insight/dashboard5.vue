@@ -1,44 +1,91 @@
 <template>
-    <div class="dashboard" id="dashboard5">
-        <div style="font-size:2.1vh; font-weight: 900; color: #5A5A5A; height: 5vh; ">조직별 상위 탄소 배출량 순위
-            <button class="view_all_btn">view all</button>
-        </div>
-
-        <div  v-for="(rangking,index) in group_list">
-            <div style="width:inherit; height: 6.1vh;">
-                <div style="float: left;">
-                    <div style="margin-top:0.5vh; font-size: 1.7vh; font-weight: 600; color:#5A5A5A">{{rangking.name}}</div>
-                    <div style= "margin-top:0.5vh; font-size: 1.6vh; color:#9F9696">{{rangking.location}}</div>
-                </div>
-                <span style="float:right; margin-top:1.8vh; color:#00B912;" v-if="rangking.emission > rangking.pre_emission">　▲</span>
-                <span style="float:right; margin-top:1.8vh; color:#FF0000;" v-if="rangking.emission < rangking.pre_emission">　▼</span>
-                <span style="float:right; margin-top:1.8vh; color:#5A5A5A; font-size:2.3vh; font-weight: bold;" v-if="rangking.emission == rangking.pre_emission">　-</span>
-                <span style="float:right; margin-top:1.8vh; font-size: 1.7vh; font-weight: 600;">{{rangking.emission}}kg</span>
-                </div>
-            <div style="width:32vw; height:0.1vh; background: #F4F4F4;" v-if ="index!=4"> </div> 
-        </div>
-
+  <div style="float:left; width:41vw; margin-left: 1vw; ">
+    <div class="dash_title" style="text-align: start;">에너지 사용량</div>
+    <div class="dashboard" id="dashboard5_top"> 
+      <span style="margin-left:10vw;">{{ year }}년 {{ month }}월 </span>
+      <span style="font-weight:lighter">(단위 GJ)</span>
     </div>
+    <div class="dashboard" id="dashboard5_left1"> 
+      <p style="margin-top:8vh">직접<br>에너지원별<br>소비량</p>
+    </div>
+    <div class="dashboard" id="dashboard5_right1"> 
+      <div>
+          <div v-for="item in DirectEnargyList" :key="item.label" class="emission-list-item" style="height:3.3vh; margin-top:1vh">
+              <span class="emission-list-item-lable" style="font-size:1.8vh; height: 0vh; margin-left:1vw; padding: 0; color:#615B5B">{{item.label}}</span>
+              <span class="emission-list-item-wight" style="font-size:1.8vh; height: 0vh; margin-right:10vw; color:#000000; padding: 0; ">{{item.weight}} kg</span>
+          </div>
+      </div>
+    </div>
+    <div class="dashboard" id="dashboard5_left2"> 
+      <p style="margin-top:1.5vh">간접<br>에너지원별<br>소비량</p>
+    </div>
+    <div class="dashboard" id="dashboard5_right2"> 
+      <div>
+          <div v-for="item in IndirectEnargyList" :key="item.label" class="emission-list-item" style="height:3.3vh; margin-top:1vh">
+              <span class="emission-list-item-lable" style="font-size:1.8vh; height: 0vh; margin-left:1vw; padding: 0; color:#615B5B">{{item.label}}</span>
+              <span class="emission-list-item-wight" style="font-size:1.8vh; height: 0vh; margin-right:10vw; color:#000000; padding: 0; ">{{item.weight}} kg</span>
+          </div>
+      </div>
+    </div>
+    <div class="dashboard" id="dashboard5_bottom"> 
+      <span style="float:left; margin-left:6vw; color:#615B5B; font-weight: bolder;" >총 에너지 소비량 </span>
+      <sapn style="color:#376B7C; margin-left:-1.5vw; font-weight: bolder;">{{ total }}kg</sapn>
+    </div>
+  </div>
+    
 </template>
 
 <style>
-  #dashboard5{
+  #dashboard5_top{
     float: left;
-    width: 33.8vw;
-    height: 35vh;
-    margin-left:1vw;
-    padding:2%
+    width: 39vw;
+    height: 3vh;
+    color:#376B7C;
+    padding:2%;
+    font-weight: bolder;
+    font-size:2.3vh;
   }
-  .view_all_btn{
-    float:right;
-    color:#3DC984;
-    background: #ffffff;
-    border: none;
-    font-size: large;
+  #dashboard5_left1{
+    width: 5vw;
+    height:25vh;
+    padding: 2vh;
+    font-size:1.8vh;
+    font-weight: bolder;
+    text-align: start;
+    float:left;
+    margin-top:0px;
   }
-  .view_all_btn:hover{
-    color: #35ad71;
-    cursor: pointer;
+  #dashboard5_right1{
+    width: 31.3vw;
+    height:25vh;
+    padding: 2vh;
+    margin-top:0px;
+    float:left;
+  }
+  #dashboard5_left2{
+    width: 5vw;
+    height:10vh;
+    padding: 2vh;
+    font-size:1.8vh;
+    font-weight: bolder;
+    text-align: start;
+    float:left;
+    margin-top:0px;
+  }
+  #dashboard5_right2{
+    width: 31.3vw;
+    height:10vh;
+    padding: 2vh;
+    margin-top:0px;
+    float:left;
+  }
+  #dashboard5_bottom{
+    width: 38.5vw;
+    height:2vh;
+    padding: 2vh;
+    margin-top:0px;
+    float:left;
+    margin-bottom:5vh;
   }
 
 </style>
@@ -50,12 +97,20 @@
       },
       data() {
         return{
-            group_list:[
-                {img:'상', name:'상경대학', location: '경남 진주시', emission: 101136, pre_emission: 54568},
-                {img:'공', name:'공과대학', location: '경남 진주시', emission: 101136, pre_emission: 504568},
-                {img:'의', name:'의학대학', location: '경남 진주시', emission: 101136, pre_emission: 101136},
-                {img:'수', name:'수산대학', location: '경남 진주시', emission: 101136, pre_emission: 54568},
-                {img:'농', name:'농경대학', location: '경남 진주시', emission: 101136, pre_emission: 504568}
+            year:2023,
+            month:1,
+            total:'2,340',
+            DirectEnargyList:[
+              {label:"휘발유",weight:12.34},
+              {label:"경유",weight:11.32},
+              {label:"등유",weight:3.67},
+              {label:"LPG",weight:1.234},
+              {label:"도시가스(LNG)",weight:0.52},
+            ],
+            IndirectEnargyList:[
+              {label:"전력",weight:12.34},
+              {label:"열(스팀)",weight:11.32},
+
             ]
           
         }

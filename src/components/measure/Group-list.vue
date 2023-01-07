@@ -3,7 +3,7 @@
     <div class ="body"> 
         <div class="board" >   
             <!-- 조직목록, 조직도 화면 -->
-            <div class="left-bar" style="float: left; height: inherit; width:27vw; overflow: auto;">
+            <div class="left-bar" style="float: left; height: inherit; width:27vw; ">
                 <!-- 조직목록, 조직도 버튼 -->
                 <div class="title" style="position:">
                     <button :class="{list_title : titleclick  ,'non_click_title' : chartclick}" @click="clickList">조직 목록</button>
@@ -101,6 +101,9 @@
 }
 .list{
     padding:1vw;
+    width:25vw;
+    height: 55vh;
+    overflow: auto;
 }
 .category_content{
     margin-top:2.5vh; 

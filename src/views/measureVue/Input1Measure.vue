@@ -10,9 +10,7 @@
 
 
 <style>
-body{
-    margin:0;
-}
+
 .masure-main{
     display: flex;
 }
