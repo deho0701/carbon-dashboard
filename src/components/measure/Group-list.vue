@@ -55,7 +55,8 @@
     position:relative;
     background: #F8F8F8;;
     width: 85vw;
-    height: 75.5vh;
+    min-height: 75.5vh;
+    height: inherit;
 }
 
 .board{

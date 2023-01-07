@@ -3,7 +3,7 @@
       <navigation class="navigation"/>
       <div class="contents">
           <insight_header/>
-          <div class="body">
+          <div class="body" style="height:110vh">
             <div style="float:right; margin-right:5vw; margin-top:0px;">
               <button :class="{date_btn_insight: category_dashboard_month,'non_date_insight': !category_dashboard_month }" @click="click_month()">월</button>
               <button :class="{date_btn_insight: category_dashboard_year,'non_date_insight': !category_dashboard_year}" @click="click_year()">년</button>
