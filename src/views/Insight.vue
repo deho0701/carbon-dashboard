@@ -3,7 +3,7 @@
       <navigation class="navigation"/>
       <div class="contents">
           <insight_header/>
-          <div class="body" id="insight_body">
+          <div class="body">
             <div style="float:right; margin-right:5vw; margin-top:0px;">
               <button :class="{date_btn_insight: category_dashboard_month,'non_date_insight': !category_dashboard_month }" @click="click_month()">월</button>
               <button :class="{date_btn_insight: category_dashboard_year,'non_date_insight': !category_dashboard_year}" @click="click_year()">년</button>
@@ -17,6 +17,7 @@
               <dashboard1_nameVue></dashboard1_nameVue>
               <dashboard1_totalEmissionVue></dashboard1_totalEmissionVue>
               <dashboard1_scopeVue></dashboard1_scopeVue>
+              
             </div>
             <!-- 최근 3개년 히스토리 -->
             <div v-if="history==true" > 
@@ -35,6 +36,7 @@
               <span class="date_info_btn" @click="click_plus_month()"> ＞ </span><br>
               <dashboard3Vue></dashboard3Vue>
               <dashboard4Vue></dashboard4Vue>
+              <Dashboard5></Dashboard5>
    
             </div>
             <!-- 년 그래프 -->
@@ -44,6 +46,7 @@
               <span class="date_info_btn" @click="click_plus_year()"> ＞ </span><br>
               <dashboard3Vue></dashboard3Vue>
               <dashboard4Vue></dashboard4Vue>
+              <Dashboard5></Dashboard5>
             </div>
           </div>
       </div>
@@ -81,11 +84,6 @@
     width: 5vh;
     font-size: 4.5vh;
     font-weight: bolder;
-  }
-  #insight_body{
-    height: 140vh;
-    padding-bottom: 3%;
-    padding-top: 1%
   }
   .dashboard{
     background-color: white;

@@ -1,7 +1,7 @@
 <template>
 <div class="setting-main">
     <navigation class="navigation"></navigation>
-    <div class="contents">
+    <div style="margin-bottom:2vh">
         <settingHeader></settingHeader>
         <settingInput class="setting-input"></settingInput>
     </div>
@@ -15,9 +15,6 @@
 .setting-input{
     margin-left: 24vw;
     width: 30vw;
-}
-.contents{
-    margin-bottom: 2vh;
 }
 </style>
 
