@@ -10,6 +10,10 @@ import setting from "./views/Setting/Setting"
 import survey from "./views/Survey"
 import zaju from "./views/Drone"
 
+
+
+
+
 const router = createRouter({
   history: createWebHistory(),
   routes:[

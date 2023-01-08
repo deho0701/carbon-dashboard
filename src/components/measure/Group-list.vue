@@ -40,7 +40,7 @@
                    <li class="select-list" v-for="group in select_group">
                     <img style="margin-left:1vw; margin-right:2vw; width: 3vw; vertical-align: middle; " src="@/assets/building.png" alt="" v-if="group.category==1">
                     <h class="category_image2" id="right_bar_icon" v-if="group.category!=1">{{group.image}}</h>{{group.name}}
-                   <button class="select-btn" onclick="location.href='/measure/input1';" @click="click_regi_page">+　입력하기</button></li>
+                    <button class="select-btn" onclick="location.href='/measure/input1';" @click="click_regi_page(group.name)">+　입력하기</button></li>{{group_name}}
                 </ul>
             </div>
 
@@ -77,6 +77,7 @@
     margin: 2vw 3vw 1vw;
     padding: 1%;
 }
+
 .category_image2{
     margin-right:1.3vw; 
     width: 3vw;
@@ -159,7 +160,6 @@
 ::-webkit-scrollbar{
     display:none;
 }
-
 </style>
     
 <style scoped>
@@ -195,18 +195,16 @@
         
         name :"group-list",
         data() {
-            
             return{
                 titleclick: true,
                 chartclick: false,
                 check: true,
-
+                group_name:'',
                 list_number:[
                     {index:"1", category_title: "1차 카테고리"},
                     {index:"2",category_title: "2차 카테고리"},
                     {index:"3",category_title: "3차 카테고리"}
                 ],
-
                 list_category:[
                     {category:"1", image:'building.png' ,name:"경상대", check:''},
                     {category:"2" ,image:'상', name:"상경대학", check:''}, 
@@ -215,7 +213,6 @@
                     {category:"3" ,image:'항', name:"항공우주 및 소프트웨어학과", check:''},
                     {category:"3" ,image:'건', name:"건축공학과", check:''},                  
                 ],
-
                 select_group:[
                     //{category:"2" ,image:'상', name:"상경대학"},
                     //{category:"2" ,image:'공', name:"공과대학"},
@@ -239,19 +236,21 @@
                     this.select_group.push({category:category.category, image:category.image, name:category.name})
                     category.check=true
                 }
-
                 else{
                     this.select_group.pop({category:category.category, image:category.image, name:category.name})
                     category.check=false
                 }  
             },
-            click_regi_page(){
-
+            click_regi_page(name){
+                this.group_name = name
+                this.emitter.emit("send_name", name) //input1에서 emitter.on으로 name을 받아야하는데 안 받아짐 ㅜ____ㅜ
             }
         },
         components:{
             treeList
         },
+        created(){
+            
+        }
     }
-    
 </script>
