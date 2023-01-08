@@ -5,14 +5,24 @@ import store  from "./store";
 import VueBlocksTree from 'vue3-blocks-tree';
 import 'vue3-blocks-tree/dist/vue3-blocks-tree.css';
 import axios from 'axios'
+import mitt from 'mitt';                  // Import mitt
+   
+
+
 //import axios from 'axios'
+const emitter = mitt();  
 const app = createApp(App)
+
 
 
 //그룹 트리 사용
 let defaultoptions = {treeName:'blocks-tree'}
 app.config.globalProperties.$axios = axios; 
 app.use(VueBlocksTree,defaultoptions)
+app.provide('emitter', emitter);  
+
+
+app.config.globalProperties.emitter = emitter
 
 app.use(store)
 //app.config.productionTip = false

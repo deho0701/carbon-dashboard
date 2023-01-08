@@ -53,8 +53,6 @@
             <!-- 탄소 배출 내용 테이블 -->
             <div>
                 <div class="info_board" id="info_board_bottom">
-                    <button class= "measure_btn" id="btn_del_input2">선택 삭제</button> 
-                    <button class= "measure_btn" id="btn_edit_input2">수정하기</button>
                     <div  v-if="info_table_defalt==true" style="text-align: center; width:inherit; border: 1px solid rgba(206, 206, 206, 0.5); border-radius: 7px; margin-top: 15px; height: 350px; ">
                         <img style="margin-top:10%; width: 5%;" src="@/assets/exclamationMark.png" alt=""/>
                         <div style="margin-top:30px">데이터가 존재하지 않습니다.</div>
@@ -201,8 +199,6 @@
         outline: none;
     }
  
-
-    
 </style>
 <script>
 import measuretable from "@/components/measure/MeasuretableA.vue"

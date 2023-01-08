@@ -1,12 +1,13 @@
 //vuex 설정 파일 
 import { createStore } from "vuex";
-
+import mitt from 'mitt'
+ 
 export default createStore({
     //관리 해야할 데이터 선언
     state: {
         EditGroups : false,
         GroupPreview : false,
-
+        emitter : mitt()
     }
     //상태 가공 후 state 데이터 호출
     ,getters:{

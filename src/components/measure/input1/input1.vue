@@ -1,5 +1,6 @@
 <template>
     <div class ="body_1">
+        {{ this.group_name }}
         <div>
             <button class="input1_back_btn" onclick="location.href='/measure';"> ◀ </button>
         </div>
@@ -50,6 +51,7 @@
                 <!-- <measuretable class="m_table" v-bind:emssion_info_list="emssion_info_list_parent"/> -->
                 <measuretable class="m_table"/>
             </div>
+        
         </div>
     </div>
 </template>
@@ -161,11 +163,13 @@
 <script>
     import measuretable from "@/components/measure/MeasuretableA.vue"
     import chart from "@/components/measure/input1/chart.ts"
+    import { useStore } from "vuex";
+
     export default {
         name :"input1",
         data() {
             return{
-                
+                group_name:"",
                 N_emssions:0,
                 M_emssions:0,
                 info_Group_Text:[
@@ -190,7 +194,14 @@
         methods:{
             del_btn(){
                 
+            },
+            register_group_name(name){
+                this.group_name=name
             }
+        },
+        mounted(){
+            const emitter = useStore().state.emitter
+            emitter.on("send_name", (name) => {this.group_name=name})
         }
     }
     

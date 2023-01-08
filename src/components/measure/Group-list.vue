@@ -191,6 +191,7 @@
 </style>
 <script>
     import treeList from "@/components/measure/Tree-list.vue"
+    import { useStore } from 'vuex'
     export default {
         
         name :"group-list",
@@ -243,7 +244,8 @@
             },
             click_regi_page(name){
                 this.group_name = name
-                this.emitter.emit("send_name", name) //input1에서 emitter.on으로 name을 받아야하는데 안 받아짐 ㅜ____ㅜ
+                const emitter = useStore().state.emitter
+                emitter.emit("send_name", name) //input1에서 emitter.on으로 name을 받아야하는데 안 받아짐 ㅜ____ㅜ
             }
         },
         components:{
