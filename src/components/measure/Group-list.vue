@@ -40,7 +40,7 @@
                    <li class="select-list" v-for="group in select_group">
                     <img style="margin-left:1vw; margin-right:2vw; width: 3vw; vertical-align: middle; " src="@/assets/building.png" alt="" v-if="group.category==1">
                     <h class="category_image2" id="right_bar_icon" v-if="group.category!=1">{{group.image}}</h>{{group.name}}
-                    <button class="select-btn" onclick="location.href='/measure/input1';" @click="click_regi_page(group.name)">+　입력하기</button></li>{{group_name}}
+                    <button class="select-btn"  @click="click_regi_page(group.name)">+　입력하기</button></li>{{group_name}}
                 </ul>
             </div>
 
@@ -244,7 +244,8 @@
             },
             click_regi_page(name){
                 this.group_name = name
-                const emitter = useStore().state.emitter
+                const store = useStore();
+                const emitter = store.state.emitter
                 emitter.emit("send_name", name) //input1에서 emitter.on으로 name을 받아야하는데 안 받아짐 ㅜ____ㅜ
             }
         },

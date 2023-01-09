@@ -12,13 +12,11 @@
                 perPage: 5
             }"
             >
-            <template #table-actions>
+            <!-- <template #table-actions>
               <button class= "measure_btn" id="btn_del_input2" @click="click_del_btn()">선택 삭제</button> 
               <button class= "measure_btn" id="btn_edit_input2" @click="click_edit_btn()" style="margin-right:1vw; margin-top:1vh; margin-bottom: 1vh;">수정하기</button>
-            </template>
+            </template> -->
         </vue-good-table>
-        {{info_list}}
-        {{text}}
     </div>
   </template>
   
@@ -55,17 +53,17 @@ import { VueGoodTable } from 'vue-good-table-next';
           },
           {
             label: '시작 날짜',
-            field: 'startDate',
+            field: 'StartDate',
             type: 'date',
             dateInputFormat: 'yyyy-MM-dd',
-            dateOutputFormat: 'yyyy.MM.dd',
+            dateOutputFormat: 'yyyy-MM-dd',
           },
           {
             label: '종료 날짜',
             field: 'EndDate',
             type: 'date',
             dateInputFormat: 'yyyy-MM-dd',
-            dateOutputFormat: 'yyyy.MM.dd',
+            dateOutputFormat: 'yyyy-MM-dd',
           },
           {
             label: '스코프',
@@ -74,7 +72,22 @@ import { VueGoodTable } from 'vue-good-table-next';
         ],
         rows: [
           {
-            content:'d',data:'d',emissions:'d',StartDate:'',EndDate:'',scope:''
+            content:'임직원 통근',data:'1,234kg',emissions:'1,234kg',StartDate:'2022-01-09',EndDate:'2023-01-09',scope:'Scope2'
+          },
+          {
+            content:'전력사용',data:'1,234kg',emissions:'1,234kg',StartDate:'2022-01-09',EndDate:'2023-01-09',scope:'Scope2'
+          },
+          {
+            content:'열사용',data:'1,234kg',emissions:'1,234kg',StartDate:'2022-01-09',EndDate:'2023-01-09',scope:'Scope2'
+          },
+          {
+            content:'전력사용',data:'1,234kg',emissions:'1,234kg',StartDate:'2022-01-09',EndDate:'2023-01-09',scope:'Scope2'
+          },
+          {
+            content:'임직원 통근',data:'1,234kg',emissions:'1,234kg',StartDate:'2022-01-09',EndDate:'2023-01-09',scope:'Scope2'
+          },
+          {
+            content:'임직원 통근',data:'1,234kg',emissions:'1,234kg',StartDate:'2022-01-09',EndDate:'2023-01-09',scope:'Scope2'
           }
         ],
       };
@@ -84,7 +97,7 @@ import { VueGoodTable } from 'vue-good-table-next';
     },
     methods:{
       click_del_btn(){
-        this.rows.pop({content:'d',data:'d',emissions:'d',StartDate:'',EndDate:'',scope:''});
+        this.rows.pop({content:'전력사용',data:'1,234kg',emissions:'1,234kg',StartDate:'2022-01-09',EndDate:'2023-01-09',scope:'Scope2'});
       },
       setting(info_list_input2){
         this.text=info_list_input2
